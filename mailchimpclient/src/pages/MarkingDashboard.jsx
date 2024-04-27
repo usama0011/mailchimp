@@ -37,67 +37,7 @@ const MarkingDashboard = () => {
             data-auto-enablement-allowed="true"
             class="snipcss0-4-7-9"
           ></div>
-          <div
-            role="region"
-            aria-label="Site messages banner"
-            class="snipcss0-4-7-10"
-          >
-            <div class="root-2YPpb warning-3SnLw snipcss0-5-10-11">
-              <p class="copy-3Y9AB snipcss0-6-11-12">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  focusable="false"
-                  aria-hidden="true"
-                  class="wink-icon feedbackIcon-2qEAZ snipcss0-7-12-13"
-                >
-                  <path d="M13.5 17a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm-3-12l.5 9h2l.5-9h-3z"></path>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11zm0-2a9 9 0 100-18 9 9 0 000 18z"
-                  ></path>
-                </svg>
-                Your account has one or more issues that need to be resolved.{" "}
-                <a href="/account/status/" class="snipcss0-7-12-14">
-                  View issues
-                </a>
-              </p>
-              <a
-                class="copy-3Y9AB phone-_5iVZ snipcss0-6-11-15"
-                href="/account/status/"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  focusable="false"
-                  aria-hidden="true"
-                  class="wink-icon feedbackIcon-2qEAZ snipcss0-7-15-16"
-                >
-                  <path d="M13.5 17a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm-3-12l.5 9h2l.5-9h-3z"></path>
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11zm0-2a9 9 0 100-18 9 9 0 000 18z"
-                  ></path>
-                </svg>
-                Your account needs review
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  focusable="false"
-                  aria-hidden="true"
-                  class="wink-icon snipcss0-7-15-17"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M13.586 12L9.293 7.707l1.414-1.414L16.414 12l-5.707 5.707-1.414-1.414L13.586 12z"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-          </div>
+         
         </div>
         <div class="headerTop-2Y-yB snipcss0-3-6-18">
           <div class="wink snipcss0-4-18-19">

@@ -451,7 +451,7 @@ const App = () => {
                                     className="root-2MzAS fullHeight-2grW3 snipcss0-14-135-136"
                                     role="link"
                                     aria-describedby="mc:53"
-                                    href="/lists/preferences-center/"
+                                    href="#"
                                   >
                                     <div className="snipcss0-15-136-137">
                                       <span className="snipcss0-16-137-138">
@@ -469,7 +469,7 @@ const App = () => {
                                     className="root-2MzAS fullHeight-2grW3 snipcss0-14-139-140"
                                     role="link"
                                     aria-describedby="mc:54"
-                                    href="/audience/inbox"
+                                    href="#"
                                   >
                                     <div className="snipcss0-15-140-141">
                                       <span className="snipcss0-16-141-142">
@@ -529,37 +529,31 @@ const App = () => {
                                   data-analytics-tag="SecondaryNav-Marketing dashboard"
                                   className="snipcss0-13-152-153"
                                 >
-                                  <a
-                                    aria-label="Marketing dashboard"
-                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-153-154"
-                                    role="link"
-                                    aria-describedby="mc:55"
-                                    href="/analytics/marketing-dashboard"
+                                  <Link
+                                    to="/marketingdashboard"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
                                   >
                                     <div className="snipcss0-15-154-155">
                                       <span className="snipcss0-16-155-156">
                                         Marketing dashboard
                                       </span>
                                     </div>
-                                  </a>
+                                  </Link>
                                 </li>
                                 <li
                                   data-analytics-tag="SecondaryNav-Audience"
                                   className="snipcss0-13-152-157"
                                 >
-                                  <a
-                                    aria-label="Audience"
-                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-157-158"
-                                    role="link"
-                                    aria-describedby="mc:56"
-                                    href="/analytics/audience-analytics"
+                                  <Link
+                                    to="/audienceanalytics"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
                                   >
                                     <div className="snipcss0-15-158-159">
                                       <span className="snipcss0-16-159-160">
                                         Audience
                                       </span>
                                     </div>
-                                  </a>
+                                  </Link>
                                 </li>
                                 <li
                                   data-analytics-tag="SecondaryNav-Reports"
@@ -648,55 +642,46 @@ const App = () => {
                                   data-analytics-tag="SecondaryNav-Website"
                                   className="snipcss0-13-178-179"
                                 >
-                                  <a
-                                    aria-label="Website"
-                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-179-180"
-                                    role="link"
-                                    aria-describedby="mc:59"
-                                    href="/website/dashboard/"
+                                  <Link
+                                    to="/websiteoverview"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
                                   >
                                     <div className="snipcss0-15-180-181">
                                       <span className="snipcss0-16-181-182">
                                         Website
                                       </span>
                                     </div>
-                                  </a>
+                                  </Link>
                                 </li>
                                 <li
                                   data-analytics-tag="SecondaryNav-Settings"
                                   className="snipcss0-13-178-183"
                                 >
-                                  <a
-                                    aria-label="Settings"
-                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-183-184"
-                                    role="link"
-                                    aria-describedby="mc:60"
-                                    href="/website/settings/"
+                                  <Link
+                                    to="/websitesetting"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
                                   >
                                     <div className="snipcss0-15-184-185">
                                       <span className="snipcss0-16-185-186">
                                         Settings
                                       </span>
                                     </div>
-                                  </a>
+                                  </Link>
                                 </li>
                                 <li
                                   data-analytics-tag="SecondaryNav-Reports"
                                   className="snipcss0-13-178-187"
                                 >
-                                  <a
-                                    aria-label="Reports"
-                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-187-188"
-                                    role="link"
-                                    aria-describedby="mc:61"
-                                    href="/website/reports/"
+                                  <Link
+                                    to="/websitereports"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
                                   >
                                     <div className="snipcss0-15-188-189">
                                       <span className="snipcss0-16-189-190">
                                         Reports
                                       </span>
                                     </div>
-                                  </a>
+                                  </Link>
                                 </li>
                               </ul>
                             </div>
@@ -749,19 +734,16 @@ const App = () => {
                                   data-analytics-tag="SecondaryNav-Creative Assistant"
                                   className="snipcss0-13-200-201"
                                 >
-                                  <a
-                                    aria-label="Creative Assistant"
-                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-201-202"
-                                    role="link"
-                                    aria-describedby="mc:62"
-                                    href="/creative-assistant"
+                                  <Link
+                                    to="/creativeassistant"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
                                   >
                                     <div className="snipcss0-15-202-203">
                                       <span className="snipcss0-16-203-204">
                                         Creative Assistant
                                       </span>
                                     </div>
-                                  </a>
+                                  </Link>
                                 </li>
                                 <li
                                   data-analytics-tag="SecondaryNav-My files"
@@ -785,19 +767,16 @@ const App = () => {
                                   data-analytics-tag="SecondaryNav-Email templates"
                                   className="snipcss0-13-200-209"
                                 >
-                                  <a
-                                    aria-label="Email templates"
-                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-209-210"
-                                    role="link"
-                                    aria-describedby="mc:64"
-                                    href="/templates"
+                                  <Link
+                                    to="/"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
                                   >
                                     <div className="snipcss0-15-210-211">
                                       <span className="snipcss0-16-211-212">
                                         Email templates
                                       </span>
                                     </div>
-                                  </a>
+                                  </Link>
                                 </li>
                               </ul>
                             </div>
@@ -850,12 +829,9 @@ const App = () => {
                                   data-analytics-tag="SecondaryNav-Discover"
                                   className="snipcss0-13-222-223"
                                 >
-                                  <a
-                                    aria-label="Discover"
-                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-223-224"
-                                    role="link"
-                                    aria-describedby="mc:65"
-                                    href="/account/connected-sites/discover"
+                                  <Link
+                                    to="/integrationdiscover"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
                                   >
                                     <div className="snipcss0-15-224-225">
                                       <span className="snipcss0-16-225-226">
@@ -871,25 +847,22 @@ const App = () => {
                                         </span>
                                       </span>
                                     </div>
-                                  </a>
+                                  </Link>
                                 </li>
                                 <li
                                   data-analytics-tag="SecondaryNav-Manage"
                                   className="snipcss0-13-222-230"
                                 >
-                                  <a
-                                    aria-label="Manage"
-                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-230-231"
-                                    role="link"
-                                    aria-describedby="mc:66"
-                                    href="/integrations/manage"
+                                  <Link
+                                    to="/integrationmanage"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
                                   >
                                     <div className="snipcss0-15-231-232">
                                       <span className="snipcss0-16-232-233">
                                         Manage
                                       </span>
                                     </div>
-                                  </a>
+                                  </Link>
                                 </li>
                               </ul>
                             </div>
