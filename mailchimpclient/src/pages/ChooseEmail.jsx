@@ -9,8 +9,10 @@ const ChooseEmail = () => {
   const handleUpdateState = (field, value) => {
     dispatch({ type: "UPDATE_STATE", payload: { field, value } });
   };
-  const handlemovenextpage=() =>{
+  const handlemovenextpage=(image) =>{
+    handleUpdateState("chooseemailtemplate",image)
     navigation("/email/editor")
+
   }
   const handlecheckElement=()=>{
      // Prevent the default behavior of the click event
