@@ -128,6 +128,7 @@ const App = () => {
                       <ul className="stack-1qp4V spacing4-1xt6w navItems-1Kfmk minHeightNav-2mej_ snipcss0-8-55-56">
                         <li className="createItem-1mIzO snipcss0-9-56-57">
                           <Link
+                            style={{ outline: "1px solid #1b8a95" }}
                             className="root-sBgFt container-3-bH7 secondary-1_P2K createButton-1NK_y snipcss0-10-57-58"
                             to="/newcomaping"
                           >
@@ -918,8 +919,8 @@ const App = () => {
             </div>
             <main id="content" className="body-1uBId snipcss0-3-6-246">
               <div className="frame-1q4n0 snipcss0-4-246-247">
-                <div className="loading-_VrqD snipcss0-5-247-248"></div>
-                {/* Start From There */}
+                <div className="loading-_VrqD snipcss0-5-247-248"></div>I am all
+                the comapings
               </div>
             </main>
           </div>

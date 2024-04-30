@@ -1,6 +1,26 @@
-import React from "react";
-// import '../styles/ChooseTemplate.css'
+import React, { useContext, useRef } from "react";
+import '../styles/ChooseTemplate.css'
+import { useNavigate } from "react-router-dom";
+import { NewCampaignDetailsContext } from "../context/NewCompaingContext";
 const ChooseEmail = () => {
+  const navigation = useNavigate()
+  const divRef  = useRef(null)
+  const { state, dispatch } = useContext(NewCampaignDetailsContext);
+  const handleUpdateState = (field, value) => {
+    dispatch({ type: "UPDATE_STATE", payload: { field, value } });
+  };
+  const handlemovenextpage=() =>{
+    navigation("/email/editor")
+  }
+  const handlecheckElement=()=>{
+     // Prevent the default behavior of the click event
+     console.log("hello")
+   console.log(divRef)
+  }
+
+  const halleakelable=(e)=>{
+    console.log(e)
+  }
   return (
     <div class="pageContainer-nmRCK pageContainer_templateSelection-20m_G snipcss-FYitB">
       <div class="root-3uY95">
@@ -368,30 +388,30 @@ const ChooseEmail = () => {
                       class="root-209cT gap6-U7x7I grid-3AAp- style-gTpG1"
                       id="style-gTpG1"
                     >
-                      <label
+                      <label 
                         for="Start from scratch"
                         class="thumbnailButton-2fZfR"
                         data-testid="templateCard"
                         title="Start from scratch"
                         aria-label="Start from scratch"
                       >
-                        <input
+                        <input 
                           id="Start from scratch"
                           type="button"
                           name="template"
                           class="radioHiddenInput-CyuAN"
                           value="Start from scratch"
                         />
-                        <div
+                        <div ref={divRef} onClick={handlecheckElement}
                           class="templateThumbnailContainer-1Fp1C style-BSZRJ"
                           id="style-BSZRJ"
                         ></div>
                         <div class="infoContainer-1VHAL">
                           <div class="name-12q7Y">Start from scratch</div>
                         </div>
-                        <div class="buttonOverlay-1vS-v expanded-24kuN">
+                        <div  class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://s3.amazonaws.com/cdn-images.mailchimp.com/template_images/email/thumbnails/2x/scratch.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -414,7 +434,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Bold"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-QcZd9"
                           id="style-QcZd9"
                         ></div>
@@ -423,7 +443,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={  ()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/Bold.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -452,7 +472,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Minimal"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-ntQl1"
                           id="style-ntQl1"
                         ></div>
@@ -461,7 +481,8 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>  handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/Minimal.jpg")
+}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -490,7 +511,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Natural"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-p2WrU"
                           id="style-p2WrU"
                         ></div>
@@ -499,7 +520,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>  handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/Natural.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -528,7 +549,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Simple Text"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-wEOoP"
                           id="style-wEOoP"
                         ></div>
@@ -537,7 +558,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>  handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/Simple_text.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -566,7 +587,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Gallery"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-ipS3g"
                           id="style-ipS3g"
                         ></div>
@@ -575,7 +596,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>  handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/Gallery.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -604,7 +625,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Survey"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-17Dld"
                           id="style-17Dld"
                         ></div>
@@ -613,7 +634,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>  handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/Survey.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -642,7 +663,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="SMS"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-PjUJs"
                           id="style-PjUJs"
                         ></div>
@@ -651,7 +672,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>  handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/Sms.png")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -680,7 +701,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="1:2:1 Column"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-pEEjF"
                           id="style-pEEjF"
                         ></div>
@@ -689,7 +710,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>  handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/500.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -718,7 +739,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="1:2 Column"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-8n2BP"
                           id="style-8n2BP"
                         ></div>
@@ -727,7 +748,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>  handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/501.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -756,7 +777,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="1:2:1:2 Column"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-GiaNG"
                           id="style-GiaNG"
                         ></div>
@@ -765,7 +786,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>  handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/502.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -794,7 +815,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="1:3 Column"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-dpfUX"
                           id="style-dpfUX"
                         ></div>
@@ -803,7 +824,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>  handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/503.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -832,7 +853,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="1:3:1:3 Column"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-vYYNF"
                           id="style-vYYNF"
                         ></div>
@@ -841,7 +862,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>  handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/504.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -870,7 +891,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Sell products"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-JBCgK"
                           id="style-JBCgK"
                         ></div>
@@ -879,7 +900,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>  handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/505.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -908,7 +929,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Make an announcement"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-xLDno"
                           id="style-xLDno"
                         ></div>
@@ -917,7 +938,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/506.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -946,7 +967,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Tell a story"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-GklBo"
                           id="style-GklBo"
                         ></div>
@@ -955,7 +976,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/507.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -984,7 +1005,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Welcome "
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-yYLec"
                           id="style-yYLec"
                         ></div>
@@ -993,7 +1014,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/508.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1022,7 +1043,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Educate"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-JDtfX"
                           id="style-JDtfX"
                         ></div>
@@ -1031,7 +1052,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/509.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1060,7 +1081,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Weekly newsletter"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-GorY7"
                           id="style-GorY7"
                         ></div>
@@ -1069,7 +1090,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/510.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1098,7 +1119,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Welcome new subscribers"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-EZTYQ"
                           id="style-EZTYQ"
                         ></div>
@@ -1107,7 +1128,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpageurl("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/511.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1136,7 +1157,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Advertise app"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-Q3Abb"
                           id="style-Q3Abb"
                         ></div>
@@ -1145,7 +1166,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/512.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1174,7 +1195,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Services promotion"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-8LT6g"
                           id="style-8LT6g"
                         ></div>
@@ -1183,7 +1204,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/513.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1212,7 +1233,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="New product categories"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-OaDTk"
                           id="style-OaDTk"
                         ></div>
@@ -1221,7 +1242,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/514.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1250,7 +1271,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Featured services"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-WScpX"
                           id="style-WScpX"
                         ></div>
@@ -1259,7 +1280,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/515_lg.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1288,7 +1309,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Invitation"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-X3qNg"
                           id="style-X3qNg"
                         ></div>
@@ -1297,7 +1318,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/516_lg.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1326,7 +1347,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="New product announcement"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-skstY"
                           id="style-skstY"
                         ></div>
@@ -1335,7 +1356,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/517_lg.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1366,7 +1387,7 @@ const ChooseEmail = () => {
                         />
                         <div
                           class="templateThumbnailContainer-1Fp1C style-O2Yen"
-                          id="style-O2Yen"
+                          id="style- O2Yen" onClick={(e)=>handlecheckElement(e.currentTarget)}
                         ></div>
                         <div class="infoContainer-1VHAL">
                           <div class="name-12q7Y">
@@ -1375,7 +1396,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/518_lg.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1404,7 +1425,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Thank you personalized"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-t6IhO"
                           id="style-t6IhO"
                         ></div>
@@ -1413,7 +1434,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/519_lg.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1442,7 +1463,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Thank you discount"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-D8x6q"
                           id="style-D8x6q"
                         ></div>
@@ -1451,7 +1472,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/520_lg.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1480,7 +1501,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Announcement"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-gOh5e"
                           id="style-gOh5e"
                         ></div>
@@ -1489,7 +1510,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/521.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1518,7 +1539,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Learn more"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-b3YRs"
                           id="style-b3YRs"
                         ></div>
@@ -1527,7 +1548,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/522.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1556,7 +1577,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Event calendar"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-mvyjw"
                           id="style-mvyjw"
                         ></div>
@@ -1565,7 +1586,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/523.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1594,7 +1615,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Welcome new customers"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-FAA2Z"
                           id="style-FAA2Z"
                         ></div>
@@ -1603,7 +1624,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/524.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1632,7 +1653,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Thank you promo"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-Xf7k9"
                           id="style-Xf7k9"
                         ></div>
@@ -1641,7 +1662,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/525.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1670,7 +1691,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Party invite"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-j6nrm"
                           id="style-j6nrm"
                         ></div>
@@ -1679,7 +1700,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/527.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1708,7 +1729,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Event thank you"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-fjzxc"
                           id="style-fjzxc"
                         ></div>
@@ -1717,7 +1738,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/528.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1746,7 +1767,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Services spotlight"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-Zs77N"
                           id="style-Zs77N"
                         ></div>
@@ -1755,7 +1776,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/529.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1784,7 +1805,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Friendly welcome"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-ieQDk"
                           id="style-ieQDk"
                         ></div>
@@ -1793,7 +1814,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/526.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1822,7 +1843,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Explore new collection"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-UFjvb"
                           id="style-UFjvb"
                         ></div>
@@ -1831,7 +1852,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/530.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1860,7 +1881,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Meet the founder"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-kCjq6"
                           id="style-kCjq6"
                         ></div>
@@ -1869,7 +1890,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/531.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1898,7 +1919,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Seasonal products"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-QpMfq"
                           id="style-QpMfq"
                         ></div>
@@ -1907,7 +1928,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/532.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1936,7 +1957,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Event speaker spotlight"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-OOcih"
                           id="style-OOcih"
                         ></div>
@@ -1945,7 +1966,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/533.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -1974,7 +1995,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Editorial newsletter"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-i6NCN"
                           id="style-i6NCN"
                         ></div>
@@ -1983,7 +2004,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/534.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2012,7 +2033,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Minimal welcome"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-5JaUA"
                           id="style-5JaUA"
                         ></div>
@@ -2021,7 +2042,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/535.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2050,7 +2071,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Upcoming events"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-NWoTK"
                           id="style-NWoTK"
                         ></div>
@@ -2059,7 +2080,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/536.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2088,7 +2109,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Thanks for attending"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-yN2bO"
                           id="style-yN2bO"
                         ></div>
@@ -2097,7 +2118,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/537.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2126,7 +2147,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Multi-day event invite"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-opKeY"
                           id="style-opKeY"
                         ></div>
@@ -2135,7 +2156,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/538.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2164,7 +2185,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Event thank you"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-kN5bO"
                           id="style-kN5bO"
                         ></div>
@@ -2173,7 +2194,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/539.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2202,7 +2223,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Announce new classes"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-o8hhX"
                           id="style-o8hhX"
                         ></div>
@@ -2211,7 +2232,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/540.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2240,7 +2261,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Monthly newsletter"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-MNo1Q"
                           id="style-MNo1Q"
                         ></div>
@@ -2249,7 +2270,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/541.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2278,7 +2299,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Explore products"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-pNtzn"
                           id="style-pNtzn"
                         ></div>
@@ -2287,7 +2308,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/542.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2316,7 +2337,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="What we offer"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-bssDb"
                           id="style-bssDb"
                         ></div>
@@ -2325,7 +2346,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/543.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2354,7 +2375,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Featured interview"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-ZZ4wL"
                           id="style-ZZ4wL"
                         ></div>
@@ -2363,7 +2384,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/544.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2392,7 +2413,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Event"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-mqvQS"
                           id="style-mqvQS"
                         ></div>
@@ -2401,7 +2422,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/545.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2430,7 +2451,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Explore services"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-nlOgw"
                           id="style-nlOgw"
                         ></div>
@@ -2439,7 +2460,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/546.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2468,7 +2489,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Book a class winback"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-75Ogs"
                           id="style-75Ogs"
                         ></div>
@@ -2477,7 +2498,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/547.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2506,7 +2527,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Get started"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-7qmKA"
                           id="style-7qmKA"
                         ></div>
@@ -2515,7 +2536,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/548.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2544,7 +2565,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="About us"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-ettFo"
                           id="style-ettFo"
                         ></div>
@@ -2553,7 +2574,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/549.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2582,7 +2603,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Thanks for signing up"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-z3oMx"
                           id="style-z3oMx"
                         ></div>
@@ -2591,7 +2612,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/550.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2620,7 +2641,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Member thank you"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-T2hVO"
                           id="style-T2hVO"
                         ></div>
@@ -2629,7 +2650,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/551.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2658,7 +2679,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="What's new"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-rfyn5"
                           id="style-rfyn5"
                         ></div>
@@ -2667,7 +2688,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/553.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2696,7 +2717,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Winback promotion"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-bRwYS"
                           id="style-bRwYS"
                         ></div>
@@ -2705,7 +2726,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/552.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2734,7 +2755,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Thanks for joining us"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-boNG1"
                           id="style-boNG1"
                         ></div>
@@ -2743,7 +2764,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/554.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2772,7 +2793,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Customer appreciation"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-9SDGP"
                           id="style-9SDGP"
                         ></div>
@@ -2781,7 +2802,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/555.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2810,7 +2831,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="About our products"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-FIoQa"
                           id="style-FIoQa"
                         ></div>
@@ -2819,7 +2840,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/556.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2848,7 +2869,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="New customer offer"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-Ronb2"
                           id="style-Ronb2"
                         ></div>
@@ -2857,7 +2878,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/557.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2886,7 +2907,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Community welcome"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-yXrlO"
                           id="style-yXrlO"
                         ></div>
@@ -2895,7 +2916,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/558.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2924,7 +2945,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Educational how-to"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-2flpW"
                           id="style-2flpW"
                         ></div>
@@ -2933,7 +2954,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/559.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -2962,7 +2983,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Announce new collection"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-zpyQi"
                           id="style-zpyQi"
                         ></div>
@@ -2971,7 +2992,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/560.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3000,7 +3021,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Thank you offer"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-CNLPd"
                           id="style-CNLPd"
                         ></div>
@@ -3009,7 +3030,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/561.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3040,7 +3061,7 @@ const ChooseEmail = () => {
                         />
                         <div
                           class="templateThumbnailContainer-1Fp1C style-KgKbW"
-                          id="style-KgKbW"
+                          id="style- onClick={(e)=>handlecheckElement(e.currentTarget)}KgKbW"
                         ></div>
                         <div class="infoContainer-1VHAL">
                           <div class="name-12q7Y">
@@ -3049,7 +3070,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/562.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3078,7 +3099,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Class overview"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-Uv6ps"
                           id="style-Uv6ps"
                         ></div>
@@ -3087,7 +3108,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/563.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3116,7 +3137,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Event lineup"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-VdlON"
                           id="style-VdlON"
                         ></div>
@@ -3125,7 +3146,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/564.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3154,7 +3175,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Featured products"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-WZ7ra"
                           id="style-WZ7ra"
                         ></div>
@@ -3163,7 +3184,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/565.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3192,7 +3213,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Loyal customer thank you"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-q6ETU"
                           id="style-q6ETU"
                         ></div>
@@ -3201,7 +3222,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/566.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3230,7 +3251,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Thanks for your support"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-tm5Sg"
                           id="style-tm5Sg"
                         ></div>
@@ -3239,7 +3260,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/567.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3268,7 +3289,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Order again"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-UbzNx"
                           id="style-UbzNx"
                         ></div>
@@ -3277,7 +3298,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/568.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3306,7 +3327,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Class welcome"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-MKxzW"
                           id="style-MKxzW"
                         ></div>
@@ -3315,7 +3336,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/569.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3344,7 +3365,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Class thank you"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-srvMC"
                           id="style-srvMC"
                         ></div>
@@ -3353,7 +3374,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/570.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3382,7 +3403,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Performance invite"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-djsXi"
                           id="style-djsXi"
                         ></div>
@@ -3391,7 +3412,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/571.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3420,7 +3441,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Services overview"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-z6g4p"
                           id="style-z6g4p"
                         ></div>
@@ -3429,7 +3450,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/572.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3458,7 +3479,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Performance thank you"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-bHGiS"
                           id="style-bHGiS"
                         ></div>
@@ -3467,7 +3488,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/573.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3496,7 +3517,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Retreat invite"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-pMrZl"
                           id="style-pMrZl"
                         ></div>
@@ -3505,7 +3526,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/574.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3534,7 +3555,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="New brand partnership"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-aS4PI"
                           id="style-aS4PI"
                         ></div>
@@ -3543,7 +3564,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/575.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3572,7 +3593,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Networking event invite"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-anEwH"
                           id="style-anEwH"
                         ></div>
@@ -3581,7 +3602,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/576.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3610,7 +3631,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Creator spotlight"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-fYVWO"
                           id="style-fYVWO"
                         ></div>
@@ -3619,7 +3640,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/577.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3648,7 +3669,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Recommended for you"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-4JnOw"
                           id="style-4JnOw"
                         ></div>
@@ -3657,7 +3678,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/578.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3686,7 +3707,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Post-purchase welcome"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-iyqKw"
                           id="style-iyqKw"
                         ></div>
@@ -3695,7 +3716,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/579.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3724,7 +3745,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Meet our team"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-m2Th2"
                           id="style-m2Th2"
                         ></div>
@@ -3733,7 +3754,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/580.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3762,7 +3783,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="About our services"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-NbNx8"
                           id="style-NbNx8"
                         ></div>
@@ -3771,7 +3792,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/581.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3800,7 +3821,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="New case study"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-ExVe2"
                           id="style-ExVe2"
                         ></div>
@@ -3809,7 +3830,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/582.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3838,7 +3859,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Preorder new product"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-iYS1N"
                           id="style-iYS1N"
                         ></div>
@@ -3847,7 +3868,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/583.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3876,7 +3897,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="New subscriber welcome"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-ZKtTm"
                           id="style-ZKtTm"
                         ></div>
@@ -3885,7 +3906,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/584.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3914,7 +3935,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Upcoming event"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-GYIfH"
                           id="style-GYIfH"
                         ></div>
@@ -3923,7 +3944,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/585.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3952,7 +3973,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="New client onboarding"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-7Zgfp"
                           id="style-7Zgfp"
                         ></div>
@@ -3961,7 +3982,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/586.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -3990,7 +4011,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Our service offerings"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-JlNjP"
                           id="style-JlNjP"
                         ></div>
@@ -3999,7 +4020,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/587.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4028,7 +4049,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Conference invite"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-XfySB"
                           id="style-XfySB"
                         ></div>
@@ -4037,7 +4058,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/588.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4066,7 +4087,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Conference welcome"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-Ot6t7"
                           id="style-Ot6t7"
                         ></div>
@@ -4075,7 +4096,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/588.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4104,7 +4125,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="About our company"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-od4mj"
                           id="style-od4mj"
                         ></div>
@@ -4113,7 +4134,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/588.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4142,7 +4163,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Client thank you"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-evRmN"
                           id="style-evRmN"
                         ></div>
@@ -4151,7 +4172,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/589.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4180,7 +4201,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Purchase Follow-up"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-kkUBr"
                           id="style-kkUBr"
                         ></div>
@@ -4189,7 +4210,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/590.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4218,7 +4239,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Digital download"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-T7nW3"
                           id="style-T7nW3"
                         ></div>
@@ -4227,7 +4248,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/591.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4256,7 +4277,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Open House invite"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-T3cGh"
                           id="style-T3cGh"
                         ></div>
@@ -4265,7 +4286,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/592.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4294,7 +4315,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="New listing announcement"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-5agsO"
                           id="style-5agsO"
                         ></div>
@@ -4303,7 +4324,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/593.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4332,7 +4353,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Newsletter welcome"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-Ogs8D"
                           id="style-Ogs8D"
                         ></div>
@@ -4341,7 +4362,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/594.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4372,7 +4393,7 @@ const ChooseEmail = () => {
                         />
                         <div
                           class="templateThumbnailContainer-1Fp1C style-KjXq1"
-                          id="style-KjXq1"
+                          id="style- onClick={(e)=>handlecheckElement(e.currentTarget)}KjXq1"
                         ></div>
                         <div class="infoContainer-1VHAL">
                           <div class="name-12q7Y">
@@ -4381,7 +4402,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/595.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4410,7 +4431,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Book a consultation"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-Pa1l2"
                           id="style-Pa1l2"
                         ></div>
@@ -4419,7 +4440,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/596.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4448,7 +4469,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Anniversary thank you"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-wGdAo"
                           id="style-wGdAo"
                         ></div>
@@ -4457,7 +4478,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/597.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4486,7 +4507,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Event welcome"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-xIKzy"
                           id="style-xIKzy"
                         ></div>
@@ -4495,7 +4516,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/598.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4524,7 +4545,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="New office location"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-rZnvd"
                           id="style-rZnvd"
                         ></div>
@@ -4533,7 +4554,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/599.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4562,7 +4583,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Important reminder"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-5MbOw"
                           id="style-5MbOw"
                         ></div>
@@ -4571,7 +4592,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/600.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4600,7 +4621,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Sincere thank you"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-nOlOA"
                           id="style-nOlOA"
                         ></div>
@@ -4609,7 +4630,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/601.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4638,7 +4659,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="New collection preview"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-ik8oi"
                           id="style-ik8oi"
                         ></div>
@@ -4647,7 +4668,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/602.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4676,7 +4697,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Post-purchase guide"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-BywoE"
                           id="style-BywoE"
                         ></div>
@@ -4685,7 +4706,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/603.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4714,7 +4735,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="About our products"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-iAGSs"
                           id="style-iAGSs"
                         ></div>
@@ -4723,7 +4744,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/604.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4752,7 +4773,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Event invite"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-kLoB4"
                           id="style-kLoB4"
                         ></div>
@@ -4761,7 +4782,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/605.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4790,7 +4811,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Shop new collection"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-8A1Sy"
                           id="style-8A1Sy"
                         ></div>
@@ -4799,7 +4820,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/606.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4828,7 +4849,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Project follow-up"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-dbDDU"
                           id="style-dbDDU"
                         ></div>
@@ -4837,7 +4858,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/607.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4866,7 +4887,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Customer win-back"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-552Xz"
                           id="style-552Xz"
                         ></div>
@@ -4875,7 +4896,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/608.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4904,7 +4925,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Welcome to the club"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-bAmh1"
                           id="style-bAmh1"
                         ></div>
@@ -4913,7 +4934,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/609.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4944,7 +4965,7 @@ const ChooseEmail = () => {
                         />
                         <div
                           class="templateThumbnailContainer-1Fp1C style-A5zHO"
-                          id="style-A5zHO"
+                          id="style- onClick={(e)=>handlecheckElement(e.currentTarget)}A5zHO"
                         ></div>
                         <div class="infoContainer-1VHAL">
                           <div class="name-12q7Y">
@@ -4953,7 +4974,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/610.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -4984,7 +5005,7 @@ const ChooseEmail = () => {
                         />
                         <div
                           class="templateThumbnailContainer-1Fp1C style-xUdMK"
-                          id="style-xUdMK"
+                          id="style- onClick={(e)=>handlecheckElement(e.currentTarget)}xUdMK"
                         ></div>
                         <div class="infoContainer-1VHAL">
                           <div class="name-12q7Y">
@@ -4993,7 +5014,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/611.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5022,7 +5043,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Patron thank you"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-C1DZC"
                           id="style-C1DZC"
                         ></div>
@@ -5031,7 +5052,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/612.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5060,7 +5081,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Sale teaser 1"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-bRU1Z"
                           id="style-bRU1Z"
                         ></div>
@@ -5069,7 +5090,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/613.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5098,7 +5119,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Early access to sale 1"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-xkI9o"
                           id="style-xkI9o"
                         ></div>
@@ -5107,7 +5128,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/614.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5136,7 +5157,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Start of sale 1"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-R9Y1j"
                           id="style-R9Y1j"
                         ></div>
@@ -5145,7 +5166,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/615.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5174,7 +5195,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Sale reminder 1"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-q8ZQg"
                           id="style-q8ZQg"
                         ></div>
@@ -5183,7 +5204,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/616.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5212,7 +5233,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="End of sale 1"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-PGf5U"
                           id="style-PGf5U"
                         ></div>
@@ -5221,7 +5242,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/617.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5250,7 +5271,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Sale teaser 2"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-OCHbf"
                           id="style-OCHbf"
                         ></div>
@@ -5259,7 +5280,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/618.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5288,7 +5309,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Early access to sale 2"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-hQesF"
                           id="style-hQesF"
                         ></div>
@@ -5297,7 +5318,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/619.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5326,7 +5347,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Start of sale 2"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-TZU5K"
                           id="style-TZU5K"
                         ></div>
@@ -5335,7 +5356,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/620.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5364,7 +5385,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Sale reminder 2"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-8sZ6L"
                           id="style-8sZ6L"
                         ></div>
@@ -5373,7 +5394,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/621.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5402,7 +5423,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="End of sale 2"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-VTXCV"
                           id="style-VTXCV"
                         ></div>
@@ -5411,7 +5432,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/622.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5440,7 +5461,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Site-wide sale"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-XZ8ai"
                           id="style-XZ8ai"
                         ></div>
@@ -5449,7 +5470,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/623.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5478,7 +5499,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Black Friday sale"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-ahoYO"
                           id="style-ahoYO"
                         ></div>
@@ -5487,7 +5508,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/524.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5516,7 +5537,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Biggest sale of the year"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-WaWKf"
                           id="style-WaWKf"
                         ></div>
@@ -5525,7 +5546,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/625.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5554,7 +5575,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Cyber Monday sale"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-yM9jV"
                           id="style-yM9jV"
                         ></div>
@@ -5563,7 +5584,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/626.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >
@@ -5592,7 +5613,7 @@ const ChooseEmail = () => {
                           class="radioHiddenInput-CyuAN"
                           value="Shop Black Friday sale"
                         />
-                        <div
+                        <div onClick={(e)=>handlecheckElement(e.currentTarget)}
                           class="templateThumbnailContainer-1Fp1C style-zLtLT"
                           id="style-zLtLT"
                         ></div>
@@ -5601,7 +5622,7 @@ const ChooseEmail = () => {
                         </div>
                         <div class="buttonOverlay-1vS-v expanded-24kuN">
                           <div class="stack-1qp4V spacing4-1xt6w">
-                            <button
+                            <button onClick={()=>handlemovenextpage("https://cdn-images.mailchimp.com/template_images/email/thumbnails/2x/627.jpg")}
                               class="root-sBgFt container-3-bH7 primary-33czz"
                               type="button"
                             >

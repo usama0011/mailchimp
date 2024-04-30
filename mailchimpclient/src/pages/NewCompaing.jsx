@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "../styles/NewCompaing.css";
 import { Link } from "react-router-dom";
+import { NewCampaignDetailsContext } from "../context/NewCompaingContext";
 const NewCompaing = () => {
+  const [email,setEmail]=useState("")
+  const { state, dispatch } = useContext(NewCampaignDetailsContext);
+  const handleUpdateState = (field, value) => {
+    dispatch({ type: "UPDATE_STATE", payload: { field, value } });
+  };
+const handlebuttonsubmit=()=>{
+  handleUpdateState("comapingemail", email);
+}
   return (
     <div class="wink snipcss-yD1ls">
       <a href="#front-door-content" class="skipToContent-3Sx-7">
@@ -16,21 +25,21 @@ const NewCompaing = () => {
               aria-label="Exit"
             >
               <Link to="/">
-              <div class="navigationBackButtonArrow-1c_Nj">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  focusable="false"
-                  aria-hidden="true"
-                  class="wink-icon navigationBackButtonArrowIcon-36OSq"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M13.293 6.293l1.414 1.414L10.414 12l4.293 4.293-1.414 1.414L7.586 12l5.707-5.707z"
-                  ></path>
-                </svg>
-              </div>
+                <div class="navigationBackButtonArrow-1c_Nj">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    focusable="false"
+                    aria-hidden="true"
+                    class="wink-icon navigationBackButtonArrowIcon-36OSq"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M13.293 6.293l1.414 1.414L10.414 12l4.293 4.293-1.414 1.414L7.586 12l5.707-5.707z"
+                    ></path>
+                  </svg>
+                </div>
               </Link>
               <img
                 class="navigationBackButtonFreddie-qXKoK"
@@ -80,12 +89,10 @@ const NewCompaing = () => {
                 <ul id="mc:41" class="">
                   <div role="listitem">
                     <div class="container-IL_ti">
-                      <a
+                      <Link
                         class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
                         id="option-ol4ct"
-                        aria-describedby="mc:86"
-                        href="#/create-campaign/explore/emailCampaign"
-                        aria-current="page"
+                        to="/emailregular"
                       >
                         <span class="root-3TDqk medium-3AcAC text-2t4Eg secondaryText-71Q7m">
                           Regular
@@ -103,49 +110,46 @@ const NewCompaing = () => {
                             d="M20.707 7.707L10 18.414l-5.207-5.207 1.414-1.414L10 15.586l9.293-9.293 1.414 1.414z"
                           ></path>
                         </svg>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div role="listitem">
                     <div class="container-IL_ti">
-                      <a
-                        class="label-g01vr isChild-Zr4Q5"
-                        id="option-51grf"
-                        aria-describedby="mc:87"
-                        href="#/create-campaign/explore/emailCampaign:plainText"
+                      <Link
+                        class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
+                        id="option-ol4ct"
+                        to="/emailplaintext"
                       >
                         <span class="root-3TDqk medium-3AcAC text-2t4Eg secondaryText-71Q7m">
                           Plain text
                         </span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div role="listitem">
                     <div class="container-IL_ti">
-                      <a
-                        class="label-g01vr isChild-Zr4Q5"
-                        id="option-7j082"
-                        aria-describedby="mc:88"
-                        href="#/create-campaign/explore/emailCampaign:multivariate"
+                      <Link
+                        class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
+                        id="option-ol4ct"
+                        to="/emailmultvariate"
                       >
                         <span class="root-3TDqk medium-3AcAC text-2t4Eg secondaryText-71Q7m">
                           Multivariate
                         </span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div role="listitem" class="">
                     <div class="container-IL_ti">
-                      <a
-                        class="label-g01vr isChild-Zr4Q5"
-                        id="option-pct4z"
-                        aria-describedby="mc:89"
-                        href="#/create-campaign/explore/emailCampaign:template"
+                      <Link
+                        class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
+                        id="option-ol4ct"
+                        to="/emailtemplate"
                       >
                         <span class="root-3TDqk medium-3AcAC text-2t4Eg secondaryText-71Q7m">
                           Template
                         </span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </ul>
@@ -153,44 +157,41 @@ const NewCompaing = () => {
             </div>
             <div role="listitem">
               <div class="container-IL_ti">
-                <a
-                  class="label-g01vr"
-                  id="option-1riow"
-                  aria-describedby="mc:42"
-                  href="#/create-campaign/explore/automation"
+                <Link
+                  class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
+                  id="option-ol4ct"
+                  to="/newcampaingsautomations"
                 >
                   <span class="root-3TDqk medium-3AcAC text-2t4Eg">
                     Automations
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
             <div role="listitem">
               <div class="container-IL_ti">
-                <a
-                  class="label-g01vr"
-                  id="option-0ned0"
-                  aria-describedby="mc:43"
-                  href="#/create-campaign/explore/website"
+                <Link
+                  class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
+                  id="option-ol4ct"
+                  to="/newcampaingwebsite"
                 >
                   <span class="root-3TDqk medium-3AcAC text-2t4Eg">
                     Website
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
             <div role="listitem">
               <div class="container-IL_ti">
-                <a
-                  class="label-g01vr"
-                  id="option-1l2yy"
-                  aria-describedby="mc:44"
-                  href="#/create-campaign/explore/page"
+                <Link
+                  class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
+                  id="option-ol4ct"
+                  to="/newcampainglandingpage"
                 >
                   <span class="root-3TDqk medium-3AcAC text-2t4Eg">
                     Landing Page
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
             <div role="listitem">
@@ -199,7 +200,7 @@ const NewCompaing = () => {
                   class="label-g01vr"
                   id="option-51ujz"
                   aria-describedby="mc:45"
-                  href="#/create-campaign/explore/creative-assistant"
+                  href="#"
                 >
                   <span class="root-3TDqk medium-3AcAC text-2t4Eg">
                     Creative Assistant
@@ -232,19 +233,59 @@ const NewCompaing = () => {
                   ></path>
                 </svg>
               </button>
+              <ul id="mc:45" class="snipcss-4eFSH">
+                <div role="listitem" class="">
+                  <div class="container-IL_ti">
+                    <Link
+                      class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
+                      id="option-ol4ct"
+                      to="/signupembaddedform"
+                    >
+                      <span class="root-3TDqk medium-3AcAC text-2t4Eg secondaryText-71Q7m">
+                        Embedded form
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+                <div role="listitem">
+                  <div class="container-IL_ti">
+                    <Link
+                      class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
+                      id="option-ol4ct"
+                      to="/signuppopupform"
+                    >
+                      <span class="root-3TDqk medium-3AcAC text-2t4Eg secondaryText-71Q7m">
+                        Pop-up form
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+                <div role="listitem">
+                  <div class="container-IL_ti">
+                    <Link
+                      class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
+                      id="option-ol4ct"
+                      to="/signuplandingpage"
+                    >
+                      <span class="root-3TDqk medium-3AcAC text-2t4Eg secondaryText-71Q7m">
+                        Signup landing page
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              </ul>
             </div>
             <div role="listitem">
               <div class="container-IL_ti">
-                <a
-                  class="label-g01vr"
-                  id="option-jv6hc"
-                  aria-describedby="mc:47"
-                  href="#/create-campaign/explore/survey"
+                <Link
+                  class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
+                  id="option-ol4ct"
+                  to="/newcampaingsurverys"
                 >
                   <span class="root-3TDqk medium-3AcAC text-2t4Eg secondaryText-71Q7m">
                     Surveys
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
             <div role="listitem" class="container-IL_ti">
@@ -271,45 +312,80 @@ const NewCompaing = () => {
                   ></path>
                 </svg>
               </button>
+              <div class="snipcss-tYr1L style-gX2nQ" id="style-gX2nQ">
+                <ul id="mc:47" class="">
+                  <div role="listitem" class="">
+                    <div class="container-IL_ti">
+                      <Link
+                        class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
+                        id="option-ol4ct"
+                        to="/newcampaingfacebookinstaads"
+                      >
+                        <span class="root-3TDqk medium-3AcAC text-2t4Eg secondaryText-71Q7m">
+                          Facebook / Instagram ad
+                        </span>
+                      </Link>
+                    </div>
+                  </div>
+                  <div role="listitem">
+                    <div class="container-IL_ti">
+                      <Link
+                        class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
+                        id="option-ol4ct"
+                        to="/newcampainggooglemarketingads"
+                      >
+                        <span class="root-3TDqk medium-3AcAC text-2t4Eg secondaryText-71Q7m">
+                          Google remarketing ad
+                        </span>
+                      </Link>
+                    </div>
+                  </div>
+                </ul>
+              </div>
             </div>
             <div role="listitem">
               <div class="container-IL_ti">
-                <a
-                  class="label-g01vr"
-                  id="option-s4a2n"
-                  aria-describedby="mc:49"
-                  href="#/create-campaign/explore/social"
+                <Link
+                  class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
+                  id="option-ol4ct"
+                  to="/newcampaingsocialpost"
                 >
                   <span class="root-3TDqk medium-3AcAC text-2t4Eg secondaryText-71Q7m">
                     Social Post
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
             <div role="listitem" class="container-IL_ti">
-              <button
-                aria-expanded="false"
-                type="button"
-                class="button-1YrMi"
-                aria-controls="mc:50"
+              <Link
+                class="label-g01vr isSelected-LmGnC isChild-Zr4Q5"
+                id="option-ol4ct"
+                to="/newcampainpostcardonetimesend"
               >
-                <p class="root-3TDqk medium-3AcAC text-2t4Eg secondaryText-71Q7m">
-                  Postcard
-                </p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  focusable="false"
-                  aria-hidden="true"
-                  class="wink-icon"
+                <button
+                  aria-expanded="false"
+                  type="button"
+                  class="button-1YrMi"
+                  aria-controls="mc:50"
                 >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
-                  ></path>
-                </svg>
-              </button>
+                  <p class="root-3TDqk medium-3AcAC text-2t4Eg secondaryText-71Q7m">
+                    Postcard
+                  </p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    focusable="false"
+                    aria-hidden="true"
+                    class="wink-icon"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
+                    ></path>
+                  </svg>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -339,16 +415,17 @@ const NewCompaing = () => {
                       </div>
                       <div class="inputWrapper-TVkf7">
                         <input
-                          type="text"
+                          type="email"
                           id="mc:77"
                           aria-invalid="false"
-                          value=""
+                          value={email}
+                          onChange={(e)=>setEmail(e.target.value)}
                         />
                       </div>
                     </div>
                     <div class="formButtonContainer-qDx2N">
                       <Link to="/newcampaing/createemail">
-                        <button
+                        <button onClick={handlebuttonsubmit} style={{backgroundColor:"#007c89"}}
                           class="root-sBgFt container-3-bH7 primary-33czz"
                           type="button"
                         >

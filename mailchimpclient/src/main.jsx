@@ -3,10 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import InitilizeApp from "./pages/InitilizeApp.jsx";
+import { CompaingStateProvider } from "./context/NewCompaingContext.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <InitilizeApp />
+      <CompaingStateProvider>
+        <InitilizeApp />
+      </CompaingStateProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

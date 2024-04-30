@@ -1,7 +1,7 @@
 import React from "react";
+import "../styles/ViewCompaing.css";
 import { Link } from "react-router-dom";
-import "../styles/AllCompaings.css";
-const AllCampaings = () => {
+const ViewCompaing = () => {
   return (
     <div>
       <div
@@ -125,10 +125,9 @@ const AllCampaings = () => {
                     className="root-kjeIf shellNavigationLeftNav-3iPdf snipcss0-6-53-54"
                   >
                     <nav className="navItems-1Kfmk snipcss0-7-54-55">
-                    <ul className="stack-1qp4V spacing4-1xt6w navItems-1Kfmk minHeightNav-2mej_ snipcss0-8-55-56">
+                      <ul className="stack-1qp4V spacing4-1xt6w navItems-1Kfmk minHeightNav-2mej_ snipcss0-8-55-56">
                         <li className="createItem-1mIzO snipcss0-9-56-57">
                           <Link
-                            style={{ outline: "1px solid #1b8a95" }}
                             className="root-sBgFt container-3-bH7 secondary-1_P2K createButton-1NK_y snipcss0-10-57-58"
                             to="/newcomaping"
                           >
@@ -923,32 +922,24 @@ const AllCampaings = () => {
                 <br />
 
                 <div className="lastUnit">
-                  <h1>Campaigns</h1>{" "}
-                  <div>
-                    <button>View analytics</button>
-                    <button
-                      style={{ backgroundColor: "#1b8a95", color: "white" }}
-                    >
-                      <Link style={{color:'unset'}} to="/newcomaping">Create new</Link>
-                    </button>
-                  </div>{" "}
+                  <h1>Roofing Services | GreatDailyBlogs</h1>{" "}
                 </div>
                 <div
                   data-dojo-attach-point="switcherContainer"
                   class="margin-bottom--lv4"
                 >
-                  <p data-dojo-attach-point="selectLabel" class="ddkjsldfj">
-                    Next Web Lines
+                  <p
+                    style={{
+                      fontSize: "15px",
+                      color: "#1b8a95",
+                      paddingLeft: "35px",
+                    }}
+                    sclass="ddkjsldfj"
+                  >
+                    Switch Reports
                   </p>
                 </div>
-                <div className="audiencemain">
-                  <p style={{ fontSize: "20px", color: "#241c60" }}>
-                    Your aduience has{" "}
-                    <span style={{ color: "#007c89 " }}> 500</span> contacts.
-                    <span style={{ color: "#007c89 " }}> 500</span> fo these are
-                    subscribers.
-                  </p>
-                </div>
+
                 <div class="">
                   <div class="maintestwarp">
                     <div class="wrapper-2GUvc">
@@ -965,10 +956,10 @@ const AllCampaings = () => {
                           aria-selected="true"
                           aria-controls="mc:89:tabs:0:panel"
                         >
-                          List View
+                          Overview
                         </span>
                         <span
-                          style={{ paddingLeft: "50px" }}
+                          style={{ paddingLeft: "50px", color: "black" }}
                           class="root-TPnFr"
                           role="tab"
                           id="mc:89:tabs:1"
@@ -976,7 +967,73 @@ const AllCampaings = () => {
                           aria-selected="false"
                           aria-controls="mc:89:tabs:1:panel"
                         >
-                          Calendar View
+                          Activity
+                        </span>
+                        <span
+                          style={{ paddingLeft: "50px", color: "black" }}
+                          class="root-TPnFr"
+                          role="tab"
+                          id="mc:89:tabs:1"
+                          tabindex="-1"
+                          aria-selected="false"
+                          aria-controls="mc:89:tabs:1:panel"
+                        >
+                          Click Performance
+                        </span>
+                        <span
+                          style={{ paddingLeft: "50px", color: "black" }}
+                          class="root-TPnFr"
+                          role="tab"
+                          id="mc:89:tabs:1"
+                          tabindex="-1"
+                          aria-selected="false"
+                          aria-controls="mc:89:tabs:1:panel"
+                        >
+                          Content Optimizer
+                        </span>
+                        <span
+                          style={{ paddingLeft: "50px", color: "black" }}
+                          class="root-TPnFr"
+                          role="tab"
+                          id="mc:89:tabs:1"
+                          tabindex="-1"
+                          aria-selected="false"
+                          aria-controls="mc:89:tabs:1:panel"
+                        >
+                          Social
+                        </span>
+                        <span
+                          style={{ paddingLeft: "50px", color: "black" }}
+                          class="root-TPnFr"
+                          role="tab"
+                          id="mc:89:tabs:1"
+                          tabindex="-1"
+                          aria-selected="false"
+                          aria-controls="mc:89:tabs:1:panel"
+                        >
+                          E-commerce
+                        </span>
+                        <span
+                          style={{ paddingLeft: "50px", color: "black" }}
+                          class="root-TPnFr"
+                          role="tab"
+                          id="mc:89:tabs:1"
+                          tabindex="-1"
+                          aria-selected="false"
+                          aria-controls="mc:89:tabs:1:panel"
+                        >
+                          Inbox
+                        </span>
+                        <span
+                          style={{ paddingLeft: "50px", color: "black" }}
+                          class="root-TPnFr"
+                          role="tab"
+                          id="mc:89:tabs:1"
+                          tabindex="-1"
+                          aria-selected="false"
+                          aria-controls="mc:89:tabs:1:panel"
+                        >
+                          Analytics360
                         </span>
                       </div>
                       <span
@@ -986,377 +1043,1057 @@ const AllCampaings = () => {
                     </div>
                   </div>
                 </div>
-                <div className="mainpareonecontainer">
-                  <div style={{ display: "flex" }}>
-                    <div className="mymy" style={{ minWidth: "200px" }}>
-                      <div
-                        lang="en"
-                        id="campaigns-nav"
-                        widgetid="campaigns-nav"
+                <div class="sub-section !margin--lv0">
+                  {" "}
+                  <div class="unit size1of2 !margin--lv0">
+                    {" "}
+                    <h3>
+                      <a
+                        data-mc-el="recipientCountStat"
+                        href="https://us9.admin.mailchimp.com/reports/activity/sent?id=6150701"
+                        title="View"
                       >
-                        <div
-                          style={{ marginBottom: "10px", fontWeight: "500" }}
-                          class="fwb padding--lv1 margin-bottom--lv1 c-campaignManager_sidebar_title"
+                        2,005{" "}
+                      </a>
+                      <span data-mc-el="recipientCountLabel"> Recipients</span>{" "}
+                    </h3>{" "}
+                  </div>{" "}
+                  <div class="lastUnit size1of2 alignr">
+                    {" "}
+                    <p>
+                      {" "}
+                      Have feedback?{" "}
+                      <a
+                        style={{ textDecoration: "underline" }}
+                        href="https://us1.list-manage.com/survey?u=ca43a81748e00364d2dd12f1a&amp;id=bbc4d7671e&amp;attribution=false"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {" "}
+                        How can Mailchimp improve your reporting?{" "}
+                      </a>{" "}
+                    </p>{" "}
+                  </div>{" "}
+                </div>
+                <div class="sub-section">
+                  {" "}
+                  <div class="unit size1of2 !margin--lv0">
+                    {" "}
+                    <ul class="campaign-data">
+                      {" "}
+                      <li>
+                        {" "}
+                        <span class="title fwb ">Audience:</span>{" "}
+                        <span class="description">Great Daily Blogs </span>{" "}
+                      </li>{" "}
+                      <li>
+                        {" "}
+                        <span class="title fwb ">Subject:</span>{" "}
+                        <span class="description">
+                          Roofing Services: Restoring Your Home's Crown
+                          <img
+                            style={{ width: "20px", height: "20px" }}
+                            class="emoji"
+                            draggable="false"
+                            alt="🏠"
+                            src="https://hayzeltech.com/mailing/reports/roofing_details4_files/1f3e0.png"
+                          />
+                        </span>{" "}
+                      </li>{" "}
+                    </ul>{" "}
+                  </div>{" "}
+                  <div class="lastUnit size1of2">
+                    {" "}
+                    <ul class="campaign-data">
+                      {" "}
+                      <li>
+                        {" "}
+                        <span class="title fwb"> Delivered: </span>{" "}
+                        <span class="description">
+                          Thu, Jan 25, 2024 11:15 am
+                        </span>{" "}
+                      </li>{" "}
+                      <li class="hide-print">
+                        {" "}
+                        <span>
+                          {" "}
+                          <a
+                            class="inline-block-i"
+                            href="https://hayzeltech.com/mailing/reports/Roofing.html"
+                          >
+                            {" "}
+                            View email{" "}
+                          </a>{" "}
+                          ·{" "}
+                        </span>{" "}
+                        <a
+                          href="https://us9.admin.mailchimp.com/reports/excel?id=6150701"
+                          class="inline-block-i"
+                          title="Download a CSV of this report"
+                          download=""
                         >
-                          View by Status
+                          {" "}
+                          Download{" "}
+                        </a>{" "}
+                        ·{" "}
+                        <a
+                          href="https://us9.admin.mailchimp.com/reports/print-report?id=6150701"
+                          target="_blank"
+                          class="inline-block-i"
+                          title="Print this report"
+                          rel="noopener noreferrer"
+                        >
+                          {" "}
+                          Print{" "}
+                        </a>{" "}
+                        <span
+                          data-dojo-attach-point="containerNode"
+                          id="dijit__TemplatedMixin_0"
+                          lang="en"
+                          title="Roofing Services | SmartDailyBlogs"
+                          widgetid="dijit__TemplatedMixin_0"
+                        >
+                          {" "}
+                          <a class="inline-block-i cursor-pointer">
+                            {" "}
+                            · Share{" "}
+                          </a>{" "}
+                        </span>{" "}
+                      </li>{" "}
+                    </ul>{" "}
+                  </div>{" "}
+                </div>
+                <div class="dfoisid">
+                  {" "}
+                  <div class="">
+                    {" "}
+                    <h3 class="fsn !margin--lv0">
+                      <a
+                        data-mc-stat="openCountStat"
+                        href="https://hayzeltech.com/mailing/reports/"
+                        title="View"
+                      >
+                        611
+                      </a>{" "}
+                    </h3>{" "}
+                    <p>Opened</p>{" "}
+                  </div>{" "}
+                  <div class="">
+                    {" "}
+                    <h3 class="">
+                      <a
+                        data-mc-stat="clickCountStat"
+                        class="not-active"
+                        href="https://hayzeltech.com/mailing/reports/"
+                        title="View"
+                      >
+                        221
+                      </a>
+                    </h3>{" "}
+                    <p>Clicked</p>{" "}
+                  </div>{" "}
+                  <div class="">
+                    {" "}
+                    <h3 class="fsn !margin--lv0">
+                      <a
+                        data-mc-el="bounceCountStat"
+                        class="not-active"
+                        href="https://hayzeltech.com/mailing/reports/"
+                        title="View"
+                      >
+                        2
+                      </a>
+                    </h3>{" "}
+                    <p>Bounced</p>{" "}
+                  </div>{" "}
+                  <div class="">
+                    {" "}
+                    <h3 class="fsn !margin--lv0">
+                      <a
+                        data-mc-el="unsubCountStat"
+                        class="not-active"
+                        href="https://us9.admin.mailchimp.com/reports/activity/unsubscribed?id=6150701"
+                        title="View"
+                      >
+                        0
+                      </a>
+                    </h3>{" "}
+                    <p>Unsubscribed</p>{" "}
+                  </div>{" "}
+                </div>
+                {/* next section  */}
+                <div class="sub-section">
+                  {" "}
+                  <div class="dfkjahsdkjfh">
+                    {" "}
+                    <ul class="leaders">
+                      {" "}
+                      <li>
+                        {" "}
+                        <span>Successful deliveries</span>{" "}
+                        <span class="fwb">
+                          <span data-mc-el="deliverCountStat">
+                            <b>2,003</b>
+                          </span>{" "}
+                          <span
+                            data-mc-el="deliverRateStat"
+                            class="percent-spacer alignr dim-el fwn"
+                          >
+                            99.7%
+                          </span>
+                        </span>{" "}
+                      </li>{" "}
+                      <li>
+                        {" "}
+                        <span>Total opens</span>{" "}
+                        <span class="fwb">
+                          <a
+                            data-mc-stat="openCountStat"
+                            href="https://us9.admin.mailchimp.com/reports/activity/opened?id=6150701&amp;_ga=2.41225579.810457447.1706014327-1066594206.1700086536"
+                            title="View"
+                          >
+                            614
+                          </a>{" "}
+                        </span>{" "}
+                      </li>{" "}
+                      <li>
+                        {" "}
+                        <span>Last opened</span>
+                        <span data-mc-el="lastOpenDate">1/25/24 4:40PM</span>
+                      </li>{" "}
+                      <li>
+                        {" "}
+                        <span>Forwarded</span>{" "}
+                        <span class="fwb">
+                          <span data-mc-el="forwardCountStat">0</span>
+                        </span>{" "}
+                      </li>{" "}
+                      <li
+                        data-mc-el="forwardOpenCountBlock"
+                        style={{ display: "none" }}
+                      >
+                        {" "}
+                        <span>Forward opens</span>{" "}
+                        <span class="fwb">
+                          <span data-mc-el="forwardOpenCountStat">0</span>
+                        </span>{" "}
+                      </li>{" "}
+                    </ul>{" "}
+                  </div>{" "}
+                  <div class="dfkjahsdkjfh">
+                    {" "}
+                    <ul class="leaders">
+                      {" "}
+                      <li>
+                        {" "}
+                        <span>Clicks per unique opens</span>{" "}
+                        <span class="fwb">
+                          <span data-mc-el="openClickRateStat">
+                            <b>36.1%</b>
+                          </span>
+                        </span>{" "}
+                      </li>{" "}
+                      <li>
+                        {" "}
+                        <span>Total clicks</span>{" "}
+                        <span class="fwb">
+                          <span data-mc-stat="clickCountStat">
+                            <b>223</b>
+                          </span>
+                        </span>{" "}
+                      </li>{" "}
+                      <li>
+                        {" "}
+                        <span>Last clicked</span>
+                        <span data-mc-el="lastClickDate">1/25/24 4:44PM</span>
+                      </li>{" "}
+                      <li>
+                        {" "}
+                        <span>Abuse reports</span>{" "}
+                        <span class="fwb">
+                          <span data-mc-el="abuseCountStat">
+                            <span>0</span>
+                          </span>
+                        </span>{" "}
+                      </li>{" "}
+                    </ul>{" "}
+                  </div>{" "}
+                </div>
+                <div class="dfoisid">
+                  {" "}
+                  <div class="">
+                    {" "}
+                    <h3 class="fsn !margin--lv0">
+                      <a
+                        data-mc-stat="openCountStat"
+                        href="https://hayzeltech.com/mailing/reports/"
+                        title="View"
+                      >
+                        611
+                      </a>{" "}
+                    </h3>{" "}
+                    <p>Orders</p>{" "}
+                  </div>{" "}
+                  <div class="">
+                    {" "}
+                    <h3 class="">
+                      <a
+                        data-mc-stat="clickCountStat"
+                        class="not-active"
+                        href="https://hayzeltech.com/mailing/reports/"
+                        title="View"
+                      >
+                        221
+                      </a>
+                    </h3>{" "}
+                    <p>Average order revenue</p>{" "}
+                  </div>{" "}
+                  <div class="">
+                    {" "}
+                    <h3 class="fsn !margin--lv0">
+                      <a
+                        data-mc-el="bounceCountStat"
+                        class="not-active"
+                        href="https://hayzeltech.com/mailing/reports/"
+                        title="View"
+                      >
+                        2
+                      </a>
+                    </h3>{" "}
+                    <p>Total revenue</p>{" "}
+                  </div>{" "}
+                </div>
+                {/* Content Optimizer here  */}
+                <div class="wink kdsjkdljf">
+                  <header class="header-6RFqy">
+                    <div class="row-2bcC_">
+                      <img
+                        alt=""
+                        src="https://hayzeltech.com/mailing/reports/roofing_details4_files/benchmarking.svg"
+                        class="icon-iEtPd"
+                      />
+                      <h3 class="title-2V2Vk">Content Optimizer &nbsp;</h3>{" "}
+                      <span
+                        className="new"
+                        style={{
+                          backgroundColor: "#f9e0fa",
+                          padding: "2px 10px",
+                          borderRadius: "3px",
+                          fontSize: "12px",
+                        }}
+                      >
+                        New
+                      </span>
+                    </div>
+                    <div class="bylineRow-1Huhq">
+                      <p class="byline-1jw7n">
+                        See how your email’s content performed, and how to
+                        improve it in the future.
+                      </p>
+                      <button
+                        style={{
+                          border: "1px solid  #1b8a95",
+                          backgroundColor: "transparent",
+                        }}
+                        class="root-sBgFt container-3-bH7 primary-33czz"
+                        type="button"
+                      >
+                        <span class="">View Click Map</span>
+                      </button>
+                    </div>
+                  </header>
+                  <div className="clickedsectionsmain">
+                    <div className="sectoinleftclicked">
+                      <h4 class="title-2V2Vk">Best practices met &nbsp;</h4>
+                      <div className="skillsmaincontainer">
+                        <div>
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <span style={{ fontWeight: "500" }}>
+                              Skimmability
+                            </span>{" "}
+                            <span style={{ color: "gray" }}>2 out of 3</span>
+                          </div>
+                          <div className="prciesiu">
+                            <div className="hundperd">
+                              <div className="mallavi"></div>
+                            </div>
+                          </div>
                         </div>
-                        <ul
-                          class="mybuttonuls"
-                          data-dojo-attach-point="node_bucketList"
-                        >
-                          <li style={{ backgroundColor: "#efeeea" }}>
-                            <a
-                              data-mc-el="bucket-link"
-                              href="#0"
-                              class="c-campaignManager_sidebar_link padding--lv1 border-radius--lv1 c-campaignManager_sidebar_link--selected"
-                            >
-                              <img
-                                class="c-autocomplete_suggestion_iconImage padding-right--lv2"
-                                src="https://cdn-images.mailchimp.com/product/campaigns/nav-icons/all.svg"
-                              />
-                              <span class="freddicon display--none !deprecated-textColorGray4 padding-right--lv2"></span>{" "}
-                              All
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              data-mc-el="bucket-link"
-                              href="#0"
-                              class="c-campaignManager_sidebar_link padding--lv1 border-radius--lv1"
-                            >
-                              <img
-                                class="c-autocomplete_suggestion_iconImage padding-right--lv2"
-                                src="https://cdn-images.mailchimp.com/product/campaigns/nav-icons/ongoing.svg"
-                              />
-                              <span class="freddicon display--none !deprecated-textColorGray4 padding-right--lv2"></span>{" "}
-                              Ongoing
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              data-mc-el="bucket-link"
-                              href="#0"
-                              class="c-campaignManager_sidebar_link padding--lv1 border-radius--lv1"
-                            >
-                              <img
-                                class="c-autocomplete_suggestion_iconImage padding-right--lv2"
-                                src="https://cdn-images.mailchimp.com/product/campaigns/nav-icons/draft.svg"
-                              />
-                              <span class="freddicon display--none !deprecated-textColorGray4 padding-right--lv2"></span>{" "}
-                              Draft
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              data-mc-el="bucket-link"
-                              href="#0"
-                              class="c-campaignManager_sidebar_link padding--lv1 border-radius--lv1"
-                            >
-                              <img
-                                class="c-autocomplete_suggestion_iconImage padding-right--lv2"
-                                src="https://cdn-images.mailchimp.com/product/campaigns/nav-icons/completed.svg"
-                              />
-                              <span class="freddicon display--none !deprecated-textColorGray4 padding-right--lv2"></span>{" "}
-                              Completed
-                            </a>
-                          </li>
-                        </ul>
-                        <div class="border-bottom-light c-campaignManager_sidebar_divider margin--lv2 margin-left--lv0 margin-right--lv0"></div>
-                        <div
-                          style={{ marginBottom: "10px", fontWeight: "500" }}
-                          class="fwb padding--lv1 margin-bottom--lv1 c-campaignManager_sidebar_title"
-                        >
-                          View by Type
+                        <div>
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <span style={{ fontWeight: "500" }}>
+                              Text and Visuals
+                            </span>{" "}
+                            <span style={{ color: "gray" }}>2 out of 2</span>
+                          </div>
+                          <div className="prciesiu">
+                            <div className="hundperd">
+                              <div className="mallavii"></div>
+                            </div>
+                          </div>
                         </div>
-                        <ul
-                          class="mybuttonuls"
-                          data-dojo-attach-point="node_typeBucketList"
-                        >
-                          <li style={{ backgroundColor: "#efeeea" }}>
-                            <a
-                              data-mc-el="bucket-link"
-                              href="#0"
-                              class="c-campaignManager_sidebar_link padding--lv1 border-radius--lv1 c-campaignManager_sidebar_link--selected"
-                            >
-                              <img
-                                class="c-autocomplete_suggestion_iconImage padding-right--lv2"
-                                src="https://cdn-images.mailchimp.com/product/campaigns/nav-icons/all.svg"
-                              />
-                              <span class="freddicon display--none !deprecated-textColorGray4 padding-right--lv2"></span>{" "}
-                              All
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              data-mc-el="bucket-link"
-                              href="#0"
-                              class="c-campaignManager_sidebar_link padding--lv1 border-radius--lv1"
-                            >
-                              <img
-                                class="c-autocomplete_suggestion_iconImage padding-right--lv2"
-                                src="https://cdn-images.mailchimp.com/product/campaigns/nav-icons/email.svg"
-                              />
-                              <span class="freddicon display--none !deprecated-textColorGray4 padding-right--lv2"></span>{" "}
-                              Emails
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              data-mc-el="bucket-link"
-                              href="#0"
-                              class="c-campaignManager_sidebar_link padding--lv1 border-radius--lv1"
-                            >
-                              <img
-                                class="c-autocomplete_suggestion_iconImage padding-right--lv2"
-                                src="https://cdn-images.mailchimp.com/product/campaigns/nav-icons/sms-filter.svg"
-                              />
-                              <span class="freddicon display--none !deprecated-textColorGray4 padding-right--lv2"></span>{" "}
-                              SMS
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              data-mc-el="bucket-link"
-                              href="#0"
-                              class="c-campaignManager_sidebar_link padding--lv1 border-radius--lv1"
-                            >
-                              <img
-                                class="c-autocomplete_suggestion_iconImage padding-right--lv2"
-                                src="https://cdn-images.mailchimp.com/product/campaigns/nav-icons/automation.svg"
-                              />
-                              <span class="freddicon display--none !deprecated-textColorGray4 padding-right--lv2"></span>{" "}
-                              Automations
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              data-mc-el="bucket-link"
-                              href="#0"
-                              class="c-campaignManager_sidebar_link padding--lv1 border-radius--lv1"
-                            >
-                              <img
-                                class="c-autocomplete_suggestion_iconImage padding-right--lv2"
-                                src="https://cdn-images.mailchimp.com/product/campaigns/nav-icons/landing-page.svg"
-                              />
-                              <span class="freddicon display--none !deprecated-textColorGray4 padding-right--lv2"></span>{" "}
-                              Landing pages
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              data-mc-el="bucket-link"
-                              href="#0"
-                              class="c-campaignManager_sidebar_link padding--lv1 border-radius--lv1"
-                            >
-                              <img
-                                class="c-autocomplete_suggestion_iconImage padding-right--lv2"
-                                src="https://cdn-images.mailchimp.com/product/campaigns/nav-icons/ad.svg"
-                              />
-                              <span class="freddicon display--none !deprecated-textColorGray4 padding-right--lv2"></span>{" "}
-                              Ads
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              data-mc-el="bucket-link"
-                              href="#0"
-                              class="c-campaignManager_sidebar_link padding--lv1 border-radius--lv1"
-                            >
-                              <img
-                                class="c-autocomplete_suggestion_iconImage padding-right--lv2"
-                                src="https://cdn-images.mailchimp.com/product/campaigns/nav-icons/postcard.svg"
-                              />
-                              <span class="freddicon display--none !deprecated-textColorGray4 padding-right--lv2"></span>{" "}
-                              Postcards
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              data-mc-el="bucket-link"
-                              href="#0"
-                              class="c-campaignManager_sidebar_link padding--lv1 border-radius--lv1"
-                            >
-                              <img
-                                class="c-autocomplete_suggestion_iconImage padding-right--lv2"
-                                src="https://cdn-images.mailchimp.com/product/campaigns/nav-icons/social-post.svg"
-                              />
-                              <span class="freddicon display--none !deprecated-textColorGray4 padding-right--lv2"></span>{" "}
-                              Social Posts
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              data-mc-el="bucket-link"
-                              href="#0"
-                              class="c-campaignManager_sidebar_link padding--lv1 border-radius--lv1"
-                            >
-                              <img
-                                class="c-autocomplete_suggestion_iconImage padding-right--lv2"
-                                src="https://cdn-images.mailchimp.com/product/campaigns/nav-icons/survey.svg"
-                              />
-                              <span class="freddicon display--none !deprecated-textColorGray4 padding-right--lv2"></span>{" "}
-                              Surveys
-                            </a>
-                          </li>
-                        </ul>
+                        <div>
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <span style={{ fontWeight: "500" }}>
+                              Links & CTAs
+                            </span>{" "}
+                            <span style={{ color: "gray" }}>2 out of 3</span>
+                          </div>
+                          <div className="prciesiu">
+                            <div className="hundperd">
+                              <div className="mallavi"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <span style={{ fontWeight: "500" }}>
+                              Typography
+                            </span>{" "}
+                            <span style={{ color: "gray" }}>1 out of 3</span>
+                          </div>
+                          <div className="prciesiu">
+                            <div className="hundperd">
+                              <div className="mallavi"></div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div className="comapingdetaissl">
-                      <span>Aril,2024 (4)</span>
-                      <hr />
-                      <div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
-                          <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
-                          </p>
-                        </div>
-                        <div className="draftnewuilder">
-                          <p>Draft</p>
-                          <p>New Builder</p>
-                        </div>
-                        <div className="editdelete">
-                          <p>Edit</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
-                      <div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
-                          <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
-                          </p>
-                        </div>
-                        <div className="draftnewuilder">
-                          <p>Draft</p>
-                          <p>New Builder</p>
-                        </div>
-                        <div className="editdelete">
-                          <p>Edit</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
-                      <div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
-                          <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
-                          </p>
-                        </div>
-                        <div className="draftnewuilder">
-                          <p>Draft</p>
-                          <p>New Builder</p>
-                        </div>
-                        <div className="editdelete">
-                          <p>Edit</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
-                      <div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
-                          <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
-                          </p>
-                        </div>
-                        <div className="draftnewuilder">
-                          <p>Draft</p>
-                          <p>New Builder</p>
-                        </div>
-                        <div className="editdelete">
-                          <p>Edit</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
-                      <div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
-                          <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
-                          </p>
-                        </div>
-                        <div className="draftnewuilder">
-                          <p>Draft</p>
-                          <p>New Builder</p>
-                        </div>
-                        <div className="editdelete">
-                          <p>Edit</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
+                    <div
+                      style={{
+                        backgroundColor: "unset",
+                        display: "flex",
+                        fontSize: "20px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexDirection: "column",
+                      }}
+                      className="sectoinrightclicked"
+                    >
+                      <p>
+                        {" "}
+                        We analyzed your email content and have <b>5</b>{" "}
+                        suggestions for improvement to try next time. <br />
+                        <br />
+                        <span
+                          style={{
+                            fontSize: "15px",
+                            paddingTop: "10px",
+                            color: "#1b8a95",
+                          }}
+                        >
+                          View Report
+                        </span>
+                      </p>
                     </div>
                   </div>
                 </div>
+                <br />
+                <br />
+                {/* Content Optimizer end */}
+                <div class="wink kdsjkdljf">
+                  <header class="header-6RFqy">
+                    <div class="row-2bcC_">
+                      <img
+                        alt=""
+                        src="https://hayzeltech.com/mailing/reports/roofing_details4_files/benchmarking.svg"
+                        class="icon-iEtPd"
+                      />
+                      <h3 class="title-2V2Vk">Click performance&nbsp;</h3>
+                    </div>
+                    <div class="bylineRow-1Huhq">
+                      <p class="byline-1jw7n">
+                        See how many times contacts clicked each of the links in
+                        your email.
+                      </p>
+                      <button
+                        style={{
+                          border: "1px solid  #1b8a95",
+                          backgroundColor: "transparent",
+                        }}
+                        class="root-sBgFt container-3-bH7 primary-33czz"
+                        type="button"
+                      >
+                        <span class="">View Click Map</span>
+                      </button>
+                    </div>
+                  </header>
+                  <div className="clickedsectionsmain">
+                    <div className="sectoinleftclicked">
+                      <h4 class="title-2V2Vk">Top links clicked &nbsp;</h4>
+                      <br />
+
+                      <div>
+                        <a style={{ color: "#1b8a95" }} href="#">
+                          https://www.lb03vh8trk.com/28KL6/6JHXF/
+                        </a>
+                        <span>220</span>
+                      </div>
+                      <hr />
+                      <div>
+                        <a style={{ color: "#1b8a95" }} href="#">
+                          https://www.lb03vh8trk.com/28KL6/6JHXF/
+                        </a>
+                        <span>220</span>
+                      </div>
+                      <hr />
+                      <div>
+                        <a style={{ color: "#1b8a95" }} href="#">
+                          https://www.lb03vh8trk.com/28KL6/6JHXF/
+                        </a>
+                        <span>220</span>
+                      </div>
+                      <hr />
+                      <div>
+                        <a style={{ color: "#1b8a95" }} href="#">
+                          https://www.lb03vh8trk.com/28KL6/6JHXF/
+                        </a>
+                        <span>220</span>
+                      </div>
+                      <hr />
+                      <br />
+                      <br />
+                      <div>
+                        <a style={{ color: "#1b8a95" }} href="#">
+                          View All Links
+                        </a>
+                      </div>
+                    </div>
+                    <div className="sectoinrightclicked">
+                      <div className="whitegatway">
+                        <div className="greadalbolys">
+                          <p>
+                            <h3>Great Daily</h3>
+                          </p>
+                          <p>
+                            <h3>Blogs</h3>
+                          </p>
+                        </div>
+                        <img
+                          style={{
+                            width: "100%",
+                            height: "300px",
+                            objectFit: "cover",
+                            backgroundSize: "cover",
+                          }}
+                          src="https://hayzeltech.com/mailing/reports/roofing_details4_files/1fc5f4d3dfa24932aaf493d8ea32141e_3.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br />
+                <div class="wink kdsjkdljf">
+                  <header class="header-6RFqy">
+                    <div class="row-2bcC_">
+                      <img
+                        alt=""
+                        src="https://hayzeltech.com/mailing/reports/roofing_details4_files/benchmarking.svg"
+                        class="icon-iEtPd"
+                      />
+                      <h3 class="title-2V2Vk">Campaign benchmarking&nbsp;</h3>
+                    </div>
+                    <div class="bylineRow-1Huhq">
+                      <p class="byline-1jw7n">
+                        Your email campaign performance compared to similar
+                        businesses.
+                      </p>
+                      <p class="splitByline-1T2oD">
+                        <span class="wrap-2mxF8">
+                          Learn more about{" "}
+                          <a
+                            class="root-sBgFt container-3-bH7 tertiary-Wmhgk buttonLink-32tK4"
+                            href="https://mailchimp.com/help/about-campaign-benchmarking/"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            <span class="temporarySpan-2iF2p">
+                              campaign benchmarking
+                            </span>
+                          </a>
+                        </span>
+                      </p>
+                    </div>
+                  </header>
+                  <div>
+                    <div class="switcher-2RqDX">
+                      <div class="spacing2-1pqd3 sdsdskjduu">
+                        <div class="confirmSection-2-5bk hoohee">
+                          <div class="stack-1qp4V spacing7-3UvBh">
+                            <br />
+                            <h2 class="heading-2-ZDzRe root-PihPG">
+                              Please confirm or update your industry.
+                            </h2>
+
+                            <div class="radioContainer-3nOHG">
+                              <fieldset class="fieldset-3ISha">
+                                <legend class="mcds-label-default">
+                                  <span class="wink-visually-hidden">
+                                    Please confirm your industry
+                                  </span>
+                                </legend>
+                                <div>
+                                  <div class="root-bk32G">
+                                    <input
+                                      class="input-1Cccs"
+                                      id="mc:21"
+                                      type="radio"
+                                      value="Insurance"
+                                    />
+                                    <div class="text-3qpwu">
+                                      <label for="mc:21" class="">
+                                        Insurance
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <p class="root-3TDqk medium-bold-2nZ0J otherIndustryText-1lm6Z">
+                                  <h4>
+                                    {" "}
+                                    Other industries you might be a match for:
+                                  </h4>
+                                </p>
+                                <div class="stack-1qp4V spacing4-1xt6w">
+                                  <div class="root-bk32G">
+                                    <input
+                                      class="input-1Cccs"
+                                      id="mc:23"
+                                      type="radio"
+                                      value="Business and Finance"
+                                    />
+                                    <div class="text-3qpwu">
+                                      <label for="mc:23" class="">
+                                        Business and Finance
+                                      </label>
+                                    </div>
+                                  </div>
+                                  <div class="root-bk32G">
+                                    <input
+                                      class="input-1Cccs"
+                                      id="mc:25"
+                                      type="radio"
+                                      value="Legal"
+                                    />
+                                    <div class="text-3qpwu">
+                                      <label for="mc:25" class="">
+                                        Legal
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </fieldset>
+                            </div>
+                            <div class="cluster-3D5Qr">
+                              <div
+                                style={{ margin: "20px 0px" }}
+                                class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR"
+                              >
+                                <button
+                                  style={{
+                                    backgroundColor: " #1b8a95",
+                                    color: "white",
+                                  }}
+                                  class="root-sBgFt container-3-bH7 primary-33czz"
+                                  type="button"
+                                >
+                                  <span class="temporarySpan-2iF2p">Save</span>
+                                </button>
+                                <button
+                                  style={{ border: "1px solid  #1b8a95 " }}
+                                  class="root-sBgFt container-3-bH7 secondary-1_P2K"
+                                  type="button"
+                                >
+                                  <span class="temporarySpan-2iF2p">
+                                    Pick Another Industry
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                            <span
+                              style={{
+                                fontSize: "12px",
+                                color: "gray",
+                                padding: "20px 0px",
+                              }}
+                            >
+                              We use your selected industry to generate and
+                              customize your benchmarking report. This will not
+                              make you lose any benchmarking data.
+                            </span>
+                          </div>
+                        </div>
+                        <div class="imageSection-3-W8q iiuu">
+                          <img
+                            style={{ width: "300px", height: "300px" }}
+                            class="lowConfidenceImage-19wZm"
+                            src="https://hayzeltech.com/mailing/reports/roofing_details4_files/art-other-choice.png"
+                            alt="[object Object]"
+                          />
+                          <h3 class="heading-3-eDQNF lowConfidenceImageLabel-2SpjY root-PihPG iii">
+                            Confirm your industry to get more accurate
+                            benchmarking data
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 style={{ paddingLeft: "35px", paddingTop: "50px" }}>
+                  Precisou
+                </h3>
+                <section class="section-137bm myssss">
+                  <div class="columns-1BJb1 singleColumn-3N8qb">
+                    <div class="column-21-zM">
+                      <section class="section-xAWB7">
+                        <div>
+                          <div class="splitColumn-14J8y">
+                            <div>
+                              <div
+                                style={{
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "space-between",
+                                }}
+                                className="uttonsdksjkf"
+                              >
+                                <h4>Gender</h4>
+                                <div
+                                  className="recoptions"
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <p
+                                    style={{
+                                      marginRight: "10px",
+                                      color: "#1b8a95",
+                                    }}
+                                  >
+                                    Recipients
+                                  </p>
+                                  <p>Opens</p>
+                                </div>
+                              </div>
+                              <figure
+                                style={{
+                                  display: "flex",
+                                  flexDirection: "column",
+                                  width: "100%",
+                                }}
+                                class="genderChartContainer-6pb1A"
+                              >
+                              <svg version="1.1" style={{position: "absolute", width: "404px",height: "150px"}}><desc></desc><g><path cs="100,100" d="M0.5,0.5 L403.5,0.5 L403.5,149.5 L0.5,149.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path></g><g></g><g></g><g></g><g></g><g></g><g><g><path cs="1000,1000" d=" M190.2945806790323,133.84711682419382 L187.36822584879036,148.5588960302423 A75,75,0,0,1,201.99999999999997,0 L201.99999999999997,15 A60,60,0,0,0,190.2945806790323,133.84711682419382 Z" fill="#4f135e" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0" fill-opacity="1"></path></g><g><path cs="1000,1000" d=" M202,15 L202,0 A75,75,0,1,1,187.36822584879036,148.5588960302423 L190.2945806790323,133.84711682419382 A60,60,0,1,0,202,15 Z" fill="#f97f50" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0" fill-opacity="1"></path></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g><g></g></g><g></g><g></g><g></g></svg>
+                              <br />
+                              <br />
+                              <br />
+                              <br />
+                              <br />
+                              <br />
+                              <br />
+                              <br />
+                                <figcaption class="genderChartLegend-_3zq0">
+                                  <ul>
+                                    <li class="row-3JfVL">
+                                      <div class="clickArea-2gAoC targetwithCampaign-1QhY9">
+                                        <div class="container-3eYOU activeContainer-29_2d">
+                                          <div class="legendItem-37hMD color_1-2RDMV"></div>
+                                          <div class="content-3KolX">
+                                            <div class="rowContent-RedmX">
+                                              <strong class="percentage-31XWx">
+                                                51.2%
+                                              </strong>
+                                              <span class="label-3pIE0">
+                                                Female
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                    <li class="row-3JfVL">
+                                      <div class="clickArea-2gAoC targetwithCampaign-1QhY9">
+                                        <div class="container-3eYOU activeContainer-29_2d">
+                                          <div class="legendItem-37hMD color_2-6xahh"></div>
+                                          <div class="content-3KolX">
+                                            <div class="rowContent-RedmX">
+                                              <strong class="percentage-31XWx">
+                                                34.4%
+                                              </strong>
+                                              <span class="label-3pIE0">
+                                                Male
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                    <li class="row-3JfVL">
+                                      <div class="clickArea-2gAoC targetwithCampaign-1QhY9">
+                                        <div class="container-3eYOU">
+                                          <div class="legendItem-37hMD color_3-3LCa-"></div>
+                                          <div class="content-3KolX">
+                                            <div class="rowContent-RedmX">
+                                              <strong class="percentage-31XWx">
+                                                0.0%
+                                              </strong>
+                                              <span class="label-3pIE0">
+                                                Another Identity
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                    <li class="row-3JfVL">
+                                      <div class="clickArea-2gAoC targetwithCampaign-1QhY9">
+                                        <div class="container-3eYOU activeContainer-29_2d">
+                                          <div class="legendItem-37hMD color_4-ifi9S"></div>
+                                          <div class="content-3KolX">
+                                            <div class="rowContent-RedmX">
+                                              <strong class="percentage-31XWx">
+                                                14.4%
+                                              </strong>
+                                              <span class="label-3pIE0">
+                                                Unknown
+                                              </span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </figcaption>
+                              </figure>
+                            </div>
+                            <div>
+                              <div
+                                style={{
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "space-between",
+                                }}
+                                className="uttonsdksjkf"
+                              >
+                                <h4>Age Range</h4>
+                                <div
+                                  className="recoptions"
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                  }}
+                                >
+                                  <p
+                                    style={{
+                                      marginRight: "10px",
+                                      color: "#1b8a95",
+                                    }}
+                                  >
+                                    Recipients
+                                  </p>
+                                  <p>Opens</p>
+                                </div>
+                              </div>
+                              <div>
+                                <div class="row-13lP_">
+                                  <div class="clickArea-2gAoC targetwithCampaign-PGk0d">
+                                    <div class="container-3eYOU activeContainer-29_2d">
+                                      <span class="label-1rkn2">18-24</span>
+                                      <div class="content-3KolX">
+                                        <ul
+                                          class="container-3aDrJ ageRangeChart-QceMY"
+                                          aria-hidden="true"
+                                        >
+                                          <li
+                                            class="section-2-yBP color_1-3idki style-iiiGD"
+                                            id="style-iiiGD"
+                                          ></li>
+                                          <li
+                                            class="section-2-yBP color_2-sim0Y style-ZQ5TY"
+                                            id="style-ZQ5TY"
+                                          ></li>
+                                          <li class="section-2-yBP fillerSection-2hKPY"></li>
+                                        </ul>
+                                        <strong class="percentage-J6FTc">
+                                          1.2%
+                                        </strong>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row-13lP_">
+                                  <div class="clickArea-2gAoC targetwithCampaign-PGk0d">
+                                    <div class="container-3eYOU activeContainer-29_2d">
+                                      <span class="label-1rkn2">25-34</span>
+                                      <div class="content-3KolX">
+                                        <ul
+                                          class="container-3aDrJ ageRangeChart-QceMY"
+                                          aria-hidden="true"
+                                        >
+                                          <li
+                                            class="section-2-yBP color_1-3idki style-QKhy7"
+                                            id="style-QKhy7"
+                                          ></li>
+                                          <li
+                                            class="section-2-yBP color_2-sim0Y style-UfwcV"
+                                            id="style-UfwcV"
+                                          ></li>
+                                          <li class="section-2-yBP fillerSection-2hKPY"></li>
+                                        </ul>
+                                        <strong class="percentage-J6FTc">
+                                          7.8%
+                                        </strong>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row-13lP_">
+                                  <div class="clickArea-2gAoC targetwithCampaign-PGk0d">
+                                    <div class="container-3eYOU activeContainer-29_2d">
+                                      <span class="label-1rkn2">35-44</span>
+                                      <div class="content-3KolX">
+                                        <ul
+                                          class="container-3aDrJ ageRangeChart-QceMY"
+                                          aria-hidden="true"
+                                        >
+                                          <li
+                                            class="section-2-yBP color_1-3idki style-Zndi9"
+                                            id="style-Zndi9"
+                                          ></li>
+                                          <li
+                                            class="section-2-yBP color_2-sim0Y style-7DQop"
+                                            id="style-7DQop"
+                                          ></li>
+                                          <li class="section-2-yBP fillerSection-2hKPY"></li>
+                                        </ul>
+                                        <strong class="percentage-J6FTc">
+                                          16.4%
+                                        </strong>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row-13lP_">
+                                  <div class="clickArea-2gAoC targetwithCampaign-PGk0d">
+                                    <div class="container-3eYOU activeContainer-29_2d">
+                                      <span class="label-1rkn2">45-54</span>
+                                      <div class="content-3KolX">
+                                        <ul
+                                          class="container-3aDrJ ageRangeChart-QceMY"
+                                          aria-hidden="true"
+                                        >
+                                          <li
+                                            class="section-2-yBP color_1-3idki style-4h7Po"
+                                            id="style-4h7Po"
+                                          ></li>
+                                          <li
+                                            class="section-2-yBP color_2-sim0Y style-7WoPe"
+                                            id="style-7WoPe"
+                                          ></li>
+                                          <li class="section-2-yBP fillerSection-2hKPY"></li>
+                                        </ul>
+                                        <strong class="percentage-J6FTc">
+                                          20.0%
+                                        </strong>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row-13lP_">
+                                  <div class="clickArea-2gAoC targetwithCampaign-PGk0d">
+                                    <div class="container-3eYOU activeContainer-29_2d">
+                                      <span class="label-1rkn2">55-64</span>
+                                      <div class="content-3KolX">
+                                        <ul
+                                          class="container-3aDrJ ageRangeChart-QceMY"
+                                          aria-hidden="true"
+                                        >
+                                          <li
+                                            class="section-2-yBP color_1-3idki style-eyALK"
+                                            id="style-eyALK"
+                                          ></li>
+                                          <li
+                                            class="section-2-yBP color_2-sim0Y style-Jbwh9"
+                                            id="style-Jbwh9"
+                                          ></li>
+                                          <li class="section-2-yBP fillerSection-2hKPY"></li>
+                                        </ul>
+                                        <strong class="percentage-J6FTc">
+                                          17.4%
+                                        </strong>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row-13lP_">
+                                  <div class="clickArea-2gAoC targetwithCampaign-PGk0d">
+                                    <div class="container-3eYOU activeContainer-29_2d">
+                                      <span class="label-1rkn2">65+</span>
+                                      <div class="content-3KolX">
+                                        <ul
+                                          class="container-3aDrJ ageRangeChart-QceMY"
+                                          aria-hidden="true"
+                                        >
+                                          <li
+                                            class="section-2-yBP color_1-3idki style-XKQr4"
+                                            id="style-XKQr4"
+                                          ></li>
+                                          <li
+                                            class="section-2-yBP color_2-sim0Y style-nyQkf"
+                                            id="style-nyQkf"
+                                          ></li>
+                                          <li class="section-2-yBP fillerSection-2hKPY"></li>
+                                        </ul>
+                                        <strong class="percentage-J6FTc">
+                                          22.8%
+                                        </strong>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </section>
+            <br />
+                  <a style={{paddingLeft:'30px'}} href="#">Learn more about predicted demographics</a>
+                  <br />
+
+                  <br />
+                  <br />
+                  <br />
+                  <br />
               </div>
             </main>
           </div>
@@ -1366,4 +2103,4 @@ const AllCampaings = () => {
   );
 };
 
-export default AllCampaings;
+export default ViewCompaing;

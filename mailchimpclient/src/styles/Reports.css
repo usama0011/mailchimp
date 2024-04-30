@@ -1,0 +1,12 @@
+.reporseditcele {
+  background-color: #efeeea;
+  border-radius: 20px;
+  display: flex;
+  font-size: 14px;
+  height: 40px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.reporseditcele > p {
+  font-size: 15px;
+}

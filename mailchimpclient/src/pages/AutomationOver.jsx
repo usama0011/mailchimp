@@ -151,801 +151,751 @@ const AutomationOver = () => {
                   class="root-kjeIf shellNavigationLeftNav-3iPdf snipcss0-6-53-54"
                 >
                   <nav class="navItems-1Kfmk snipcss0-7-54-55">
-                    <ul class="stack-1qp4V spacing4-1xt6w navItems-1Kfmk minHeightNav-2mej_ snipcss0-8-55-56">
-                      <li class="createItem-1mIzO snipcss0-9-56-57">
-                        <a
-                          class="root-sBgFt container-3-bH7 secondary-1_P2K createButton-1NK_y snipcss0-10-57-58"
-                          href="#/create-campaign"
-                        >
-                          <span class="temporarySpan-2iF2p snipcss0-11-58-59">
-                            <span class="createIcon-qJ3Qk snipcss0-12-59-60"></span>
-                            Create
-                          </span>
-                        </a>
-                      </li>
-                      <li
-                        data-analytics-tag="Nav-Campaigns"
-                        class="navItem-GOmDa snipcss0-9-56-61"
-                      >
-                        <button
-                          aria-expanded="true"
-                          type="button"
-                          class="button-1_vuD snipcss0-10-61-62"
-                          aria-controls="mc:4"
-                          data-testid="primary-button"
-                          role="button"
-                        >
-                          <span class="icon-1Nsyy campaigns-3-h-u expanded-222wz snipcss0-11-62-63"></span>
-                          <div class="labelContainer-XqeX9 snipcss0-11-62-64">
-                            <span
-                              class="label-30mF1 snipcss0-12-64-65"
-                              data-analytics-tag="leftnav-primnav-inner-link-label"
-                            >
-                              Campaigns
-                            </span>
-                            <div class="downArrow--nVw9 snipcss0-12-64-66">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                focusable="false"
-                                aria-hidden="true"
-                                class="wink-icon snipcss0-13-66-67"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
-                                ></path>
-                              </svg>
-                            </div>
-                          </div>
-                        </button>
-                        <div class="snipcss0-10-61-68">
-                          <div
-                            class="snipcss0-11-68-69 style-Rtn1I"
-                            id="style-Rtn1I"
+                  <ul className="stack-1qp4V spacing4-1xt6w navItems-1Kfmk minHeightNav-2mej_ snipcss0-8-55-56">
+                        <li className="createItem-1mIzO snipcss0-9-56-57">
+                          <Link
+                            style={{ outline: "1px solid #1b8a95" }}
+                            className="root-sBgFt container-3-bH7 secondary-1_P2K createButton-1NK_y snipcss0-10-57-58"
+                            to="/newcomaping"
                           >
-                            <ul id="mc:4" class="snipcss0-12-69-70">
-                              <li
-                                data-analytics-tag="SecondaryNav-All campaigns"
-                                class="snipcss0-13-70-71"
-                              >
-                                <Link
-                                  to="/allcompaings"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
-                                >
-                                  <div class="snipcss0-15-72-73">
-                                    <span class="snipcss0-16-73-74">
-                                      All campaigns
-                                    </span>
-                                  </div>
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        data-analytics-tag="Nav-Automations"
-                        class="navItem-GOmDa snipcss0-9-56-75"
-                      >
-                        <button
-                          aria-expanded="true"
-                          type="button"
-                          class="button-1_vuD snipcss0-10-75-76"
-                          aria-controls="mc:6"
-                          data-testid="primary-button"
-                          role="button"
-                        >
-                          <span class="icon-1Nsyy automations-Vsn6O expanded-222wz snipcss0-11-76-77"></span>
-                          <div class="labelContainer-XqeX9 snipcss0-11-76-78">
-                            <span
-                              class="label-30mF1 snipcss0-12-78-79"
-                              data-analytics-tag="leftnav-primnav-inner-link-label"
-                            >
-                              Automations
+                            <span className="temporarySpan-2iF2p snipcss0-11-58-59">
+                              <span className="createIcon-qJ3Qk snipcss0-12-59-60"></span>
+                              Create
                             </span>
-                            <div class="downArrow--nVw9 snipcss0-12-78-80">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                focusable="false"
-                                aria-hidden="true"
-                                class="wink-icon snipcss0-13-80-81"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
-                                ></path>
-                              </svg>
-                            </div>
-                          </div>
-                        </button>
-                        <div class="snipcss0-10-75-82">
-                          <div
-                            class="snipcss0-11-82-83 style-FZrke"
-                            id="style-FZrke"
-                          >
-                            <ul id="mc:6" class="snipcss0-12-83-84">
-                              <li
-                                data-analytics-tag="SecondaryNav-Overview"
-                                class="snipcss0-13-84-85"
-                              >
-                                <Link
-                                  to="/automationoverview"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
-                                >
-                                  <div class="snipcss0-15-72-73">
-                                    <span class="snipcss0-16-73-74">
-                                    OverView
-                                    </span>
-                                  </div>
-                                </Link>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-All journeys"
-                                class="snipcss0-13-84-89"
-                              >
-                                <a
-                                  aria-label="All journeys"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-89-90"
-                                  role="link"
-                                  aria-describedby="mc:44"
-                                  href="/customer-journey/my-journeys"
-                                >
-                                  <div class="snipcss0-15-90-91">
-                                    <span class="snipcss0-16-91-92">
-                                      All journeys
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Pre-built journeys"
-                                class="snipcss0-13-84-93"
-                              >
-                                <a
-                                  aria-label="Pre-built journeys"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-93-94"
-                                  role="link"
-                                  aria-describedby="mc:45"
-                                  href="/customer-journey/explore"
-                                >
-                                  <div class="snipcss0-15-94-95">
-                                    <span class="snipcss0-16-95-96">
-                                      Pre-built journeys
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Transactional email"
-                                class="snipcss0-13-84-97"
-                              >
-                                <a
-                                  aria-label="Transactional email"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-97-98"
-                                  role="link"
-                                  aria-describedby="mc:46"
-                                  href="/transactional"
-                                >
-                                  <div class="snipcss0-15-98-99">
-                                    <span class="snipcss0-16-99-100">
-                                      Transactional email
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        data-analytics-tag="Nav-Audience"
-                        class="navItem-GOmDa snipcss0-9-56-101"
-                      >
-                        <button
-                          aria-expanded="true"
-                          type="button"
-                          class="button-1_vuD snipcss0-10-101-102"
-                          aria-controls="mc:11"
-                          data-testid="primary-button"
-                          role="button"
+                          </Link>
+                        </li>
+                        <li
+                          data-analytics-tag="Nav-Campaigns"
+                          className="navItem-GOmDa snipcss0-9-56-61"
                         >
-                          <span class="icon-1Nsyy audience-A6AiK expanded-222wz snipcss0-11-102-103"></span>
-                          <div class="labelContainer-XqeX9 snipcss0-11-102-104">
-                            <span
-                              class="label-30mF1 snipcss0-12-104-105"
-                              data-analytics-tag="leftnav-primnav-inner-link-label"
-                            >
-                              Audience
-                            </span>
-                            <div class="downArrow--nVw9 snipcss0-12-104-106">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                focusable="false"
-                                aria-hidden="true"
-                                class="wink-icon snipcss0-13-106-107"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
-                                ></path>
-                              </svg>
-                            </div>
-                          </div>
-                        </button>
-                        <div class="snipcss0-10-101-108">
-                          <div
-                            class="snipcss0-11-108-109 style-JdVoN"
-                            id="style-JdVoN"
+                          <button
+                            aria-expanded="true"
+                            type="button"
+                            className="button-1_vuD snipcss0-10-61-62"
+                            aria-controls="mc:4"
+                            data-testid="primary-button"
+                            role="button"
                           >
-                            <ul id="mc:11" class="snipcss0-12-109-110">
-                              <li
-                                data-analytics-tag="SecondaryNav-Audience dashboard"
-                                class="snipcss0-13-110-111"
+                            <span className="icon-1Nsyy campaigns-3-h-u expanded-222wz snipcss0-11-62-63"></span>
+                            <div className="labelContainer-XqeX9 snipcss0-11-62-64">
+                              <span
+                                className="label-30mF1 snipcss0-12-64-65"
+                                data-analytics-tag="leftnav-primnav-inner-link-label"
                               >
-                                <a
-                                  aria-label="Audience dashboard"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-111-112"
-                                  role="link"
-                                  aria-describedby="mc:47"
-                                  href="/audience"
+                                Campaigns
+                              </span>
+                              <div className="downArrow--nVw9 snipcss0-12-64-66">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  focusable="false"
+                                  aria-hidden="true"
+                                  className="wink-icon snipcss0-13-66-67"
                                 >
-                                  <div class="snipcss0-15-112-113">
-                                    <span class="snipcss0-16-113-114">
-                                      Audience dashboard
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-All contacts"
-                                class="snipcss0-13-110-115"
-                              >
-                                <a
-                                  aria-label="All contacts"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-115-116"
-                                  role="link"
-                                  aria-describedby="mc:48"
-                                  href="/lists/members"
-                                >
-                                  <div class="snipcss0-15-116-117">
-                                    <span class="snipcss0-16-117-118">
-                                      All contacts
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Signup forms"
-                                class="snipcss0-13-110-119"
-                              >
-                                <a
-                                  aria-label="Signup forms"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-119-120"
-                                  role="link"
-                                  aria-describedby="mc:49"
-                                  href="/audience/forms/dashboard"
-                                >
-                                  <div class="snipcss0-15-120-121">
-                                    <span class="snipcss0-16-121-122">
-                                      Signup forms
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Tags"
-                                class="snipcss0-13-110-123"
-                              >
-                                <a
-                                  aria-label="Tags"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-123-124"
-                                  role="link"
-                                  aria-describedby="mc:50"
-                                  href="/audience/tags"
-                                >
-                                  <div class="snipcss0-15-124-125">
-                                    <span class="snipcss0-16-125-126">
-                                      Tags
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Segments"
-                                class="snipcss0-13-110-127"
-                              >
-                                <a
-                                  aria-label="Segments"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-127-128"
-                                  role="link"
-                                  aria-describedby="mc:51"
-                                  href="/audience/segments"
-                                >
-                                  <div class="snipcss0-15-128-129">
-                                    <span class="snipcss0-16-129-130">
-                                      Segments
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Surveys"
-                                class="snipcss0-13-110-131"
-                              >
-                                <a
-                                  aria-label="Surveys"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-131-132"
-                                  role="link"
-                                  aria-describedby="mc:52"
-                                  href="/lists/surveys"
-                                >
-                                  <div class="snipcss0-15-132-133">
-                                    <span class="snipcss0-16-133-134">
-                                      Surveys
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Subscriber preferences"
-                                class="snipcss0-13-110-135"
-                              >
-                                <a
-                                  aria-label="Subscriber preferences"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-135-136"
-                                  role="link"
-                                  aria-describedby="mc:53"
-                                  href="/lists/preferences-center/"
-                                >
-                                  <div class="snipcss0-15-136-137">
-                                    <span class="snipcss0-16-137-138">
-                                      Subscriber preferences
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Inbox"
-                                class="snipcss0-13-110-139"
-                              >
-                                <a
-                                  aria-label="Inbox"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-139-140"
-                                  role="link"
-                                  aria-describedby="mc:54"
-                                  href="/audience/inbox"
-                                >
-                                  <div class="snipcss0-15-140-141">
-                                    <span class="snipcss0-16-141-142">
-                                      Inbox
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        data-analytics-tag="Nav-Analytics"
-                        class="navItem-GOmDa snipcss0-9-56-143"
-                      >
-                        <button
-                          aria-expanded="true"
-                          type="button"
-                          class="button-1_vuD snipcss0-10-143-144"
-                          aria-controls="mc:20"
-                          data-testid="primary-button"
-                          role="button"
-                        >
-                          <span class="icon-1Nsyy analytics-3SiQv expanded-222wz snipcss0-11-144-145"></span>
-                          <div class="labelContainer-XqeX9 snipcss0-11-144-146">
-                            <span
-                              class="label-30mF1 snipcss0-12-146-147"
-                              data-analytics-tag="leftnav-primnav-inner-link-label"
-                            >
-                              Analytics
-                            </span>
-                            <div class="downArrow--nVw9 snipcss0-12-146-148">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                focusable="false"
-                                aria-hidden="true"
-                                class="wink-icon snipcss0-13-148-149"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
-                                ></path>
-                              </svg>
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
+                                  ></path>
+                                </svg>
+                              </div>
                             </div>
-                          </div>
-                        </button>
-                        <div class="snipcss0-10-143-150">
-                          <div
-                            class="snipcss0-11-150-151 style-GtTVY"
-                            id="style-GtTVY"
-                          >
-                            <ul id="mc:20" class="snipcss0-12-151-152">
-                              <li
-                                data-analytics-tag="SecondaryNav-Marketing dashboard"
-                                class="snipcss0-13-152-153"
-                              >
-                                <a
-                                  aria-label="Marketing dashboard"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-153-154"
-                                  role="link"
-                                  aria-describedby="mc:55"
-                                  href="/analytics/marketing-dashboard"
-                                >
-                                  <div class="snipcss0-15-154-155">
-                                    <span class="snipcss0-16-155-156">
-                                      Marketing dashboard
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Audience"
-                                class="snipcss0-13-152-157"
-                              >
-                                <a
-                                  aria-label="Audience"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-157-158"
-                                  role="link"
-                                  aria-describedby="mc:56"
-                                  href="/analytics/audience-analytics"
-                                >
-                                  <div class="snipcss0-15-158-159">
-                                    <span class="snipcss0-16-159-160">
-                                      Audience
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Reports"
-                                class="snipcss0-13-152-161"
-                              >
-                                <a
-                                  aria-label="Reports"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-161-162"
-                                  role="link"
-                                  aria-describedby="mc:57"
-                                  href="/reports"
-                                >
-                                  <div class="snipcss0-15-162-163">
-                                    <span class="snipcss0-16-163-164">
-                                      Reports
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Custom reports"
-                                class="snipcss0-13-152-165"
-                              >
-                                <a
-                                  aria-label="Custom reports"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-165-166"
-                                  role="link"
-                                  aria-describedby="mc:58"
-                                  href="/analytics/custom-reports"
-                                >
-                                  <div class="snipcss0-15-166-167">
-                                    <span class="snipcss0-16-167-168">
-                                      Custom reports
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        data-analytics-tag="Nav-Website"
-                        class="navItem-GOmDa snipcss0-9-56-169"
-                      >
-                        <button
-                          aria-expanded="true"
-                          type="button"
-                          class="button-1_vuD snipcss0-10-169-170"
-                          aria-controls="mc:25"
-                          data-testid="primary-button"
-                          role="button"
-                        >
-                          <span class="icon-1Nsyy websites-39YWq expanded-222wz snipcss0-11-170-171"></span>
-                          <div class="labelContainer-XqeX9 snipcss0-11-170-172">
-                            <span
-                              class="label-30mF1 snipcss0-12-172-173"
-                              data-analytics-tag="leftnav-primnav-inner-link-label"
+                          </button>
+                          <div className="snipcss0-10-61-68">
+                            <div
+                              className="snipcss0-11-68-69 style-Rtn1I"
+                              id="style-Rtn1I"
                             >
-                              Website
-                            </span>
-                            <div class="downArrow--nVw9 snipcss0-12-172-174">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                focusable="false"
-                                aria-hidden="true"
-                                class="wink-icon snipcss0-13-174-175"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
-                                ></path>
-                              </svg>
-                            </div>
-                          </div>
-                        </button>
-                        <div class="snipcss0-10-169-176">
-                          <div
-                            class="snipcss0-11-176-177 style-EgfMh"
-                            id="style-EgfMh"
-                          >
-                            <ul id="mc:25" class="snipcss0-12-177-178">
-                              <li
-                                data-analytics-tag="SecondaryNav-Website"
-                                class="snipcss0-13-178-179"
-                              >
-                                <a
-                                  aria-label="Website"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-179-180"
-                                  role="link"
-                                  aria-describedby="mc:59"
-                                  href="/website/dashboard/"
+                              <ul id="mc:4" className="snipcss0-12-69-70">
+                                <li
+                                  data-analytics-tag="SecondaryNav-All campaigns"
+                                  className="snipcss0-13-70-71"
                                 >
-                                  <div class="snipcss0-15-180-181">
-                                    <span class="snipcss0-16-181-182">
-                                      Website
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Settings"
-                                class="snipcss0-13-178-183"
-                              >
-                                <a
-                                  aria-label="Settings"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-183-184"
-                                  role="link"
-                                  aria-describedby="mc:60"
-                                  href="/website/settings/"
-                                >
-                                  <div class="snipcss0-15-184-185">
-                                    <span class="snipcss0-16-185-186">
-                                      Settings
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Reports"
-                                class="snipcss0-13-178-187"
-                              >
-                                <a
-                                  aria-label="Reports"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-187-188"
-                                  role="link"
-                                  aria-describedby="mc:61"
-                                  href="/website/reports/"
-                                >
-                                  <div class="snipcss0-15-188-189">
-                                    <span class="snipcss0-16-189-190">
-                                      Reports
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        data-analytics-tag="Nav-Content"
-                        class="navItem-GOmDa snipcss0-9-56-191"
-                      >
-                        <button
-                          aria-expanded="true"
-                          type="button"
-                          class="button-1_vuD snipcss0-10-191-192"
-                          aria-controls="mc:29"
-                          data-testid="primary-button"
-                          role="button"
-                        >
-                          <span class="icon-1Nsyy contentStudio-1mjjE expanded-222wz snipcss0-11-192-193"></span>
-                          <div class="labelContainer-XqeX9 snipcss0-11-192-194">
-                            <span
-                              class="label-30mF1 snipcss0-12-194-195"
-                              data-analytics-tag="leftnav-primnav-inner-link-label"
-                            >
-                              Content
-                            </span>
-                            <div class="downArrow--nVw9 snipcss0-12-194-196">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                focusable="false"
-                                aria-hidden="true"
-                                class="wink-icon snipcss0-13-196-197"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
-                                ></path>
-                              </svg>
-                            </div>
-                          </div>
-                        </button>
-                        <div class="snipcss0-10-191-198">
-                          <div
-                            class="snipcss0-11-198-199 style-rY2xm"
-                            id="style-rY2xm"
-                          >
-                            <ul id="mc:29" class="snipcss0-12-199-200">
-                              <li
-                                data-analytics-tag="SecondaryNav-Creative Assistant"
-                                class="snipcss0-13-200-201"
-                              >
-                                <a
-                                  aria-label="Creative Assistant"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-201-202"
-                                  role="link"
-                                  aria-describedby="mc:62"
-                                  href="/creative-assistant"
-                                >
-                                  <div class="snipcss0-15-202-203">
-                                    <span class="snipcss0-16-203-204">
-                                      Creative Assistant
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-My files"
-                                class="snipcss0-13-200-205"
-                              >
-                                <a
-                                  aria-label="My files"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-205-206"
-                                  role="link"
-                                  aria-describedby="mc:63"
-                                  href="/content/#myfiles"
-                                >
-                                  <div class="snipcss0-15-206-207">
-                                    <span class="snipcss0-16-207-208">
-                                      My files
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Email templates"
-                                class="snipcss0-13-200-209"
-                              >
-                                <a
-                                  aria-label="Email templates"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-209-210"
-                                  role="link"
-                                  aria-describedby="mc:64"
-                                  href="/templates"
-                                >
-                                  <div class="snipcss0-15-210-211">
-                                    <span class="snipcss0-16-211-212">
-                                      Email templates
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        data-analytics-tag="Nav-Integrations"
-                        class="navItem-GOmDa snipcss0-9-56-213"
-                      >
-                        <button
-                          aria-expanded="true"
-                          type="button"
-                          class="button-1_vuD snipcss0-10-213-214"
-                          aria-controls="mc:33"
-                          data-testid="primary-button"
-                          role="button"
-                        >
-                          <span class="icon-1Nsyy integrations-1x251 expanded-222wz snipcss0-11-214-215"></span>
-                          <div class="labelContainer-XqeX9 snipcss0-11-214-216">
-                            <span
-                              class="label-30mF1 snipcss0-12-216-217"
-                              data-analytics-tag="leftnav-primnav-inner-link-label"
-                            >
-                              Integrations
-                            </span>
-                            <div class="downArrow--nVw9 snipcss0-12-216-218">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                focusable="false"
-                                aria-hidden="true"
-                                class="wink-icon snipcss0-13-218-219"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
-                                ></path>
-                              </svg>
-                            </div>
-                          </div>
-                        </button>
-                        <div class="snipcss0-10-213-220">
-                          <div
-                            class="snipcss0-11-220-221 style-bVLoe"
-                            id="style-bVLoe"
-                          >
-                            <ul id="mc:33" class="snipcss0-12-221-222">
-                              <li
-                                data-analytics-tag="SecondaryNav-Discover"
-                                class="snipcss0-13-222-223"
-                              >
-                                <a
-                                  aria-label="Discover"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-223-224"
-                                  role="link"
-                                  aria-describedby="mc:65"
-                                  href="/account/connected-sites/discover"
-                                >
-                                  <div class="snipcss0-15-224-225">
-                                    <span class="snipcss0-16-225-226">
-                                      Discover
-                                    </span>
-                                    <span class="root-3ALOt new-1T1aO badge_padding-2UxcF snipcss0-16-225-227">
-                                      <span class="wink-visually-hidden snipcss0-17-227-228">
-                                        (
+                                  <Link
+                                    to="/allcompaings"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-72-73">
+                                      <span className="snipcss0-16-73-74">
+                                        All campaigns
                                       </span>
-                                      New
-                                      <span class="wink-visually-hidden snipcss0-17-227-229">
-                                        )
-                                      </span>
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                              <li
-                                data-analytics-tag="SecondaryNav-Manage"
-                                class="snipcss0-13-222-230"
-                              >
-                                <a
-                                  aria-label="Manage"
-                                  class="root-2MzAS fullHeight-2grW3 snipcss0-14-230-231"
-                                  role="link"
-                                  aria-describedby="mc:66"
-                                  href="/integrations/manage"
-                                >
-                                  <div class="snipcss0-15-231-232">
-                                    <span class="snipcss0-16-232-233">
-                                      Manage
-                                    </span>
-                                  </div>
-                                </a>
-                              </li>
-                            </ul>
+                                    </div>
+                                  </Link>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
-                        </div>
-                      </li>
-                    </ul>
+                        </li>
+                        <li
+                          data-analytics-tag="Nav-Automations"
+                          className="navItem-GOmDa snipcss0-9-56-75"
+                        >
+                          <button
+                            aria-expanded="true"
+                            type="button"
+                            className="button-1_vuD snipcss0-10-75-76"
+                            aria-controls="mc:6"
+                            data-testid="primary-button"
+                            role="button"
+                          >
+                            <span className="icon-1Nsyy automations-Vsn6O expanded-222wz snipcss0-11-76-77"></span>
+                            <div className="labelContainer-XqeX9 snipcss0-11-76-78">
+                              <span
+                                className="label-30mF1 snipcss0-12-78-79"
+                                data-analytics-tag="leftnav-primnav-inner-link-label"
+                              >
+                                Automations
+                              </span>
+                              <div className="downArrow--nVw9 snipcss0-12-78-80">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  focusable="false"
+                                  aria-hidden="true"
+                                  className="wink-icon snipcss0-13-80-81"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
+                          </button>
+                          <div className="snipcss0-10-75-82">
+                            <div
+                              className="snipcss0-11-82-83 style-FZrke"
+                              id="style-FZrke"
+                            >
+                              <ul id="mc:6" className="snipcss0-12-83-84">
+                                <li
+                                  data-analytics-tag="SecondaryNav-Overview"
+                                  className="snipcss0-13-84-85"
+                                >
+                                  <Link
+                                    to="/automationoverview"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-72-73">
+                                      <span className="snipcss0-16-73-74">
+                                        OverViews
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-All journeys"
+                                  className="snipcss0-13-84-89"
+                                >
+                                  <Link
+                                    to="/automationoverview"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-72-73">
+                                      <span className="snipcss0-16-73-74">
+                                        All Journeys
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Pre-built journeys"
+                                  className="snipcss0-13-84-93"
+                                >
+                                  <Link
+                                    to="/automationoverview"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-94-95">
+                                      <span className="snipcss0-16-95-96">
+                                        Pre-built journeys
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Transactional email"
+                                  className="snipcss0-13-84-97"
+                                >
+                                  <Link
+                                    to="/transactional"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-98-99">
+                                      <span className="snipcss0-16-99-100">
+                                        Transactional email
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li
+                          data-analytics-tag="Nav-Audience"
+                          className="navItem-GOmDa snipcss0-9-56-101"
+                        >
+                          <button
+                            aria-expanded="true"
+                            type="button"
+                            className="button-1_vuD snipcss0-10-101-102"
+                            aria-controls="mc:11"
+                            data-testid="primary-button"
+                            role="button"
+                          >
+                            <span className="icon-1Nsyy audience-A6AiK expanded-222wz snipcss0-11-102-103"></span>
+                            <div className="labelContainer-XqeX9 snipcss0-11-102-104">
+                              <span
+                                className="label-30mF1 snipcss0-12-104-105"
+                                data-analytics-tag="leftnav-primnav-inner-link-label"
+                              >
+                                Audience
+                              </span>
+                              <div className="downArrow--nVw9 snipcss0-12-104-106">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  focusable="false"
+                                  aria-hidden="true"
+                                  className="wink-icon snipcss0-13-106-107"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
+                          </button>
+                          <div className="snipcss0-10-101-108">
+                            <div
+                              className="snipcss0-11-108-109 style-JdVoN"
+                              id="style-JdVoN"
+                            >
+                              <ul id="mc:11" className="snipcss0-12-109-110">
+                                <li
+                                  data-analytics-tag="SecondaryNav-Audience dashboard"
+                                  className="snipcss0-13-110-111"
+                                >
+                                  <Link
+                                    to="/audiencedashboard"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-112-113">
+                                      <span className="snipcss0-16-113-114">
+                                        Audience dashboard
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-All contacts"
+                                  className="snipcss0-13-110-115"
+                                >
+                                  <a
+                                    aria-label="All contacts"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-115-116"
+                                    role="link"
+                                    aria-describedby="mc:48"
+                                    href="/lists/members"
+                                  >
+                                    <div className="snipcss0-15-116-117">
+                                      <span className="snipcss0-16-117-118">
+                                        All contacts
+                                      </span>
+                                    </div>
+                                  </a>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Signup forms"
+                                  className="snipcss0-13-110-119"
+                                >
+                                  <Link
+                                    to="/signupforms"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-120-121">
+                                      <span className="snipcss0-16-121-122">
+                                        Signup forms
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Tags"
+                                  className="snipcss0-13-110-123"
+                                >
+                                  <Link
+                                    to="/tags"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-124-125">
+                                      <span className="snipcss0-16-125-126">
+                                        Tags
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Segments"
+                                  className="snipcss0-13-110-127"
+                                >
+                                  <Link
+                                    to="/segments"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-128-129">
+                                      <span className="snipcss0-16-129-130">
+                                        Segments
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Surveys"
+                                  className="snipcss0-13-110-131"
+                                >
+                                  <Link
+                                    to="/mailchimpsurvy"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-132-133">
+                                      <span className="snipcss0-16-133-134">
+                                        Surveys
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Subscriber preferences"
+                                  className="snipcss0-13-110-135"
+                                >
+                                  <a
+                                    aria-label="Subscriber preferences"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-135-136"
+                                    role="link"
+                                    aria-describedby="mc:53"
+                                    href="#"
+                                  >
+                                    <div className="snipcss0-15-136-137">
+                                      <span className="snipcss0-16-137-138">
+                                        Subscriber preferences
+                                      </span>
+                                    </div>
+                                  </a>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Inbox"
+                                  className="snipcss0-13-110-139"
+                                >
+                                  <a
+                                    aria-label="Inbox"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-139-140"
+                                    role="link"
+                                    aria-describedby="mc:54"
+                                    href="#"
+                                  >
+                                    <div className="snipcss0-15-140-141">
+                                      <span className="snipcss0-16-141-142">
+                                        Inbox
+                                      </span>
+                                    </div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li
+                          data-analytics-tag="Nav-Analytics"
+                          className="navItem-GOmDa snipcss0-9-56-143"
+                        >
+                          <button
+                            aria-expanded="true"
+                            type="button"
+                            className="button-1_vuD snipcss0-10-143-144"
+                            aria-controls="mc:20"
+                            data-testid="primary-button"
+                            role="button"
+                          >
+                            <span className="icon-1Nsyy analytics-3SiQv expanded-222wz snipcss0-11-144-145"></span>
+                            <div className="labelContainer-XqeX9 snipcss0-11-144-146">
+                              <span
+                                className="label-30mF1 snipcss0-12-146-147"
+                                data-analytics-tag="leftnav-primnav-inner-link-label"
+                              >
+                                Analytics
+                              </span>
+                              <div className="downArrow--nVw9 snipcss0-12-146-148">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  focusable="false"
+                                  aria-hidden="true"
+                                  className="wink-icon snipcss0-13-148-149"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
+                          </button>
+                          <div className="snipcss0-10-143-150">
+                            <div
+                              className="snipcss0-11-150-151 style-GtTVY"
+                              id="style-GtTVY"
+                            >
+                              <ul id="mc:20" className="snipcss0-12-151-152">
+                                <li
+                                  data-analytics-tag="SecondaryNav-Marketing dashboard"
+                                  className="snipcss0-13-152-153"
+                                >
+                                  <Link
+                                    to="/marketingdashboard"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-154-155">
+                                      <span className="snipcss0-16-155-156">
+                                        Marketing dashboard
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Audience"
+                                  className="snipcss0-13-152-157"
+                                >
+                                  <Link
+                                    to="/audienceanalytics"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-158-159">
+                                      <span className="snipcss0-16-159-160">
+                                        Audience
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Reports"
+                                  className="snipcss0-13-152-161"
+                                >
+                                  <a
+                                    aria-label="Reports"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-161-162"
+                                    role="link"
+                                    aria-describedby="mc:57"
+                                    href="/reports"
+                                  >
+                                    <div className="snipcss0-15-162-163">
+                                      <span className="snipcss0-16-163-164">
+                                        Reports
+                                      </span>
+                                    </div>
+                                  </a>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Custom reports"
+                                  className="snipcss0-13-152-165"
+                                >
+                                  <a
+                                    aria-label="Custom reports"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-165-166"
+                                    role="link"
+                                    aria-describedby="mc:58"
+                                    href="/analytics/custom-reports"
+                                  >
+                                    <div className="snipcss0-15-166-167">
+                                      <span className="snipcss0-16-167-168">
+                                        Custom reports
+                                      </span>
+                                    </div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li
+                          data-analytics-tag="Nav-Website"
+                          className="navItem-GOmDa snipcss0-9-56-169"
+                        >
+                          <button
+                            aria-expanded="true"
+                            type="button"
+                            className="button-1_vuD snipcss0-10-169-170"
+                            aria-controls="mc:25"
+                            data-testid="primary-button"
+                            role="button"
+                          >
+                            <span className="icon-1Nsyy websites-39YWq expanded-222wz snipcss0-11-170-171"></span>
+                            <div className="labelContainer-XqeX9 snipcss0-11-170-172">
+                              <span
+                                className="label-30mF1 snipcss0-12-172-173"
+                                data-analytics-tag="leftnav-primnav-inner-link-label"
+                              >
+                                Website
+                              </span>
+                              <div className="downArrow--nVw9 snipcss0-12-172-174">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  focusable="false"
+                                  aria-hidden="true"
+                                  className="wink-icon snipcss0-13-174-175"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
+                          </button>
+                          <div className="snipcss0-10-169-176">
+                            <div
+                              className="snipcss0-11-176-177 style-EgfMh"
+                              id="style-EgfMh"
+                            >
+                              <ul id="mc:25" className="snipcss0-12-177-178">
+                                <li
+                                  data-analytics-tag="SecondaryNav-Website"
+                                  className="snipcss0-13-178-179"
+                                >
+                                  <Link
+                                    to="/websiteoverview"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-180-181">
+                                      <span className="snipcss0-16-181-182">
+                                        Website
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Settings"
+                                  className="snipcss0-13-178-183"
+                                >
+                                  <Link
+                                    to="/websitesetting"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-184-185">
+                                      <span className="snipcss0-16-185-186">
+                                        Settings
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Reports"
+                                  className="snipcss0-13-178-187"
+                                >
+                                  <Link
+                                    to="/websitereports"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-188-189">
+                                      <span className="snipcss0-16-189-190">
+                                        Reports
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li
+                          data-analytics-tag="Nav-Content"
+                          className="navItem-GOmDa snipcss0-9-56-191"
+                        >
+                          <button
+                            aria-expanded="true"
+                            type="button"
+                            className="button-1_vuD snipcss0-10-191-192"
+                            aria-controls="mc:29"
+                            data-testid="primary-button"
+                            role="button"
+                          >
+                            <span className="icon-1Nsyy contentStudio-1mjjE expanded-222wz snipcss0-11-192-193"></span>
+                            <div className="labelContainer-XqeX9 snipcss0-11-192-194">
+                              <span
+                                className="label-30mF1 snipcss0-12-194-195"
+                                data-analytics-tag="leftnav-primnav-inner-link-label"
+                              >
+                                Content
+                              </span>
+                              <div className="downArrow--nVw9 snipcss0-12-194-196">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  focusable="false"
+                                  aria-hidden="true"
+                                  className="wink-icon snipcss0-13-196-197"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
+                          </button>
+                          <div className="snipcss0-10-191-198">
+                            <div
+                              className="snipcss0-11-198-199 style-rY2xm"
+                              id="style-rY2xm"
+                            >
+                              <ul id="mc:29" className="snipcss0-12-199-200">
+                                <li
+                                  data-analytics-tag="SecondaryNav-Creative Assistant"
+                                  className="snipcss0-13-200-201"
+                                >
+                                  <Link
+                                    to="/creativeassistant"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-202-203">
+                                      <span className="snipcss0-16-203-204">
+                                        Creative Assistant
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-My files"
+                                  className="snipcss0-13-200-205"
+                                >
+                                  <a
+                                    aria-label="My files"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-205-206"
+                                    role="link"
+                                    aria-describedby="mc:63"
+                                    href="/content/#myfiles"
+                                  >
+                                    <div className="snipcss0-15-206-207">
+                                      <span className="snipcss0-16-207-208">
+                                        My files
+                                      </span>
+                                    </div>
+                                  </a>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Email templates"
+                                  className="snipcss0-13-200-209"
+                                >
+                                  <Link
+                                    to="/"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-210-211">
+                                      <span className="snipcss0-16-211-212">
+                                        Email templates
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li
+                          data-analytics-tag="Nav-Integrations"
+                          className="navItem-GOmDa snipcss0-9-56-213"
+                        >
+                          <button
+                            aria-expanded="true"
+                            type="button"
+                            className="button-1_vuD snipcss0-10-213-214"
+                            aria-controls="mc:33"
+                            data-testid="primary-button"
+                            role="button"
+                          >
+                            <span className="icon-1Nsyy integrations-1x251 expanded-222wz snipcss0-11-214-215"></span>
+                            <div className="labelContainer-XqeX9 snipcss0-11-214-216">
+                              <span
+                                className="label-30mF1 snipcss0-12-216-217"
+                                data-analytics-tag="leftnav-primnav-inner-link-label"
+                              >
+                                Integrations
+                              </span>
+                              <div className="downArrow--nVw9 snipcss0-12-216-218">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  focusable="false"
+                                  aria-hidden="true"
+                                  className="wink-icon snipcss0-13-218-219"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M6.293 10.707l1.414-1.414L12 13.586l4.293-4.293 1.414 1.414L12 16.414l-5.707-5.707z"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
+                          </button>
+                          <div className="snipcss0-10-213-220">
+                            <div
+                              className="snipcss0-11-220-221 style-bVLoe"
+                              id="style-bVLoe"
+                            >
+                              <ul id="mc:33" className="snipcss0-12-221-222">
+                                <li
+                                  data-analytics-tag="SecondaryNav-Discover"
+                                  className="snipcss0-13-222-223"
+                                >
+                                  <Link
+                                    to="/integrationdiscover"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-224-225">
+                                      <span className="snipcss0-16-225-226">
+                                        Discover
+                                      </span>
+                                      <span className="root-3ALOt new-1T1aO badge_padding-2UxcF snipcss0-16-225-227">
+                                        <span className="wink-visually-hidden snipcss0-17-227-228">
+                                          (
+                                        </span>
+                                        New
+                                        <span className="wink-visually-hidden snipcss0-17-227-229">
+                                          )
+                                        </span>
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                                <li
+                                  data-analytics-tag="SecondaryNav-Manage"
+                                  className="snipcss0-13-222-230"
+                                >
+                                  <Link
+                                    to="/integrationmanage"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
+                                    <div className="snipcss0-15-231-232">
+                                      <span className="snipcss0-16-232-233">
+                                        Manage
+                                      </span>
+                                    </div>
+                                  </Link>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
                     <div class="account-3ri0E appHeaderNotCollapsed-311nL scrollBorderBottom-2LDg0 snipcss0-8-55-234">
                       <div class="collapseIcon--FJm2 snipcss0-9-234-235">
                         <button

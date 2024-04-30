@@ -1,6 +1,32 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "../styles/CreateEmail.css";
+import { Link } from "react-router-dom";
+import { NewCampaignDetailsContext } from "../context/NewCompaingContext";
 const CreateEmail = () => {
+  const [subject, setSubject] = useState("");
+  const [perviewtext, setPreviewText] = useState("");
+  const { state, dispatch } = useContext(NewCampaignDetailsContext);
+  const [editsubject, setEditSubject] = useState(false);
+  const [edittime, setEditTime] = useState(false);
+  const handleAddSubject = () => {
+    setEditSubject(true);
+  };
+  const handleUpdateState = (field, value) => {
+    dispatch({ type: "UPDATE_STATE", payload: { field, value } });
+  };
+  const submitsaveSubject = (e) => {
+    e.preventDefault();
+    handleUpdateState("subject", subject);
+    handleUpdateState("previewtext", perviewtext);
+    setEditSubject(false)
+  };
+  const openaddTime = () => {
+    setEditTime(true);
+  };
+  const handlesaveTimebtn=(e)=>{
+    e.preventDefault();
+    setEditTime(false);
+  }
   return (
     <div class="root-3uY95 snipcss-mSWlr">
       <div class="container-2aeSm">
@@ -282,503 +308,611 @@ const CreateEmail = () => {
                     class="root-6p7-2 slat-9mBgs"
                     id="mc-checklist-step-subject"
                   >
-                    <div class="wrapper-3ln44">
+                    <div class="wrapper-3ln44 snipcss-OmtRl">
                       <div class="stack-1qp4V">
                         <div class="cluster-3D5Qr nowrap-34OZ-">
-                          <div class="alignItemsFlexStart-3pYa_ justifyFlexStart-ejJl1 spacing4-1S_zR snipcss-M27Ye">
-                            <div>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                focusable="false"
-                                aria-hidden="true"
-                                class="wink-icon empty-11uD-"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11zm5.707-14.293l-1.414-1.414L10 13.586l-2.293-2.293-1.414 1.414L10 16.414l7.707-7.707z"
-                                ></path>
-                              </svg>
-                            </div>
-                            <div class="stack-1qp4V content-2tH6V">
-                              <div data-analytics-tag="checklist-heading-subject">
-                                <h2 class="heading-2-ZDzRe root-PihPG">
-                                  <span class="root-3TDqk large-23Nnp title-35amJ">
-                                    Subject
-                                  </span>
-                                </h2>
-                              </div>
-                              <form
-                                class="stack-1qp4V spacing7-3UvBh"
-                                novalidate=""
-                                id="form-8lxra"
-                              >
-                                <p class="root-3TDqk medium-secondary-1YIN8">
-                                  What's the subject line for this email?
-                                </p>
-                                <div class="switcher-2RqDX">
-                                  <div class="spacing4-3hzb7">
-                                    <div class="stack-1qp4V spacing4-1xt6w">
-                                      <div class="root-2RFjU">
-                                        <div class="before-2EDUs">
-                                          <label
-                                            class="mcds-label-default"
-                                            id="mc:374"
-                                            for="subject-input-ai-assist"
-                                          >
-                                            <span>Subject</span>
-                                          </label>
-                                        </div>
-                                        <div class="inputWrapper-TVkf7">
-                                          <input
-                                            type="text"
-                                            id="subject-input-ai-assist"
-                                            aria-describedby="mc:375 mc:377"
-                                            aria-invalid="false"
-                                            name="subject"
-                                            value=""
-                                          />
-                                          <span
-                                            id="mc:377"
-                                            class="inputSuffix-1JIHK"
-                                            data-input-suffix="true"
-                                          >
-                                            <button
-                                              class="root-1khsy"
-                                              aria-expanded="false"
-                                              type="button"
-                                            >
-                                              <span class="wink-visually-hidden">
-                                                Default EmojiIcon
-                                              </span>
-                                              <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 24 24"
-                                                focusable="false"
-                                                aria-hidden="true"
-                                                class="wink-icon"
-                                              >
-                                                <path d="M19 0h2v3h3v2h-3v3h-2V5h-3V3h3V0zm1 12a8 8 0 11-7-7.938V2.049A10.318 10.318 0 0012 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10c0-.338-.017-.671-.05-1h-2.012c.041.328.062.661.062 1z"></path>
-                                                <path d="M8 8a1 1 0 112 0v2a1 1 0 11-2 0V8zm6 0a1 1 0 112 0v2a1 1 0 11-2 0V8zm-2 10c-2.608 0-4.75-2.197-4.98-5h9.96c-.23 2.803-2.372 5-4.98 5z"></path>
-                                              </svg>
-                                            </button>
-                                          </span>
-                                        </div>
-                                        <div
-                                          id="mc:375"
-                                          class="after-1Svqq secondary-2IrH1"
-                                        >
-                                          <div>
-                                            <p class="root-3TDqk small-secondary-3_Rq2">
-                                              See how your{" "}
-                                              <button
-                                                type="button"
-                                                class="root-EzRO6"
-                                              >
-                                                <span class="span-2w7il">
-                                                  recent subject lines
-                                                </span>
-                                              </button>{" "}
-                                              performed.{" "}
-                                              <a
-                                                href="https://mailchimp.com/help/best-practices-for-email-subject-lines/"
-                                                rel="noopener noreferrer"
-                                                target="_blank"
-                                              >
-                                                View our subject line guide.
-                                              </a>
-                                            </p>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="root-2RFjU">
-                                        <div class="before-2EDUs">
-                                          <label
-                                            class="mcds-label-default"
-                                            id="mc:381"
-                                            for="mc:380"
-                                          >
-                                            Preview Text
-                                          </label>
-                                        </div>
-                                        <div class="inputWrapper-TVkf7">
-                                          <input
-                                            type="text"
-                                            id="mc:380"
-                                            aria-describedby="mc:382 mc:384"
-                                            aria-invalid="false"
-                                            name="preview"
-                                            value=""
-                                          />
-                                          <span
-                                            id="mc:384"
-                                            class="inputSuffix-1JIHK"
-                                            data-input-suffix="true"
-                                          >
-                                            <button
-                                              class="root-1khsy"
-                                              aria-expanded="false"
-                                              type="button"
-                                            >
-                                              <span class="wink-visually-hidden">
-                                                Default EmojiIcon
-                                              </span>
-                                              <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 24 24"
-                                                focusable="false"
-                                                aria-hidden="true"
-                                                class="wink-icon"
-                                              >
-                                                <path d="M19 0h2v3h3v2h-3v3h-2V5h-3V3h3V0zm1 12a8 8 0 11-7-7.938V2.049A10.318 10.318 0 0012 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10c0-.338-.017-.671-.05-1h-2.012c.041.328.062.661.062 1z"></path>
-                                                <path d="M8 8a1 1 0 112 0v2a1 1 0 11-2 0V8zm6 0a1 1 0 112 0v2a1 1 0 11-2 0V8zm-2 10c-2.608 0-4.75-2.197-4.98-5h9.96c-.23 2.803-2.372 5-4.98 5z"></path>
-                                              </svg>
-                                            </button>
-                                          </span>
-                                        </div>
-                                        <div
-                                          id="mc:382"
-                                          class="after-1Svqq secondary-2IrH1"
-                                        >
-                                          <p class="root-3TDqk small-secondary-3_Rq2">
-                                            <a
-                                              href="https://mailchimp.com/help/about-preview-text"
-                                              rel="noopener noreferrer"
-                                              target="_blank"
-                                            >
-                                              Preview text
-                                            </a>{" "}
-                                            appears in the inbox after the
-                                            subject line.
-                                          </p>
-                                        </div>
-                                      </div>
-                                      <div class="cluster-3D5Qr">
-                                        <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR">
-                                          <button
-                                            class="root-sBgFt container-3-bH7 primary-33czz button-3mfLr"
-                                            disabled=""
-                                            type="submit"
-                                          >
-                                            <span class="temporarySpan-2iF2p">
-                                              Save
-                                            </span>
-                                          </button>
-                                          <button
-                                            class="root-sBgFt container-3-bH7 secondary-1_P2K"
-                                            type="button"
-                                          >
-                                            <span class="temporarySpan-2iF2p">
-                                              Cancel
-                                            </span>
-                                          </button>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div></div>
-                                  </div>
+                          <div class="alignItemsFlexStart-3pYa_ justifySpaceBetween-2M_OY spacing4-1S_zR">
+                            <div class="step-J8N2F cluster-3D5Qr nowrap-34OZ-">
+                              <div class="alignItemsFlexStart-3pYa_ justifyFlexStart-ejJl1 spacing4-1S_zR">
+                                <div>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    focusable="false"
+                                    aria-hidden="true"
+                                    class="wink-icon empty-11uD-"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11zm5.707-14.293l-1.414-1.414L10 13.586l-2.293-2.293-1.414 1.414L10 16.414l7.707-7.707z"
+                                    ></path>
+                                  </svg>
                                 </div>
-                              </form>
+                                <div class="stack-1qp4V content-2tH6V">
+                                  <div data-analytics-tag="checklist-heading-subject">
+                                    <h2 class="heading-2-ZDzRe root-PihPG">
+                                      <span class="root-3TDqk large-23Nnp title-35amJ">
+                                        Subject
+                                      </span>
+                                    </h2>
+                                  </div>
+                                  <p class="root-3TDqk medium-secondary-1YIN8">
+                                    What's the subject line for this email?
+                                  </p>
+                                </div>
+                              </div>
                             </div>
+                            {editsubject === true ? null : (
+                              <div
+                                class="action-20G5v"
+                                data-analytics-tag="checklist-button-subject"
+                              >
+                                <button
+                                  class="root-sBgFt container-3-bH7 secondary-1_P2K actionButton-EXvCm"
+                                  type="button"
+                                >
+                                  <span
+                                    class="temporarySpan-2iF2p"
+                                    onClick={handleAddSubject}
+                                  >
+                                    Add subject
+                                  </span>
+                                </button>
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
                     </div>
-                  </li>
-                  <li
-                    class="root-6p7-2 slat-9mBgs"
-                    id="mc-checklist-step-sendTime"
-                  >
-                    <div class="wrapper-3ln44">
-                      <div class="stack-1qp4V">
-                        <div class="cluster-3D5Qr nowrap-34OZ-">
-                          <div class="alignItemsFlexStart-3pYa_ justifyFlexStart-ejJl1 spacing4-1S_zR snipcss-yc9s8">
-                            <div>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                focusable="false"
-                                aria-hidden="true"
-                                class="wink-icon empty-11uD-"
-                              >
-                                <path
-                                  fill-rule="evenodd"
-                                  clip-rule="evenodd"
-                                  d="M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11zm5.707-14.293l-1.414-1.414L10 13.586l-2.293-2.293-1.414 1.414L10 16.414l7.707-7.707z"
-                                ></path>
-                              </svg>
-                            </div>
-                            <div class="stack-1qp4V content-2tH6V">
-                              <div data-analytics-tag="checklist-heading-sendtime">
-                                <h2 class="heading-2-ZDzRe root-PihPG">
-                                  <span class="root-3TDqk large-23Nnp title-35amJ">
-                                    Send time
-                                  </span>
-                                </h2>
-                              </div>
-                              <form
-                                class="stack-1qp4V"
-                                novalidate=""
-                                id="form-6k7r9"
-                              >
-                                <div class="stack-1qp4V spacing7-3UvBh">
-                                  <div class="stack-1qp4V spacing6-nznRY">
-                                    <div class="stack-1qp4V spacing2-3AKCb">
-                                      <div class="stack-1qp4V spacing6-nznRY">
-                                        <p class="root-3TDqk medium-secondary-1YIN8">
-                                          When should we send this email?
-                                        </p>
-                                      </div>
-                                      <fieldset
-                                        name="sendType"
-                                        class="fieldset-3ISha"
-                                      >
-                                        <legend class="mcds-label-default">
-                                          <p class="root-3TDqk medium-3AcAC wink-visually-hidden">
-                                            When should we send this email?
-                                          </p>
-                                        </legend>
-                                        <div class="switcher-2RqDX">
-                                          <div class="spacing4-3hzb7">
-                                            <div class="stack-1qp4V wrapper-3mGNv checked-V5K2c horizontal-OVUIx">
-                                              <div class="selection-2lZ94">
+                    {editsubject === true ? (
+                      <div class="">
+                        <div class="stack-1qp4V snipcss0-1-1-2">
+                          <div class="cluster-3D5Qr nowrap-34OZ- snipcss0-2-2-3">
+                            <div class="alignItemsFlexStart-3pYa_ justifySpaceBetween-2M_OY spacing4-1S_zR snipcss0-3-3-4">
+                              <div class="step-J8N2F cluster-3D5Qr nowrap-34OZ- snipcss0-4-4-5">
+                                <div class="alignItemsFlexStart-3pYa_ justifyFlexStart-ejJl1 spacing4-1S_zR snipcss0-5-5-6">
+                                  <div class="stack-1qp4V content-2tH6V snipcss0-6-6-9">
+                                    <form
+                                      class="stack-1qp4V spacing7-3UvBh"
+                                      novalidate=""
+                                      id="form-0s0bj"
+                                    >
+                                      <div class="switcher-2RqDX">
+                                        <div class="spacing4-3hzb7">
+                                          <div class="stack-1qp4V spacing4-1xt6w">
+                                            <div class="root-2RFjU">
+                                              <div class="before-2EDUs">
                                                 <label
-                                                  for="mc:392"
-                                                  class="card-sV9SD"
+                                                  class="mcds-label-default"
+                                                  id="mc:8"
+                                                  for="subject-input-ai-assist"
                                                 >
-                                                  <div class="wink-visually-hidden">
-                                                    <input
-                                                      id="mc:392"
-                                                      type="radio"
-                                                      aria-describedby="mc:395"
-                                                      aria-labelledby="mc:393"
-                                                      value="schedule"
-                                                      checked=""
-                                                    />
-                                                  </div>
-                                                  <div class="">
+                                                  <span>Subject</span>
+                                                </label>
+                                              </div>
+                                              <div>
+                                                <input
+                                                  style={{
+                                                    height: "50px",
+                                                    border: "1px solid black",
+                                                    paddingLeft: "10px",
+                                                  }}
+                                                  type="text"
+                                                  id="subject-input-ai-assist"
+                                                  aria-describedby="mc:9 mc:11"
+                                                  aria-invalid="false"
+                                                  name="subject"
+                                                  value={subject}
+                                                  onChange={(e) =>
+                                                    setSubject(e.target.value)
+                                                  }
+                                                />
+                                                <span
+                                                  id="mc:11"
+                                                  class="inputSuffix-1JIHK"
+                                                  data-input-suffix="true"
+                                                >
+                                                  <button
+                                                    class="root-1khsy"
+                                                    aria-expanded="false"
+                                                    type="button"
+                                                  >
+                                                    <span class="wink-visually-hidden">
+                                                      Default EmojiIcon
+                                                    </span>
+                                                    <br />
                                                     <svg
                                                       xmlns="http://www.w3.org/2000/svg"
                                                       viewBox="0 0 24 24"
                                                       focusable="false"
                                                       aria-hidden="true"
-                                                      alt="Selected"
-                                                      class="wink-icon checkIcon-B0V75"
+                                                      class="wink-icon"
                                                     >
-                                                      <path
-                                                        fill-rule="evenodd"
-                                                        clip-rule="evenodd"
-                                                        d="M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11zm5.707-14.293l-1.414-1.414L10 13.586l-2.293-2.293-1.414 1.414L10 16.414l7.707-7.707z"
-                                                      ></path>
+                                                      <path d="M19 0h2v3h3v2h-3v3h-2V5h-3V3h3V0zm1 12a8 8 0 11-7-7.938V2.049A10.318 10.318 0 0012 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10c0-.338-.017-.671-.05-1h-2.012c.041.328.062.661.062 1z"></path>
+                                                      <path d="M8 8a1 1 0 112 0v2a1 1 0 11-2 0V8zm6 0a1 1 0 112 0v2a1 1 0 11-2 0V8zm-2 10c-2.608 0-4.75-2.197-4.98-5h9.96c-.23 2.803-2.372 5-4.98 5z"></path>
                                                     </svg>
-                                                  </div>
-                                                  <div class="copy-2C1ww">
-                                                    <div
-                                                      id="mc:393"
-                                                      class="label-1MzSN"
+                                                  </button>
+                                                </span>
+                                              </div>
+                                              <br />
+                                              <div
+                                                id="mc:9"
+                                                class="after-1Svqq secondary-2IrH1"
+                                              >
+                                                <div>
+                                                  <p class="root-3TDqk small-secondary-3_Rq2">
+                                                    See how your{" "}
+                                                    <button
+                                                      style={{
+                                                        backgroundColor:
+                                                          "transparent",
+                                                        textDecoration:
+                                                          "underline",
+                                                        color: "#007c89",
+                                                        fontSize: "13px",
+                                                        marginLeft: "0",
+                                                        marginRight: "0",
+                                                      }}
                                                     >
-                                                      Schedule a time
-                                                    </div>
-                                                    <div
-                                                      class="description-FWLr9"
-                                                      id="mc:395"
+                                                      <span class="">
+                                                        recent subject lines
+                                                      </span>
+                                                    </button>{" "}
+                                                    performed.{" "}
+                                                    <a
+                                                      href="https://mailchimp.com/help/best-practices-for-email-subject-lines/"
+                                                      rel="noopener noreferrer"
+                                                      target="_blank"
+                                                      style={{
+                                                        textDecoration:
+                                                          "underline",
+                                                      }}
                                                     >
-                                                      Optimize your timing
-                                                    </div>
-                                                  </div>
-                                                </label>
+                                                      View our subject line
+                                                      guide.
+                                                    </a>
+                                                  </p>
+                                                </div>
                                               </div>
                                             </div>
-                                            <div class="stack-1qp4V wrapper-3mGNv horizontal-OVUIx">
-                                              <div class="selection-2lZ94">
+                                            <div class="root-2RFjU">
+                                              <div class="before-2EDUs">
                                                 <label
-                                                  for="mc:396"
-                                                  class="card-sV9SD"
+                                                  class="mcds-label-default"
+                                                  id="mc:15"
+                                                  for="mc:14"
                                                 >
-                                                  <div class="wink-visually-hidden">
-                                                    <input
-                                                      id="mc:396"
-                                                      type="radio"
-                                                      aria-describedby="mc:399"
-                                                      aria-labelledby="mc:397"
-                                                      value="sendNow"
-                                                    />
-                                                  </div>
-                                                  <span class="unselectedCircle-2BQm_"></span>
-                                                  <div class="copy-2C1ww">
-                                                    <div
-                                                      id="mc:397"
-                                                      class="label-1MzSN"
-                                                    >
-                                                      Send now
-                                                    </div>
-                                                    <div
-                                                      class="description-FWLr9"
-                                                      id="mc:399"
-                                                    >
-                                                      Get your email out there
-                                                      now
-                                                    </div>
-                                                  </div>
+                                                  Preview Text
                                                 </label>
                                               </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </fieldset>
-                                    </div>
-                                    <div class="stack-1qp4V spacing6-nznRY">
-                                      <div class="cluster-3D5Qr">
-                                        <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR">
-                                          <div class="root-2RFjU">
-                                            <div class="before-2EDUs">
-                                              <label
-                                                class="mcds-label-default"
-                                                id="mc:401"
-                                                for="mc:400"
+                                              <div class="">
+                                                <input
+                                                  style={{
+                                                    height: "50px",
+                                                    border: "1px solid black",
+                                                    paddingLeft: "10px",
+                                                  }}
+                                                  type="text"
+                                                  id="mc:14"
+                                                  aria-describedby="mc:16 mc:18"
+                                                  aria-invalid="false"
+                                                  name="preview"
+                                                  value={perviewtext}
+                                                  onChange={(e) =>
+                                                    setPreviewText(
+                                                      e.target.value
+                                                    )
+                                                  }
+                                                />
+                                                <span
+                                                  id="mc:18"
+                                                  class="inputSuffix-1JIHK"
+                                                  data-input-suffix="true"
+                                                >
+                                                  <button
+                                                    class="root-1khsy"
+                                                    aria-expanded="false"
+                                                    type="button"
+                                                  >
+                                                    <span class="wink-visually-hidden">
+                                                      Default EmojiIcon
+                                                    </span>
+                                                    <svg
+                                                      xmlns="http://www.w3.org/2000/svg"
+                                                      viewBox="0 0 24 24"
+                                                      focusable="false"
+                                                      aria-hidden="true"
+                                                      class="wink-icon"
+                                                    >
+                                                      <path d="M19 0h2v3h3v2h-3v3h-2V5h-3V3h3V0zm1 12a8 8 0 11-7-7.938V2.049A10.318 10.318 0 0012 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10c0-.338-.017-.671-.05-1h-2.012c.041.328.062.661.062 1z"></path>
+                                                      <path d="M8 8a1 1 0 112 0v2a1 1 0 11-2 0V8zm6 0a1 1 0 112 0v2a1 1 0 11-2 0V8zm-2 10c-2.608 0-4.75-2.197-4.98-5h9.96c-.23 2.803-2.372 5-4.98 5z"></path>
+                                                    </svg>
+                                                  </button>
+                                                </span>
+                                              </div>
+                                              <div
+                                                id="mc:16"
+                                                class="after-1Svqq secondary-2IrH1"
                                               >
-                                                Delivery date
-                                              </label>
+                                                <p class="root-3TDqk small-secondary-3_Rq2">
+                                                  <a
+                                                    href="https://mailchimp.com/help/about-preview-text"
+                                                    rel="noopener noreferrer"
+                                                    target="_blank"
+                                                  >
+                                                    Preview text
+                                                  </a>{" "}
+                                                  appears in the inbox after the
+                                                  subject line.
+                                                </p>
+                                              </div>
                                             </div>
-                                            <div class="inputWrapper-TVkf7">
-                                              <input
-                                                type="text"
-                                                id="mc:400"
-                                                aria-describedby="mc:404"
-                                                aria-invalid="false"
-                                                name="schedule-date"
-                                                value="2024-04-26"
-                                              />
-                                              <span
-                                                id="mc:404"
-                                                class="inputSuffix-1JIHK"
-                                                data-input-suffix="true"
-                                              >
+                                            <div class="cluster-3D5Qr">
+                                              <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR">
                                                 <button
-                                                  class="root-1khsy"
+                                                  onClick={submitsaveSubject}
+                                                  class="root-sBgFt container-3-bH7 primary-33czz button-3mfLr"
+                                                >
+                                                  <span class="temporarySpan-2iF2p">
+                                                    Save
+                                                  </span>
+                                                </button>
+                                                <button
+                                                  class="root-sBgFt container-3-bH7 secondary-1_P2K"
                                                   type="button"
                                                 >
-                                                  <span class="wink-visually-hidden">
-                                                    Open date picker
+                                                  <span class="temporarySpan-2iF2p">
+                                                    Cancel
                                                   </span>
-                                                  <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 24 24"
-                                                    focusable="false"
-                                                    aria-hidden="true"
-                                                    class="wink-icon"
-                                                  >
-                                                    <path d="M7 13a1 1 0 100-2 1 1 0 000 2zm0 5a1 1 0 100-2 1 1 0 000 2zm6-6a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2zm6-6a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
-                                                    <path
-                                                      fill-rule="evenodd"
-                                                      clip-rule="evenodd"
-                                                      d="M3 1a2 2 0 00-2 2v20h22V3a2 2 0 00-2-2H3zm18 7H3v13h18V8z"
-                                                    ></path>
-                                                  </svg>
                                                 </button>
-                                              </span>
+                                              </div>
                                             </div>
+                                            <br />
                                           </div>
+                                          <div></div>
                                         </div>
                                       </div>
-                                      <fieldset
-                                        name="schedule-options"
-                                        class="fieldset-3ISha"
-                                      >
-                                        <legend class="mcds-label-default">
-                                          Delivery time
-                                        </legend>
-                                        <div class="root-bk32G">
-                                          <input
-                                            class="input-1Cccs"
-                                            id="mc:408"
-                                            type="radio"
-                                            aria-describedby="mc:409"
-                                            value="optimize"
-                                          />
-                                          <div class="text-3qpwu">
-                                            <label for="mc:408" class="">
-                                              <div class="cluster-3D5Qr">
-                                                <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR">
-                                                  <p class="root-3TDqk medium-bold-2nZ0J">
-                                                    Send Time Optimization
-                                                  </p>
-                                                </div>
-                                              </div>
-                                            </label>
-                                            <div
-                                              id="mc:409"
-                                              class="description-1vTjM"
-                                            >
-                                              <div class="stack-1qp4V spacing4-1xt6w text-o3ubO">
-                                                <p class="root-3TDqk medium-secondary-1YIN8">
-                                                  The best send time for maximum
-                                                  engagement when scheduling at
-                                                  least 48 hours in advance.
-                                                </p>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="root-bk32G">
-                                          <input
-                                            class="input-1Cccs"
-                                            id="mc:410"
-                                            type="radio"
-                                            aria-describedby="mc:411"
-                                            value="singled"
-                                          />
-                                          <div class="text-3qpwu">
-                                            <label for="mc:410" class="">
-                                              <div class="cluster-3D5Qr">
-                                                <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR">
-                                                  <p class="root-3TDqk medium-bold-2nZ0J">
-                                                    Send at a specific time
-                                                  </p>
-                                                </div>
-                                              </div>
-                                            </label>
-                                            <div
-                                              id="mc:411"
-                                              class="description-1vTjM"
-                                            >
-                                              <div class="stack-1qp4V spacing4-1xt6w text-o3ubO">
-                                                <p class="root-3TDqk medium-secondary-1YIN8">
-                                                  Send email according to the
-                                                  time zone in your account
-                                                  settings.
-                                                </p>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </fieldset>
-                                    </div>
-                                  </div>
-                                  <div class="cluster-3D5Qr">
-                                    <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR">
-                                      <button
-                                        class="root-sBgFt container-3-bH7 primary-33czz button-3mfLr"
-                                        type="submit"
-                                      >
-                                        <span class="temporarySpan-2iF2p">
-                                          Save
-                                        </span>
-                                      </button>
-                                      <button
-                                        class="root-sBgFt container-3-bH7 secondary-1_P2K"
-                                        type="button"
-                                      >
-                                        <span class="temporarySpan-2iF2p">
-                                          Cancel
-                                        </span>
-                                      </button>
-                                    </div>
+                                    </form>
                                   </div>
                                 </div>
-                              </form>
+                              </div>
                             </div>
+                          </div>
+                        </div>
+                      </div>
+                    ) : null}
+                  </li>
+                  <li
+                    class="root-6p7-2 slat-9mBgs"
+                    id="mc-checklist-step-sendTime"
+                  >
+                    <div class="wrapper-3ln44 snipcss-aVDRs">
+                      <div class="stack-1qp4V">
+                        <div class="cluster-3D5Qr nowrap-34OZ-">
+                          <div class="alignItemsFlexStart-3pYa_ justifySpaceBetween-2M_OY spacing4-1S_zR">
+                            <div class="step-J8N2F cluster-3D5Qr nowrap-34OZ-">
+                              <div class="alignItemsFlexStart-3pYa_ justifyFlexStart-ejJl1 spacing4-1S_zR">
+                                <div>
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    focusable="false"
+                                    aria-hidden="true"
+                                    class="wink-icon empty-11uD-"
+                                  >
+                                    <path
+                                      fill-rule="evenodd"
+                                      clip-rule="evenodd"
+                                      d="M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11zm5.707-14.293l-1.414-1.414L10 13.586l-2.293-2.293-1.414 1.414L10 16.414l7.707-7.707z"
+                                    ></path>
+                                  </svg>
+                                </div>
+                                <div class="stack-1qp4V content-2tH6V">
+                                  <div data-analytics-tag="checklist-heading-sendtime">
+                                    <h2 class="heading-2-ZDzRe root-PihPG">
+                                      <span class="root-3TDqk large-23Nnp title-35amJ">
+                                        Send time
+                                      </span>
+                                    </h2>
+                                  </div>
+                                  <div class="stack-1qp4V spacing4-1xt6w">
+                                    <p class="root-3TDqk medium-secondary-1YIN8">
+                                      When should we send this email?
+                                    </p>
+                                  </div>
+                                  {edittime === true ? (
+                                    <div class="alignItemsFlexStart-3pYa_ justifyFlexStart-ejJl1 spacing4-1S_zR snipcss0-5-5-6 snipcss-xUX4H">
+                                      <div class="stack-1qp4V content-2tH6V snipcss0-6-6-9">
+                                        <form
+                                          class="stack-1qp4V"
+                                          novalidate=""
+                                          id="form-q3w8n"
+                                        >
+                                          <div class="stack-1qp4V spacing7-3UvBh">
+                                            <div class="stack-1qp4V spacing6-nznRY">
+                                              <div class="stack-1qp4V spacing2-3AKCb">
+                                                <div class="stack-1qp4V spacing6-nznRY"></div>
+                                                <fieldset
+                                                  name="sendType"
+                                                  class="fieldset-3ISha"
+                                                >
+                                                  <legend class="mcds-label-default">
+                                                    <p class="root-3TDqk medium-3AcAC wink-visually-hidden">
+                                                      When should we send this
+                                                      email?
+                                                    </p>
+                                                  </legend>
+                                                  <div class="switcher-2RqDX">
+                                                    <div class="spacing4-3hzb7">
+                                                      <div class="stack-1qp4V wrapper-3mGNv checked-V5K2c horizontal-OVUIx">
+                                                        <div class="selection-2lZ94">
+                                                          <label
+                                                            for="mc:25"
+                                                            class="card-sV9SD"
+                                                          >
+                                                            <div class="wink-visually-hidden">
+                                                              <input
+                                                                id="mc:25"
+                                                                type="radio"
+                                                                aria-describedby="mc:28"
+                                                                aria-labelledby="mc:26"
+                                                                value=""
+                                                                checked=""
+                                                              />
+                                                            </div>
+                                                            <div class=""></div>
+                                                            <div class="copy-2C1ww">
+                                                              <div
+                                                                id="mc:26"
+                                                                class="label-1MzSN"
+                                                              >
+                                                                Schedule a time
+                                                              </div>
+                                                              <div
+                                                                class="description-FWLr9"
+                                                                id="mc:28"
+                                                              >
+                                                                Optimize your
+                                                                timing
+                                                              </div>
+                                                            </div>
+                                                          </label>
+                                                        </div>
+                                                      </div>
+                                                      <div class="stack-1qp4V wrapper-3mGNv horizontal-OVUIx">
+                                                        <div class="selection-2lZ94">
+                                                          <label
+                                                            for="mc:29"
+                                                            class="card-sV9SD"
+                                                          >
+                                                            <div class="wink-visually-hidden">
+                                                              <input
+                                                                id="mc:29"
+                                                                type="radio"
+                                                                aria-describedby="mc:32"
+                                                                aria-labelledby="mc:30"
+                                                                value="sendNow"
+                                                              />
+                                                            </div>
+                                                            <span class="unselectedCircle-2BQm_"></span>
+                                                            <div class="copy-2C1ww">
+                                                              <div
+                                                                id="mc:30"
+                                                                class="label-1MzSN"
+                                                              >
+                                                                Send now
+                                                              </div>
+                                                              <div
+                                                                class="description-FWLr9"
+                                                                id="mc:32"
+                                                              >
+                                                                Get your email
+                                                                out there now
+                                                              </div>
+                                                            </div>
+                                                          </label>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </fieldset>
+                                              </div>
+                                              <div class="stack-1qp4V spacing6-nznRY">
+                                                <div class="cluster-3D5Qr">
+                                                  <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR">
+                                                    <div class="root-2RFjU">
+                                                      <div class="before-2EDUs">
+                                                        <label
+                                                          class="mcds-label-default"
+                                                          id="mc:34"
+                                                          for="mc:33"
+                                                        >
+                                                          Delivery date
+                                                        </label>
+                                                      </div>
+                                                      <div
+                                                        style={{
+                                                          display: "flex",
+                                                          border:
+                                                            "1px solid black",
+                                                          height: "40px",
+                                                          padding: "5px 10px",
+                                                        }}
+                                                      >
+                                                        <input
+                                                          style={{
+                                                            height: "20px",
+                                                          }}
+                                                          type="text"
+                                                          id="mc:33"
+                                                          aria-describedby="mc:37"
+                                                          aria-invalid="false"
+                                                          name="schedule-date"
+                                                          value="2024-04-30"
+                                                        />
+                                                        <span
+                                                          id="mc:37"
+                                                          class="inputSuffix-1JIHK"
+                                                          data-input-suffix="true"
+                                                        >
+                                                          <button
+                                                            class="root-1khsy"
+                                                            type="button"
+                                                          >
+                                                            <span class="wink-visually-hidden">
+                                                              Open date picker
+                                                            </span>
+                                                            <svg
+                                                              xmlns="http://www.w3.org/2000/svg"
+                                                              viewBox="0 0 24 24"
+                                                              focusable="false"
+                                                              aria-hidden="true"
+                                                              class="wink-icon"
+                                                            >
+                                                              <path d="M7 13a1 1 0 100-2 1 1 0 000 2zm0 5a1 1 0 100-2 1 1 0 000 2zm6-6a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2zm6-6a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                                                              <path
+                                                                fill-rule="evenodd"
+                                                                clip-rule="evenodd"
+                                                                d="M3 1a2 2 0 00-2 2v20h22V3a2 2 0 00-2-2H3zm18 7H3v13h18V8z"
+                                                              ></path>
+                                                            </svg>
+                                                          </button>
+                                                        </span>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <br />
+                                                <fieldset
+                                                  name="schedule-options"
+                                                  class="fieldset-3ISha"
+                                                >
+                                                  <legend class="mcds-label-default">
+                                                    Delivery time
+                                                  </legend>
+                                                  <div class="root-bk32G">
+                                                    <input
+                                                      class="input-1Cccs"
+                                                      id="mc:41"
+                                                      type="radio"
+                                                      aria-describedby="mc:42"
+                                                      value="optimize"
+                                                    />
+                                                    <div class="text-3qpwu">
+                                                      <label
+                                                        for="mc:41"
+                                                        class=""
+                                                      >
+                                                        <div class="cluster-3D5Qr">
+                                                          <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR">
+                                                            <p class="root-3TDqk medium-bold-2nZ0J">
+                                                              Send Time
+                                                              Optimization
+                                                            </p>
+                                                          </div>
+                                                        </div>
+                                                      </label>
+                                                      <div
+                                                        id="mc:42"
+                                                        class="description-1vTjM"
+                                                      >
+                                                        <div class="stack-1qp4V spacing4-1xt6w text-o3ubO">
+                                                          <p class="root-3TDqk medium-secondary-1YIN8">
+                                                            The best send time
+                                                            for maximum
+                                                            engagement when
+                                                            scheduling at least
+                                                            48 hours in advance.
+                                                          </p>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="root-bk32G">
+                                                    <input
+                                                      class="input-1Cccs"
+                                                      id="mc:43"
+                                                      type="radio"
+                                                      aria-describedby="mc:44"
+                                                      value="singled"
+                                                    />
+                                                    <div class="text-3qpwu">
+                                                      <label
+                                                        for="mc:43"
+                                                        class=""
+                                                      >
+                                                        <div class="cluster-3D5Qr">
+                                                          <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR">
+                                                            <p class="root-3TDqk medium-bold-2nZ0J">
+                                                              Send at a specific
+                                                              time
+                                                            </p>
+                                                          </div>
+                                                        </div>
+                                                      </label>
+                                                      <div
+                                                        id="mc:44"
+                                                        class="description-1vTjM"
+                                                      >
+                                                        <div class="stack-1qp4V spacing4-1xt6w text-o3ubO">
+                                                          <p class="root-3TDqk medium-secondary-1YIN8">
+                                                            Send email according
+                                                            to the time zone in
+                                                            your account
+                                                            settings.
+                                                          </p>
+                                                          <br />
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </fieldset>
+                                              </div>
+                                            </div>
+                                            <div class="cluster-3D5Qr">
+                                              <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR">
+                                                <button onClick={handlesaveTimebtn}
+                                                  class="root-sBgFt container-3-bH7 primary-33czz button-3mfLr"
+                                                
+                                                >
+                                                  <span class="temporarySpan-2iF2p">
+                                                    Save
+                                                  </span>
+                                                </button>
+                                                <button
+                                                  class="root-sBgFt container-3-bH7 secondary-1_P2K"
+                                                  type="button"
+                                                >
+                                                  <span class="temporarySpan-2iF2p">
+                                                    Cancel
+                                                  </span>
+                                                </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  ) : null}
+                                </div>
+                              </div>
+                            </div>
+                            {edittime === true ? null : (
+                              <div
+                                class="action-20G5v"
+                                data-analytics-tag="checklist-button-sendtime"
+                              >
+                                <button
+                                  onClick={openaddTime}
+                                  class="root-sBgFt container-3-bH7 secondary-1_P2K actionButton-EXvCm"
+                                >
+                                  <span class="temporarySpan-2iF2p">
+                                    Add send time
+                                  </span>
+                                </button>
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -838,7 +972,12 @@ const CreateEmail = () => {
                                 type="button"
                               >
                                 <span class="temporarySpan-2iF2p">
-                                  Design email
+                                  <Link
+                                    to="/choosetemplate"
+                                    style={{ color: "unset" }}
+                                  >
+                                    Design email
+                                  </Link>
                                 </span>
                               </button>
                             </div>

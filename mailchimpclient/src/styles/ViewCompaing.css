@@ -1,0 +1,154 @@
+.dfoisid {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 30px 30px;
+  border: 1px solid rgb(184, 182, 182);
+  border-radius: 5px;
+}
+.dfoisid > div {
+  width: 100%;
+  display: flex;
+  border-right: 1px solid gainsboro;
+  flex-direction: column;
+  align-items: center;
+  padding: 17px 0px;
+  justify-content: center;
+}
+.dfoisid > div:last-child {
+  border-right: none;
+}
+.sub-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 35px;
+}
+
+.dfkjahsdkjfh {
+  width: 100%;
+}
+.leaders {
+  width: 100% !important;
+  padding-right: 20px;
+}
+
+.leaders > li {
+  display: flex;
+  width: 100%;
+  padding-bottom: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+.myssss {
+  margin: 0px 30px;
+}
+
+.kdsjkdljf {
+  margin: 0px 35px;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+}
+.sdsdskjduu {
+  display: flex;
+  justify-content: space-between;
+}
+.iiuu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.iii {
+  text-align: center;
+}
+
+.kjdyy {
+  font-size: 12px;
+}
+.hoohee {
+  border-right: 1px solid gainsboro;
+  padding: 30px;
+}
+
+.clickedsectionsmain {
+  display: flex;
+  width: 100%;
+}
+.sectoinleftclicked {
+  width: 65%;
+  border-right: 1px solid gainsboro;
+  padding: 50px 30px;
+}
+.sectoinleftclicked > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0px;
+}
+.sectoinrightclicked {
+  width: 35%;
+  background-color: #f6f6f4;
+  padding: 30px;
+}
+.whitegatway {
+  background-color: white;
+  border: 1px solid gainsboro;
+  padding: 20px;
+}
+.greadalbolys {
+  display: flex;
+  align-items: center;
+  border: 3px solid black;
+  padding: 3px;
+  width: 100%;
+}
+.greadalbolys > p:first-child {
+  background-color: black;
+  width: 60%;
+  padding-left: 5px;
+}
+.greadalbolys > p:first-child > h3 {
+  color: white;
+  padding: 10px 5px;
+}
+
+.greadalbolys > p:last-child {
+  padding-left: 10px;
+}
+.greadalbolys > p:last-child > h3 {
+  font-weight: bold;
+}
+
+.skillsmaincontainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.skillsmaincontainer > div {
+  width: 50%;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+.hundperd {
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: #dedddc;
+  height: 8px;
+}
+.mallavi {
+  width: 55%;
+  background-color: #241c15;
+  height: 8px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.mallavii {
+  width: 100%;
+  background-color: #008547;
+  height: 8px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
