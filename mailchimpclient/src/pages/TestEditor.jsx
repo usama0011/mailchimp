@@ -2,12 +2,21 @@ import React, { useContext } from "react";
 import "../styles/TestEditor.css";
 import { useNavigate, useNavigation } from "react-router-dom";
 import { NewCampaignDetailsContext } from "../context/NewCompaingContext";
+import axois from 'axios'
 const TestEditor = () => {
   const navigate = useNavigate();
   const { state, dispatch } = useContext(NewCampaignDetailsContext);
   console.log(state);
-  const handleClickExit = () => {
-    navigate("/allcompaings");
+  const handleClickExit = async (e)  => {
+    e.preventDefault()
+    const comapingdata = state;
+    try {
+      await axois.post("http://localhost:3001/api/newcompaing",comapingdata)
+      navigate("/allcompaings");
+      dispatch({type:"RESET_STATE"})
+    } catch (error) {
+      console.log(error)
+    }
   };
   return (
     <div class="pageContainer-nmRCK snipcss-etQo2">

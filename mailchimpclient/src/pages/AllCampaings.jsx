@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/AllCompaings.css";
+import axios from "axios";
 const AllCampaings = () => {
+  const [allcomapings,setAllComapings]=useState([]);
+  const [loading,setLoading]=useState(false)
+  useEffect(()=>{
+   const fetchAllcompaings= async()=>{
+    try {
+      setLoading(true)
+      const allComaingsdata = await axios.get("http://localhost:3001/api/newcompaing")
+      setAllComapings(allComaingsdata.data)
+      setLoading(false)
+    } catch (error) {
+     console.log(error)    
+    }
+   }
+   fetchAllcompaings()
+  },[])
+  console.log(allcomapings)
   return (
     <div>
       <div
@@ -1204,14 +1221,16 @@ const AllCampaings = () => {
                     <div className="comapingdetaissl">
                       <span>Aril,2024 (4)</span>
                       <hr />
-                      <div className="comapingdetail">
+                     {allcomapings?.map((item)=>(
+<>
+<div className="comapingdetail">
                         <div>
                           <input type="checkbox" name="" id="" />
                         </div>
                         <div className="emailsection">
                           {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
+                          <p className="mail">{item?.comapingemail}</p>
+                          <p className="regularemail">{item?.previewtext}</p>
                           <p className="largeid">
                             Edited <b>Fri,April 26th 2:06 AM</b> by you
                           </p>
@@ -1234,126 +1253,12 @@ const AllCampaings = () => {
                         </div>
                       </div>
                       <hr />
-                      <div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
-                          <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
-                          </p>
-                        </div>
-                        <div className="draftnewuilder">
-                          <p>Draft</p>
-                          <p>New Builder</p>
-                        </div>
-                        <div className="editdelete">
-                          <p>Edit</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
-                      <div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
-                          <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
-                          </p>
-                        </div>
-                        <div className="draftnewuilder">
-                          <p>Draft</p>
-                          <p>New Builder</p>
-                        </div>
-                        <div className="editdelete">
-                          <p>Edit</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
-                      <div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
-                          <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
-                          </p>
-                        </div>
-                        <div className="draftnewuilder">
-                          <p>Draft</p>
-                          <p>New Builder</p>
-                        </div>
-                        <div className="editdelete">
-                          <p>Edit</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
-                      <div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
-                          <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
-                          </p>
-                        </div>
-                        <div className="draftnewuilder">
-                          <p>Draft</p>
-                          <p>New Builder</p>
-                        </div>
-                        <div className="editdelete">
-                          <p>Edit</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
+</>
+                     ))}
+                     
+                    
+                     
+                     
                     </div>
                   </div>
                 </div>
