@@ -9,7 +9,7 @@ const AllCampaings = () => {
    const fetchAllcompaings= async()=>{
     try {
       setLoading(true)
-      const allComaingsdata = await axios.get("http://localhost:3001/api/newcompaing")
+      const allComaingsdata = await axios.get("https://mailchimp-server.vercel.app/newcompaing")
       setAllComapings(allComaingsdata.data)
       setLoading(false)
     } catch (error) {
