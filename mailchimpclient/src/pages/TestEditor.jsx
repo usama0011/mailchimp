@@ -11,7 +11,7 @@ const TestEditor = () => {
     e.preventDefault()
     const comapingdata = state;
     try {
-      await axois.post("https://mailchimp-server.vercel.app/api/newcompaing",comapingdata)
+      await axois.post("https://mailchimp-server.vercel.app/api/newcompaing",comapingdata,{withCredentials:true})
       navigate("/allcompaings");
       dispatch({type:"RESET_STATE"})
     } catch (error) {
