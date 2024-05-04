@@ -18,10 +18,7 @@ try {
   process.exit(1); // Exit the process if unable to connect to MongoDB
 }
 
-app.use(cors({
-  origin:'https://mailchimp-five.vercel.app', 
-  credentials:true,            //access-control-allow-credentials:true
-}));
+app.use(cors())
 app.use(express.json());
 app.use(cookieParser());
 
