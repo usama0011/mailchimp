@@ -6,6 +6,7 @@ import axois from 'axios'
 const TestEditor = () => {
   const navigate = useNavigate();
   const { state, dispatch } = useContext(NewCampaignDetailsContext);
+
   console.log(state);
   const handleClickExit = async (e)  => {
     e.preventDefault()

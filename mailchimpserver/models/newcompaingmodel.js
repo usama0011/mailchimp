@@ -21,6 +21,9 @@ const campaignSchema = new Schema(
     },
     chooseemailtemplate: {
       type: String,
+    },
+    imageurl:{
+    type:String
     }
   },
   { timestamps: true }

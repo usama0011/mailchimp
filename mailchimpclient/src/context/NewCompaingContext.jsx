@@ -7,6 +7,7 @@ const initialState = {
   previewtext: "",
   sendtime: "",
   chooseemailtemplate: "",
+  imageurl:""
 };
 
 const NewCampaignDetailsContext = createContext(initialState);

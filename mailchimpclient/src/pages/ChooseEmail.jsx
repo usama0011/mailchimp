@@ -4,8 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { NewCampaignDetailsContext } from "../context/NewCompaingContext";
 const ChooseEmail = () => {
   const [curretRoute, setCurrentRoute] = useState("template");
-  const [openmodel,setOpenModel]=useState(false)
+  const [openmodel, setOpenModel] = useState(false)
+  const [preview, setPreview] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState(null);
   const navigation = useNavigate();
+  const [url, setUrl] = useState("");
+  
   const divRef = useRef(null);
   const { state, dispatch } = useContext(NewCampaignDetailsContext);
   const handleUpdateState = (field, value) => {
@@ -24,9 +29,51 @@ const ChooseEmail = () => {
   const halleakelable = (e) => {
     console.log(e);
   };
-  const handleOpenPopup=()=>{
+  const handleOpenPopup = () => {
     setOpenModel(true)
   }
+  const openPreview = () => {
+    const testLink = createTestLink(); // This function needs to be defined elsewhere or replaced with actual logic
+    window.open(testLink, "Preview");
+  };
+  const uploadImage = async (e) => {
+    e.preventDefault()
+    setLoading(true);
+    const data = new FormData();
+    data.append("file", image);
+    data.append("upload_preset", "mailchimp");
+    data.append("cloud_name", "usamaahmad");
+    data.append("folder", "mailchimp");
+
+    try {
+      const response = await fetch(
+        `https://api.cloudinary.com/v1_1/usamaahmad/image/upload`,
+        {
+          method: "POST",
+          body: data,
+        }
+      );
+      const res = await response.json();
+      setUrl(res.secure_url);
+      setLoading(false);
+      navigation("/allcompaings")
+    } catch (error) {
+      setLoading(false);
+    }
+  };
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setImage(file);
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      setPreview(reader.result);
+    };
+  };
+  const handleResetClick = () => {
+    setPreview(null);
+    setImage(null);
+  };
   return (
     <div class="pageContainer-nmRCK pageContainer_templateSelection-20m_G snipcss-FYitB">
       <div class="root-3uY95">
@@ -7310,7 +7357,7 @@ const ChooseEmail = () => {
                         id="style-7wa5z"
                       >
                         <form class="stack-1qp4V" novalidate="" id="form-l779m">
-                          <button onClick={()=>setOpenModel(false)}
+                          <button onClick={() => setOpenModel(false)}
                             class="root-1khsy closeButton-1pytm"
                             type="button"
                           >
@@ -7386,20 +7433,29 @@ const ChooseEmail = () => {
                                               </div>
                                             </div>
                                             <input
+                                              type="file"
+                                              hidden // This hides the input
+                                              onChange={handleFileChange} // Handles file selection
+                                              style={{ display: "none" }}
+                                              accept="image/*"
                                               class="fileinput-12gz-"
                                               id="mc:180"
-                                              type="file"
+
                                               aria-describedby="mc:181"
-                                              accept=".zip"
+
                                             />
-                                            <label style={{border:'1px solid #007c89',padding:"10px 30px",color:"#007c89",fontSize:"12px"}}
+
+                                            <label style={{ border: '1px solid #007c89', padding: "10px 30px", color: "#007c89", fontSize: "12px" }}
                                               for="mc:180"
                                               class="upload-Bj38u"
                                             >
                                               Add file
                                             </label>
+                                          
                                           </div>
+                                          
                                         </div>
+                                        
                                       </div>
                                     </div>
                                   </div>
@@ -7410,7 +7466,7 @@ const ChooseEmail = () => {
                           <div class="footer-GeAzX">
                             <div class="cluster-3D5Qr">
                               <div class="alignItemsCenter-1HCiJ justifyFlexEnd-3_ERd spacing4-1S_zR">
-                                <button style={{color:"#007c89"}}
+                                <button style={{ color: "#007c89" }}
                                   class="root-sBgFt container-3-bH7 tertiary-Wmhgk button-1hkgD"
                                   type="reset"
                                 >
@@ -7418,12 +7474,12 @@ const ChooseEmail = () => {
                                     Cancel
                                   </span>
                                 </button>
-                                <button style={{backgroundColor:"#007c89",color:'white'}}
+                                <button  onClick={uploadImage} style={{ backgroundColor: "#007c89", color: 'white' }}
                                   class="root-sBgFt container-3-bH7 primary-33czz button-3mfLr"
-                                  type="submit"
+                                  type="button"
                                 >
                                   <span class="temporarySpan-2iF2p">
-                                    Upload
+                                {loading ? "loading..." : "upload"}
                                   </span>
                                 </button>
                               </div>
