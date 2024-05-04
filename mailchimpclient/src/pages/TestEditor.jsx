@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "../styles/TestEditor.css";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { NewCampaignDetailsContext } from "../context/NewCompaingContext";
 import axois from 'axios'
 const TestEditor = () => {
@@ -12,8 +12,8 @@ const TestEditor = () => {
     const comapingdata = state;
     try {
       await axois.post("https://mailchimp-server.vercel.app/api/newcompaing",comapingdata)
-      navigate("/allcompaings");
       dispatch({type:"RESET_STATE"})
+      navigate("/allcompaings");
     } catch (error) {
       console.log(error)
     }
