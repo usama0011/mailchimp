@@ -1,25 +1,42 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/AllCompaings.css";
 import axios from "axios";
 const AllCampaings = () => {
-  const [allcomapings,setAllComapings]=useState([]);
-  const [loading,setLoading]=useState(false)
-  useEffect(()=>{
-   const fetchAllcompaings= async()=>{
-    try {
-      setLoading(true)
-      const allComaingsdata = await axios.get("https://mailchimp-server.vercel.app/api/newcompaing")
-      setAllComapings(allComaingsdata.data)
-      setLoading(false)
-      console.log(allComaingsdata)
-    } catch (error) {
-     console.log(error)    
+  const [allcomapings, setAllComapings] = useState([]);
+  const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
+  useEffect(() => {
+    const fetchAllcompaings = async () => {
+      try {
+        setLoading(true)
+        const allComaingsdata = await axios.get("https://mailchimp-server.vercel.app/api/newcompaing")
+        setAllComapings(allComaingsdata.data)
+        setLoading(false)
+        console.log(allComaingsdata)
+      } catch (error) {
+        console.log(error)
+      }
     }
-   }
-   fetchAllcompaings()
-  },[])
-  console.log(allcomapings)
+    fetchAllcompaings()
+  }, [])
+  const handleEditClick = (id) => {
+    navigate(`/editcompaing/${id}`)
+  }
+  useEffect(() => {
+    const fetchAllcompaings = async () => {
+      try {
+        setLoading(true)
+        const allComaingsdata = await axios.get("https://mailchimp-server.vercel.app/api/newcompaing")
+        setAllComapings(allComaingsdata.data)
+        setLoading(false)
+        console.log(allComaingsdata)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchAllcompaings()
+  }, [])
   return (
     <div>
       <div
@@ -143,7 +160,7 @@ const AllCampaings = () => {
                     className="root-kjeIf shellNavigationLeftNav-3iPdf snipcss0-6-53-54"
                   >
                     <nav className="navItems-1Kfmk snipcss0-7-54-55">
-                    <ul className="stack-1qp4V spacing4-1xt6w navItems-1Kfmk minHeightNav-2mej_ snipcss0-8-55-56">
+                      <ul className="stack-1qp4V spacing4-1xt6w navItems-1Kfmk minHeightNav-2mej_ snipcss0-8-55-56">
                         <li className="createItem-1mIzO snipcss0-9-56-57">
                           <Link
                             style={{ outline: "1px solid #1b8a95" }}
@@ -392,7 +409,7 @@ const AllCampaings = () => {
                                     className="root-2MzAS fullHeight-2grW3 snipcss0-14-115-116"
                                     role="link"
                                     aria-describedby="mc:48"
-                                    href="/lists/members"
+                                    href="/allcontacts"
                                   >
                                     <div className="snipcss0-15-116-117">
                                       <span className="snipcss0-16-117-118">
@@ -947,7 +964,7 @@ const AllCampaings = () => {
                     <button
                       style={{ backgroundColor: "#1b8a95", color: "white" }}
                     >
-                      <Link style={{color:'unset'}} to="/newcomaping">Create new</Link>
+                      <Link style={{ color: 'unset' }} to="/newcomaping">Create new</Link>
                     </button>
                   </div>{" "}
                 </div>
@@ -1222,44 +1239,44 @@ const AllCampaings = () => {
                     <div className="comapingdetaissl">
                       <span>Aril,2024 (4)</span>
                       <hr />
-                     {allcomapings?.map((item)=>(
-<>
-<div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">{item?.comapingemail}</p>
-                          <p className="regularemail">{item?.previewtext}</p>
-                          <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
-                          </p>
-                        </div>
-                        <div className="draftnewuilder">
-                          <p>Draft</p>
-                          <p>New Builder</p>
-                        </div>
-                        <div className="editdelete">
-                          <p>Edit</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
-</>
-                     ))}
-                     
-                    
-                     
-                     
+                      {loading ? "loading...." : allcomapings?.map((item) => (
+                        <>
+                          <div className="comapingdetail">
+                            <div>
+                              <input type="checkbox" name="" id="" />
+                            </div>
+                            <div className="emailsection">
+                              {/* icon is here  */}
+                              <p className="mail">{item?.comapingemail}</p>
+                              <p className="regularemail">{item?.previewtext}</p>
+                              <p className="largeid">
+                                Edited <b>Fri,April 26th 2:06 AM</b> by you
+                              </p>
+                            </div>
+                            <div className="draftnewuilder">
+                              <p>Draft</p>
+                              <p>New Builder</p>
+                            </div>
+                            <div style={{cursor:'pointer'}} onClick={()=>handleEditClick(item._id)} className="editdelete">
+                              <p>Edit</p>
+                              <p>
+                                <svg
+                                  className="arrodddd"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 512 512"
+                                >
+                                  <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                                </svg>
+                              </p>
+                            </div>
+                          </div>
+                          <hr />
+                        </>
+                      ))}
+
+
+
+
                     </div>
                   </div>
                 </div>

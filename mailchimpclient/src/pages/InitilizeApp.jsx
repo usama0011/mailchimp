@@ -45,15 +45,19 @@ import MailChimpSurvey from "./MailChimpSurvey";
 import Reports from "./Reports";
 import ViewCompaing from "./ViewCompaing";
 import TestEditor from "./TestEditor";
+import AllContacts from "./AllContacts";
+import EditCompaing from "./EditCompaing";
 
 const InitilizeApp = () => {
   return (
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<AllCampaings />} />
       <Route path="/email/editor" element={<TestEditor />} />
       <Route path="/allcompaings/:id" element={<ViewCompaing />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/allcontacts" element={<AllContacts />} />
       <Route path="/tags" element={<Tags />} />
+      <Route path="/editcompaing/:id" element={<EditCompaing />} />
       <Route path="/reports" element={<Reports />} />
       <Route path="/mailchimpsurvy" element={<MailChimpSurvey />} />
       <Route path="/segments" element={<Segments />} />

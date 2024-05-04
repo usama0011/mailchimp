@@ -978,9 +978,12 @@ const Tags = () => {
                   </header>
                 </div>
                 <div class="root-1rj4d standard-2H4cn withTopGutter-PMsAu">
+                  <br />
+                  <br />
                   <div class="stack-1qp4V spacing6-nznRY">
                     <div class="stack-1qp4V spacing2-3AKCb">
                       <h2 class="heading-2-ZDzRe root-PihPG">Next Web Lines</h2>
+                      <br />
                       <p class="root-3TDqk large-23Nnp">
                         Your audience has{" "}
                         <a href="/lists/members/clear-and-view?id=4955578">
@@ -993,6 +996,7 @@ const Tags = () => {
                         of these are subscribed.
                       </p>
                     </div>
+                    <br />
                   </div>
                 </div>
                 <div class="root-1rj4d standard-2H4cn withTopGutter-PMsAu">
@@ -1045,14 +1049,14 @@ const Tags = () => {
                         </li>
                         <li data-testid="horizontal-nav-item-add-contacts">
                           <div class="root-eTq9L">
-                            <button
+                            <button style={{display:'flex',alignItems:'center'}}
                               class="root-sBgFt container-3-bH7 secondary-1_P2K"
                               id="mc:157"
                               aria-expanded="false"
                               aria-haspopup="true"
                               type="button"
                             >
-                              <span class="temporarySpan-2iF2p">
+                              <span class="temporarySpan-2iF2p" style={{display:'flex',alignItems:'center'}}>
                                 <p class="root-3TDqk medium-bold-2nZ0J">
                                   Add contacts
                                 </p>
@@ -1145,7 +1149,9 @@ const Tags = () => {
                   <div class="container-qWsat">
                     <div class="stack-1qp4V spacing8-10xOR">
                       <div class="stack-1qp4V spacing4-1xt6w">
+                        <br />
                         <div class="actionBar-fkj6F cluster-3D5Qr">
+                          
                           <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing8-2cYQ4">
                             <div class="root-1olwd">
                               <input
@@ -1228,6 +1234,7 @@ const Tags = () => {
                             </button>
                           </div>
                         </div>
+                        <br />
                         <ul>
                           <li class="root-1Ur_2 interactive-3dK68">
                             <div class="wrapper-1hwHd">
@@ -1408,7 +1415,7 @@ const Tags = () => {
                         </ul>
                       </div>
                       <div class="cluster-3D5Qr">
-                        <div class="alignItemsCenter-1HCiJ justifyCenter-27O02 spacing4-1S_zR">
+                        <div style={{display:'flex',alignItems:"center",justifyContent:'space-between'}}>
                           <div class="root-1cS4q">
                             <div class="before-fjpii">
                               <label
@@ -1494,6 +1501,7 @@ const Tags = () => {
                           </div>
                         </div>
                       </div>
+                      <br />
                       <div class="cluster-3D5Qr">
                         <div class="alignItemsCenter-1HCiJ justifyCenter-27O02 spacing4-1S_zR">
                           <div class="root-2V0JZ root-S6wl7 default-2CUpY">
@@ -1526,6 +1534,8 @@ const Tags = () => {
                             </div>
                           </div>
                         </div>
+                            <br />
+                            <br />
                       </div>
                     </div>
                   </div>

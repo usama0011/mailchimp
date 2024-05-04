@@ -55,8 +55,9 @@ const ChooseEmail = () => {
       );
       const res = await response.json();
       setUrl(res.secure_url);
+      handleUpdateState("chooseemailtemplate", url);
       setLoading(false);
-      navigation("/allcompaings")
+      // navigation("/allcompaings")
     } catch (error) {
       setLoading(false);
     }

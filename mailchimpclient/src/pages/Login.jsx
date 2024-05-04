@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import "../styles/Login.css";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const navigation = useNavigate();
+  const handleLogin=()=>{
+    navigation("/")
+  }
   return (
     <div
       id="login"
@@ -188,9 +193,9 @@ const Login = () => {
                               Keep me logged in
                             </label>
                           </div>
-                          <button
+                          <button onClick={handleLogin}
                             id="submit-btn"
-                            type="submit"
+                            type="button"
                             value="log in"
                             className="button-large button-wide p1 text-transform--none !margin-bottom--lv5 submit-btn mc-login-btn "
                           >
