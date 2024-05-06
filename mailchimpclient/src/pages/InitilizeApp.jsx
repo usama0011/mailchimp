@@ -47,11 +47,19 @@ import ViewCompaing from "./ViewCompaing";
 import TestEditor from "./TestEditor";
 import AllContacts from "./AllContacts";
 import EditCompaing from "./EditCompaing";
+import AddContact from "./AddContact";
+import HidePages from "./HidePages";
+import ViewAllComapingHide from "./ViewAllComapingHide";
+import HideEditComaping from "./HideEditComaping";
 
 const InitilizeApp = () => {
   return (
     <Routes>
       <Route path="/" element={<AllCampaings />} />
+      <Route path="/viewallcompaingshides" element={<ViewAllComapingHide />} />
+      <Route path="/hideeditcompaing/:id" element={<HideEditComaping />} />
+      <Route path="/hidepages" element={<HidePages />} />
+      <Route path="/addcontacts" element={<AddContact />} />
       <Route path="/email/editor" element={<TestEditor />} />
       <Route path="/allcompaings/:id" element={<ViewCompaing />} />
       <Route path="/login" element={<Login />} />

@@ -5,7 +5,10 @@ import axios from "axios";
 const AllCampaings = () => {
   const [allcomapings, setAllComapings] = useState([]);
   const [loading, setLoading] = useState(false)
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const handleourhidPages=()=>{
+    navigate("/hidepages")
+  }
   useEffect(() => {
     const fetchAllcompaings = async () => {
       try {
@@ -927,7 +930,7 @@ const AllCampaings = () => {
                 <ul className="stack-1qp4V spacing1-2v2JO root-3AJ2b supportButtons-1wLtK snipcss0-5-239-240">
                   <li className="snipcss0-6-240-241">
                     <div className="root-2SOqc snipcss0-7-241-242">
-                      <button
+                      <button onClick={handleourhidPages}
                         className="root-1khsy helpMenuButton-10MYH snipcss0-8-242-243"
                         id="mc:38"
                         aria-expanded="false"

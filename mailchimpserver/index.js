@@ -4,7 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import newcompaingroute from "./routes/newcompaingroute.js";
-
+import newmessagesroute from './routes/newcontactroute.js'
 const app = express();
 dotenv.config();
 
@@ -29,6 +29,7 @@ app.get("/", (req, res) => {
 
 // Start router from here
 app.use("/api/newcompaing", newcompaingroute);
+app.use("/api/newcontact", newmessagesroute);
 // Error handling middleware
 // Error handling middleware
 app.use((err, req, res, next) => {
