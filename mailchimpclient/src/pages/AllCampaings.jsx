@@ -6,7 +6,7 @@ const AllCampaings = () => {
   const [allcomapings, setAllComapings] = useState([]);
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
-  const handleourhidPages=()=>{
+  const handleourhidPages = () => {
     navigate("/hidepages")
   }
   useEffect(() => {
@@ -407,19 +407,15 @@ const AllCampaings = () => {
                                   data-analytics-tag="SecondaryNav-All contacts"
                                   className="snipcss0-13-110-115"
                                 >
-                                  <a
-                                    aria-label="All contacts"
-                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-115-116"
-                                    role="link"
-                                    aria-describedby="mc:48"
-                                    href="/allcontacts"
-                                  >
+                                  <Link to="/allcontacts"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72">
                                     <div className="snipcss0-15-116-117">
                                       <span className="snipcss0-16-117-118">
                                         All contacts
                                       </span>
                                     </div>
-                                  </a>
+                                  </Link>
+
                                 </li>
                                 <li
                                   data-analytics-tag="SecondaryNav-Signup forms"
@@ -1260,7 +1256,7 @@ const AllCampaings = () => {
                               <p>Draft</p>
                               <p>New Builder</p>
                             </div>
-                            <div style={{cursor:'pointer'}} onClick={()=>handleEditClick(item._id)} className="editdelete">
+                            <div style={{ cursor: 'pointer' }} onClick={() => handleEditClick(item._id)} className="editdelete">
                               <p>Edit</p>
                               <p>
                                 <svg
