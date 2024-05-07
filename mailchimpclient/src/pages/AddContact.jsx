@@ -32,7 +32,7 @@ const AddContact = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:3001/api/newcontact', formData);
+      const response = await axios.post('https://mailchimp-server.vercel.app/api/newcontact', formData);
       console.log(response.data); // You can handle success response here
       setSuccess(true);
       setFormData({
