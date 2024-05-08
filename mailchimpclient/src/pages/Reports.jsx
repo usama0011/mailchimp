@@ -1,8 +1,12 @@
 import React from "react";
 import "../styles/Reports.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Reports = () => {
+  const navigate = useNavigate()
+  const handleviewreport = () => {
+    navigate("/allcompaings/3872983")
+  }
   return (
     <div>
       <div
@@ -924,13 +928,9 @@ const Reports = () => {
 
                 <div className="lastUnit">
                   <h1>Reports</h1>{" "}
-                  <div>
-                    <button>View analytics</button>
-                    <button
-                      style={{ backgroundColor: "#1b8a95", color: "white" }}
-                    >
-                      Create new
-                    </button>
+                  <div >
+                    <button style={{ backgroundColor: "#716b67", color: 'white' }}>Create Comparative Reports</button>
+
                   </div>{" "}
                 </div>
                 <div
@@ -938,17 +938,11 @@ const Reports = () => {
                   class="margin-bottom--lv4"
                 >
                   <p data-dojo-attach-point="selectLabel" class="ddkjsldfj">
-                    Next Web Lines
+                    All audiences
+
                   </p>
                 </div>
-                <div className="audiencemain">
-                  <p style={{ fontSize: "20px", color: "#241c60" }}>
-                    Your aduience has{" "}
-                    <span style={{ color: "#007c89 " }}> 500</span> contacts.
-                    <span style={{ color: "#007c89 " }}> 500</span> fo these are
-                    subscribers.
-                  </p>
-                </div>
+
                 <div class="">
                   <div class="maintestwarp">
                     <div class="wrapper-2GUvc">
@@ -1213,15 +1207,19 @@ const Reports = () => {
                           <p className="mail">testme@gmail.com</p>
                           <p className="regularemail">Regular Next We Lines</p>
                           <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
+                            Sent <b>Fri,April 26th 2:06 am</b>
+                            <br />
+                            to  2,005 recipients by you
                           </p>
                         </div>
+
                         <div className="draftnewuilder">
-                          <p>Draft</p>
+                          <p style={{ backgroundColor: "#d8eacc" }}>Send</p>
                           <p>New Builder</p>
                         </div>
-                        <div className="reporseditcele">
-                          <p>View</p>
+
+                        <div onClick={handleviewreport} style={{ width: "150px" }} className="reporseditcele">
+                          <p>View Reports</p>
                           <p>
                             <svg
                               className="arrodddd"
@@ -1234,126 +1232,8 @@ const Reports = () => {
                         </div>
                       </div>
                       <hr />
-                      <div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
-                          <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
-                          </p>
-                        </div>
-                        <div className="draftnewuilder">
-                          <p>Draft</p>
-                          <p>New Builder</p>
-                        </div>
-                        <div className="editdelete">
-                          <p>Edit</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
-                      <div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
-                          <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
-                          </p>
-                        </div>
-                        <div className="draftnewuilder">
-                          <p>Draft</p>
-                          <p>New Builder</p>
-                        </div>
-                        <div className="editdelete">
-                          <p>Edit</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
-                      <div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
-                          <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
-                          </p>
-                        </div>
-                        <div className="draftnewuilder">
-                          <p>Draft</p>
-                          <p>New Builder</p>
-                        </div>
-                        <div className="editdelete">
-                          <p>Edit</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
-                      <div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
-                          <p className="largeid">
-                            Edited <b>Fri,April 26th 2:06 AM</b> by you
-                          </p>
-                        </div>
-                        <div>
-                          <p>Draft</p>
-                          <p>New Builder</p>
-                        </div>
-                        <div className="editdelete">
-                          <p>Edit</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
+
+
                     </div>
                   </div>
                 </div>

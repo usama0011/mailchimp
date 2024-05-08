@@ -128,6 +128,7 @@ const ViewCompaing = () => {
                       <ul className="stack-1qp4V spacing4-1xt6w navItems-1Kfmk minHeightNav-2mej_ snipcss0-8-55-56">
                         <li className="createItem-1mIzO snipcss0-9-56-57">
                           <Link
+                            style={{ outline: "1px solid #1b8a95" }}
                             className="root-sBgFt container-3-bH7 secondary-1_P2K createButton-1NK_y snipcss0-10-57-58"
                             to="/newcomaping"
                           >
@@ -368,19 +369,15 @@ const ViewCompaing = () => {
                                   data-analytics-tag="SecondaryNav-All contacts"
                                   className="snipcss0-13-110-115"
                                 >
-                                  <a
-                                    aria-label="All contacts"
-                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-115-116"
-                                    role="link"
-                                    aria-describedby="mc:48"
-                                    href="/lists/members"
-                                  >
+                                  <Link to="/allcontacts"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72">
                                     <div className="snipcss0-15-116-117">
                                       <span className="snipcss0-16-117-118">
                                         All contacts
                                       </span>
                                     </div>
-                                  </a>
+                                  </Link>
+
                                 </li>
                                 <li
                                   data-analytics-tag="SecondaryNav-Signup forms"
@@ -1766,7 +1763,7 @@ const ViewCompaing = () => {
                 </div>
 
                 <h3 style={{ paddingLeft: "35px", paddingTop: "50px" }}>
-                  Precisou
+                  Predicted demographics
                 </h3>
                 <section class="section-137bm myssss">
                   <div class="columns-1BJb1 singleColumn-3N8qb">
@@ -1810,15 +1807,15 @@ const ViewCompaing = () => {
                                 }}
                                 class="genderChartContainer-6pb1A"
                               >
-                              <svg version="1.1" style={{position: "absolute", width: "404px",height: "150px"}}><desc></desc><g><path cs="100,100" d="M0.5,0.5 L403.5,0.5 L403.5,149.5 L0.5,149.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path></g><g></g><g></g><g></g><g></g><g></g><g><g><path cs="1000,1000" d=" M190.2945806790323,133.84711682419382 L187.36822584879036,148.5588960302423 A75,75,0,0,1,201.99999999999997,0 L201.99999999999997,15 A60,60,0,0,0,190.2945806790323,133.84711682419382 Z" fill="#4f135e" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0" fill-opacity="1"></path></g><g><path cs="1000,1000" d=" M202,15 L202,0 A75,75,0,1,1,187.36822584879036,148.5588960302423 L190.2945806790323,133.84711682419382 A60,60,0,1,0,202,15 Z" fill="#f97f50" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0" fill-opacity="1"></path></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g><g></g></g><g></g><g></g><g></g></svg>
-                              <br />
-                              <br />
-                              <br />
-                              <br />
-                              <br />
-                              <br />
-                              <br />
-                              <br />
+                                <svg version="1.1" style={{ position: "absolute", width: "404px", height: "150px" }}><desc></desc><g><path cs="100,100" d="M0.5,0.5 L403.5,0.5 L403.5,149.5 L0.5,149.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path></g><g></g><g></g><g></g><g></g><g></g><g><g><path cs="1000,1000" d=" M190.2945806790323,133.84711682419382 L187.36822584879036,148.5588960302423 A75,75,0,0,1,201.99999999999997,0 L201.99999999999997,15 A60,60,0,0,0,190.2945806790323,133.84711682419382 Z" fill="#4f135e" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0" fill-opacity="1"></path></g><g><path cs="1000,1000" d=" M202,15 L202,0 A75,75,0,1,1,187.36822584879036,148.5588960302423 L190.2945806790323,133.84711682419382 A60,60,0,1,0,202,15 Z" fill="#f97f50" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0" fill-opacity="1"></path></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g><g></g></g><g></g><g></g><g></g></svg>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
                                 <figcaption class="genderChartLegend-_3zq0">
                                   <ul>
                                     <li class="row-3JfVL">
@@ -2086,14 +2083,14 @@ const ViewCompaing = () => {
                     </div>
                   </div>
                 </section>
-            <br />
-                  <a style={{paddingLeft:'30px'}} href="#">Learn more about predicted demographics</a>
-                  <br />
+                <br />
+                <a style={{ paddingLeft: '30px' }} href="#">Learn more about predicted demographics</a>
+                <br />
 
-                  <br />
-                  <br />
-                  <br />
-                  <br />
+                <br />
+                <br />
+                <br />
+                <br />
               </div>
             </main>
           </div>

@@ -51,6 +51,7 @@ import AddContact from "./AddContact";
 import HidePages from "./HidePages";
 import ViewAllComapingHide from "./ViewAllComapingHide";
 import HideEditComaping from "./HideEditComaping";
+import ViewReport from "./ViewReport";
 
 const InitilizeApp = () => {
   return (
@@ -62,6 +63,7 @@ const InitilizeApp = () => {
       <Route path="/addcontacts" element={<AddContact />} />
       <Route path="/email/editor" element={<TestEditor />} />
       <Route path="/allcompaings/:id" element={<ViewCompaing />} />
+      <Route path="/reports/:id" element={<ViewReport />} />
       <Route path="/login" element={<Login />} />
       <Route path="/allcontacts" element={<AllContacts />} />
       <Route path="/tags" element={<Tags />} />
