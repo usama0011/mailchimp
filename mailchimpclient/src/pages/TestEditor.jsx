@@ -8,12 +8,12 @@ const TestEditor = () => {
   const { state, dispatch } = useContext(NewCampaignDetailsContext);
 
   console.log(state);
-  const handleClickExit = async (e)  => {
+  const handleClickExit = async (e) => {
     e.preventDefault()
     const comapingdata = state;
     try {
-      await axois.post("https://mailchimp-server.vercel.app/api/newcompaing",comapingdata)
-      dispatch({type:"RESET_STATE"})
+      await axois.post("https://mailchimp-server.vercel.app/api/newcompaing", comapingdata)
+      dispatch({ type: "RESET_STATE" })
       navigate("/allcompaings");
     } catch (error) {
       console.log(error)
@@ -2981,7 +2981,7 @@ const TestEditor = () => {
               <div></div>
               <div style={{ marginLeft: "100px" }}>
                 <img
-                  style={{ marginLeft: "100px",width:"800px",margin:"10px 0px" }}
+                  style={{ marginLeft: "100px", width: "800px", margin: "10px 0px" }}
                   src={state?.chooseemailtemplate}
                   alt=""
                 />

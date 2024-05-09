@@ -78,7 +78,6 @@ const ChooseEmail = () => {
     setPreview(null);
     setImage(null);
   };
-  console.log(image.name)
   return (
     <div class="pageContainer-nmRCK pageContainer_templateSelection-20m_G snipcss-FYitB">
       <div class="root-3uY95">
@@ -7461,7 +7460,7 @@ const ChooseEmail = () => {
 
                                         </div>
                                         <br />
-                                        {image.name && <p>{image.name}</p>}
+                                        {image?.name !== null && <p>{image.name}</p>}
                                       </div>
                                     </div>
                                   </div>
