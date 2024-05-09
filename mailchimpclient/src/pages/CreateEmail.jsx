@@ -23,7 +23,7 @@ const CreateEmail = () => {
   const openaddTime = () => {
     setEditTime(true);
   };
-  const handlesaveTimebtn=(e)=>{
+  const handlesaveTimebtn = (e) => {
     e.preventDefault();
     setEditTime(false);
   }
@@ -94,7 +94,7 @@ const CreateEmail = () => {
                 </h2>
                 <div class="stack-1qp4V spacing2-3AKCb">
                   <span class="root-3TDqk heading-2-SxWi_">
-                    za5232208@gmail.com
+                    {state.compaingemail}
                   </span>
                   <div class="cluster-3D5Qr">
                     <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR">
@@ -874,7 +874,7 @@ const CreateEmail = () => {
                                               <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR">
                                                 <button onClick={handlesaveTimebtn}
                                                   class="root-sBgFt container-3-bH7 primary-33czz button-3mfLr"
-                                                
+
                                                 >
                                                   <span class="temporarySpan-2iF2p">
                                                     Save
@@ -988,6 +988,7 @@ const CreateEmail = () => {
                   </li>
                 </ul>
                 <div class="stack-1qp4V spacing6-nznRY">
+                  <br />
                   <h2 class="heading-3-eDQNF shareCampaignUrlHeading-1pvS0 root-PihPG">
                     Share Your Email
                   </h2>
@@ -1010,9 +1011,11 @@ const CreateEmail = () => {
                   </div>
                 </div>
                 <div class="stack-1qp4V spacing7-3UvBh">
+                  <br />
                   <h2 class="heading-3-eDQNF socialPostsHeading-1Rz3D root-PihPG">
                     Add A Social Post To Your Email
                   </h2>
+                  <br />
                   <div class="stack-1qp4V spacing4-1xt6w">
                     <div class="cluster-3D5Qr nowrap-34OZ-">
                       <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR">
@@ -1026,11 +1029,12 @@ const CreateEmail = () => {
                             <p class="root-3TDqk medium-3AcAC">Facebook</p>
                           </div>
                         </div>
-                        <button type="button" class="root-EzRO6">
+                        <button style={{ backgroundColor: 'transparent', color: "#0b8495", textDecoration: "underline" }} type="button" class="root-EzRO6">
                           <span class="span-2w7il">Connect Facebook</span>
                         </button>
                       </div>
                     </div>
+                    <br />
                   </div>
                   <div class="stack-1qp4V spacing4-1xt6w">
                     <div class="cluster-3D5Qr nowrap-34OZ-">
@@ -1047,7 +1051,7 @@ const CreateEmail = () => {
                             </p>
                           </div>
                         </div>
-                        <button type="button" class="root-EzRO6">
+                        <button style={{ backgroundColor: 'transparent', color: "#0b8495", textDecoration: "underline" }} type="button" class="root-EzRO6">
                           <span class="span-2w7il">
                             Connect X (formerly Twitter)
                           </span>
@@ -1055,6 +1059,7 @@ const CreateEmail = () => {
                       </div>
                     </div>
                   </div>
+                  <br />
                   <div class="stack-1qp4V spacing4-1xt6w">
                     <div class="cluster-3D5Qr nowrap-34OZ-">
                       <div class="alignItemsCenter-1HCiJ justifyFlexStart-ejJl1 spacing4-1S_zR">
@@ -1068,10 +1073,11 @@ const CreateEmail = () => {
                             <p class="root-3TDqk medium-3AcAC">Instagram</p>
                           </div>
                         </div>
-                        <button type="button" class="root-EzRO6">
+                        <button style={{ backgroundColor: 'transparent', color: "#0b8495", textDecoration: "underline" }} type="button" class="root-EzRO6">
                           <span class="span-2w7il">Connect Instagram</span>
                         </button>
                       </div>
+                      <br />
                     </div>
                     <p class="root-3TDqk medium-3AcAC">
                       To add an Instagram post, connect an Instagram business
@@ -1085,6 +1091,7 @@ const CreateEmail = () => {
                       </a>
                     </p>
                   </div>
+                  <br />
                 </div>
                 <div class="stack-1qp4V spacing4-1xt6w root-NPngR">
                   <div class="cluster-3D5Qr">

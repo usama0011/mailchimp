@@ -22,8 +22,20 @@ const campaignSchema = new Schema(
     chooseemailtemplate: {
       type: String,
     },
-    imageurl:{
-    type:String
+    imageurl: {
+      type: String
+    },
+    visits: {
+      type: String,
+    },
+    vistitPercentage: {
+      type: String,
+    },
+    clicks: {
+      type: String
+    },
+    clickPercentage: {
+      type: String,
     }
   },
   { timestamps: true }

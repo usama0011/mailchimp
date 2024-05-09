@@ -10,7 +10,7 @@ const ChooseEmail = () => {
   const [image, setImage] = useState(null);
   const navigation = useNavigate();
   const [url, setUrl] = useState("");
-  
+
   const divRef = useRef(null);
   const { state, dispatch } = useContext(NewCampaignDetailsContext);
   const handleUpdateState = (field, value) => {
@@ -54,10 +54,13 @@ const ChooseEmail = () => {
         }
       );
       const res = await response.json();
+      console.log(res)
       setUrl(res.secure_url);
       handleUpdateState("chooseemailtemplate", url);
       setLoading(false);
       // navigation("/allcompaings")
+      console.log(url)
+      setImage(null)
     } catch (error) {
       setLoading(false);
     }
@@ -75,6 +78,7 @@ const ChooseEmail = () => {
     setPreview(null);
     setImage(null);
   };
+  console.log(image.name)
   return (
     <div class="pageContainer-nmRCK pageContainer_templateSelection-20m_G snipcss-FYitB">
       <div class="root-3uY95">
@@ -7452,11 +7456,12 @@ const ChooseEmail = () => {
                                             >
                                               Add file
                                             </label>
-                                          
+
                                           </div>
-                                          
+
                                         </div>
-                                        
+                                        <br />
+                                        {image.name && <p>{image.name}</p>}
                                       </div>
                                     </div>
                                   </div>
@@ -7475,12 +7480,12 @@ const ChooseEmail = () => {
                                     Cancel
                                   </span>
                                 </button>
-                                <button  onClick={uploadImage} style={{ backgroundColor: "#007c89", color: 'white' }}
+                                <button onClick={uploadImage} style={{ backgroundColor: "#007c89", color: 'white' }}
                                   class="root-sBgFt container-3-bH7 primary-33czz button-3mfLr"
                                   type="button"
                                 >
                                   <span class="temporarySpan-2iF2p">
-                                {loading ? "loading..." : "upload"}
+                                    {loading ? "loading..." : "upload"}
                                   </span>
                                 </button>
                               </div>
