@@ -594,19 +594,18 @@ const AllCampaings = () => {
                                   data-analytics-tag="SecondaryNav-Reports"
                                   className="snipcss0-13-152-161"
                                 >
-                                  <a
-                                    aria-label="Reports"
-                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-161-162"
-                                    role="link"
-                                    aria-describedby="mc:57"
-                                    href="/reports"
+                                  <Link
+                                    to="/reports"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
                                   >
+
                                     <div className="snipcss0-15-162-163">
                                       <span className="snipcss0-16-163-164">
                                         Reports
                                       </span>
                                     </div>
-                                  </a>
+                                  </Link>
+
                                 </li>
                                 <li
                                   data-analytics-tag="SecondaryNav-Custom reports"
