@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const HidePages = () => {
     const navigate = useNavigate();
     return (
-        <div>
+        <div style={{ padding: '30px' }}>
             <h2>Our Hide Pages</h2>
             <br />
             <div className="item">

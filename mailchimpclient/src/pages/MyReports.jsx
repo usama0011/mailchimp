@@ -18,7 +18,16 @@ const MyReports = () => {
                 setLoading(false);
             });
     }, []);
-    console.log(reports)
+
+    const handleDelete = async (id) => {
+        try {
+            await axios.post(`https://mailchimp-server.vercel.app/api/reports/${id}`)
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <div style={{ padding: "30px" }} className="my-reports">
             <h1>My Reports</h1>
@@ -56,6 +65,8 @@ const MyReports = () => {
                     </ul>
                     <br />
                     <button onClick={() => navigate(`/viewreport/${report._id}`)} style={{ backgroundColor: "green", color: "white" }}>Edit Report</button>
+                    <button onClick={() => handleDelete(report._id)} style={{ backgroundColor: "red", color: "white" }}>Delete Report</button>
+
                 </div>
             ))}
         </div>
