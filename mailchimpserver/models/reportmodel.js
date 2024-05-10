@@ -6,6 +6,7 @@ const reportSchema = new Schema(
     {
         recipients: {
             type: String,
+
         },
         Audience: {
             type: String,
@@ -20,6 +21,18 @@ const reportSchema = new Schema(
             type: String,
         },
         clicked: {
+            type: String,
+        },
+        sendtime: {
+            type: String,
+        },
+        chooseemailtemplate: {
+            type: String,
+        },
+        comapingemail: {
+            type: String,
+        },
+        previewtext: {
             type: String,
         },
         bounced: {

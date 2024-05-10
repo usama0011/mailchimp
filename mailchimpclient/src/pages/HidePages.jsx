@@ -10,6 +10,7 @@ const HidePages = () => {
             <div className="item">
                 <button onClick={() => navigate("/addcontacts")}>Add Contact</button>
                 <button onClick={() => navigate("/viewallcompaingshides")}>View All Comapings</button>
+                <button onClick={() => navigate("/myreports")}>View All Reports</button>
                 <button></button>
             </div>
         </div>

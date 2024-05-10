@@ -1,6 +1,7 @@
 import React, { useContext, useRef, useState } from "react";
 import "../styles/ChooseTemplate.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { NewCampaignDetailsContext } from "../context/NewCompaingContext";
 const ChooseEmail = () => {
   const [curretRoute, setCurrentRoute] = useState("template");
@@ -56,7 +57,8 @@ const ChooseEmail = () => {
       const res = await response.json();
       console.log(res)
       setUrl(res.secure_url);
-      handleUpdateState("chooseemailtemplate", url);
+      handleUpdateState("chooseemailtemplate", res.secure_url);
+      handleUpdateState("imageurl", res.secure_url);
       setLoading(false);
       // navigation("/allcompaings")
       console.log(url)
@@ -78,6 +80,16 @@ const ChooseEmail = () => {
     setPreview(null);
     setImage(null);
   };
+  const MovetoNext = async () => {
+    try {
+      await axios.post("https://mailchimp-server.vercel.app/api/newcompaing", state);
+      await axios.post("https://mailchimp-server.vercel.app/api/reports", state)
+      navigation("/");
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div class="pageContainer-nmRCK pageContainer_templateSelection-20m_G snipcss-FYitB">
       <div class="root-3uY95">
@@ -7348,149 +7360,152 @@ const ChooseEmail = () => {
                   </div>
                 </label>
                 {openmodel && (
-                  <div class="wink light snipcss-MVACj newomommmm">
-                    <div
-                      class="dialog-1NSI7 container-1Cqy1"
-                      role="dialog"
-                      tabindex="-1"
-                      aria-labelledby="mc:158"
-                    >
-                      <div class="overlay-2Q-6X"></div>
+                  <div className="">
+                    <div class="wink light snipcss-MVACj newomommmm">
                       <div
-                        class="root-Hg5IF sm-3xLCd style-7wa5z"
-                        id="style-7wa5z"
+                        class="dialog-1NSI7 container-1Cqy1"
+                        role="dialog"
+                        tabindex="-1"
+                        aria-labelledby="mc:158"
                       >
-                        <form class="stack-1qp4V" novalidate="" id="form-l779m">
-                          <button onClick={() => setOpenModel(false)}
-                            class="root-1khsy closeButton-1pytm"
-                            type="button"
-                          >
-                            <span class="wink-visually-hidden">
-                              Close Modal
-                            </span>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 24 24"
-                              focusable="false"
-                              aria-hidden="true"
-                              class="wink-icon"
+                        <div class="overlay-2Q-6X"></div>
+                        <div
+                          class="root-Hg5IF sm-3xLCd style-7wa5z"
+                          id="style-7wa5z"
+                        >
+                          <form class="stack-1qp4V" novalidate="" id="form-l779m">
+                            <button onClick={() => setOpenModel(false)}
+                              class="root-1khsy closeButton-1pytm"
+                              type="button"
                             >
-                              <path d="M12 13.414l6.293 6.293 1.414-1.414L13.414 12l6.293-6.293-1.414-1.414L12 10.586 5.707 4.293 4.293 5.707 10.586 12l-6.293 6.293 1.414 1.414L12 13.414z"></path>
-                            </svg>
-                          </button>
-                          <div class="header-33UyO">
-                            <h1 id="mc:158" class="title-hZdI7">
-                              Import template to Classic builder
-                            </h1>
-                          </div>
-                          <div class="body-Qf-7h">
-                            <div class="switcher-2RqDX">
-                              <div class="">
-                                <div
-                                  class="content-2Oz_g style-h7rex"
-                                  id="style-h7rex"
-                                >
-                                  <div class="stack-1qp4V spacing4-1xt6w">
-                                    <p class="root-3TDqk medium-3AcAC">
-                                      Custom-coded templates are only available
-                                      in our Classic builder for now. Upload
-                                      your template as a zip file to continue to
-                                      the Classic builder.
-                                    </p>
-                                    <div class="stack-1qp4V spacing4-1xt6w containerWidth-2rtmQ">
-                                      <div class="container-37Jkg cluster-3D5Qr nowrap-34OZ-">
-                                        <div class="alignItemsFlexStart-3pYa_ justifyFlexStart-ejJl1 spacing8-2cYQ4">
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 24 24"
-                                            focusable="false"
-                                            aria-hidden="true"
-                                            class="wink-icon"
-                                          >
-                                            <path d="M14.5 4a4.501 4.501 0 00-4.118 2.682l-.388.878-.894-.352a3 3 0 00-3.98 3.632l.28.96-.96.28A2.001 2.001 0 005 16h4v2H5a4 4 0 01-1.973-7.48 5 5 0 015.937-5.427 6.5 6.5 0 0111.928 4.595A4.5 4.5 0 0118.5 18H15v-2h3.5a2.5 2.5 0 00.875-4.843l-.9-.336.3-.913A4.5 4.5 0 0014.5 4z"></path>
-                                            <path d="M7.341 12.748l1.317 1.505 2.55-2.231L11 22h2l-.208-9.978 2.55 2.23 1.316-1.505L12 8.672l-4.659 4.077z"></path>
-                                          </svg>
-                                          <div class="stack-1qp4V spacing6-nznRY">
-                                            <div class="stack-1qp4V">
-                                              <p class="root-3TDqk small-bold-6R-6E">
-                                                Select a zip file to upload
-                                              </p>
-                                              <div id="mc:181">
-                                                <p class="root-3TDqk small-secondary-3_Rq2">
-                                                  Your zip file should be less
-                                                  than 1MB and should contain:
-                                                </p>
-                                                <ul class="list-2l3Ca mcds-list-ul-default small-secondary-2Yg8s">
-                                                  <li class="listItem-YU24s">
-                                                    One .html file (should
-                                                    include the required
-                                                    *|UNSUB|* tag)
-                                                  </li>
-                                                  <li class="listItem-YU24s">
-                                                    All images in web formats
-                                                    (png, gif, or jpg)
-                                                  </li>
-                                                  <li class="listItem-YU24s">
-                                                    Your CSS file(s)
-                                                  </li>
-                                                </ul>
-                                              </div>
-                                            </div>
-                                            <input
-                                              type="file"
-                                              hidden // This hides the input
-                                              onChange={handleFileChange} // Handles file selection
-                                              style={{ display: "none" }}
-                                              accept="image/*"
-                                              class="fileinput-12gz-"
-                                              id="mc:180"
-
-                                              aria-describedby="mc:181"
-
-                                            />
-
-                                            <label style={{ border: '1px solid #007c89', padding: "10px 30px", color: "#007c89", fontSize: "12px" }}
-                                              for="mc:180"
-                                              class="upload-Bj38u"
+                              <span class="wink-visually-hidden">
+                                Close Modal
+                              </span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                focusable="false"
+                                aria-hidden="true"
+                                class="wink-icon"
+                              >
+                                <path d="M12 13.414l6.293 6.293 1.414-1.414L13.414 12l6.293-6.293-1.414-1.414L12 10.586 5.707 4.293 4.293 5.707 10.586 12l-6.293 6.293 1.414 1.414L12 13.414z"></path>
+                              </svg>
+                            </button>
+                            <div class="header-33UyO">
+                              <h1 id="mc:158" class="title-hZdI7">
+                                Import template to Classic builder
+                              </h1>
+                            </div>
+                            <div class="body-Qf-7h">
+                              <div class="switcher-2RqDX">
+                                <div class="">
+                                  <div
+                                    class="content-2Oz_g style-h7rex"
+                                    id="style-h7rex"
+                                  >
+                                    <div class="stack-1qp4V spacing4-1xt6w">
+                                      <p class="root-3TDqk medium-3AcAC">
+                                        Custom-coded templates are only available
+                                        in our Classic builder for now. Upload
+                                        your template as a zip file to continue to
+                                        the Classic builder.
+                                      </p>
+                                      <div class="stack-1qp4V spacing4-1xt6w containerWidth-2rtmQ">
+                                        <div class="container-37Jkg cluster-3D5Qr nowrap-34OZ-">
+                                          <div class="alignItemsFlexStart-3pYa_ justifyFlexStart-ejJl1 spacing8-2cYQ4">
+                                            <svg
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              viewBox="0 0 24 24"
+                                              focusable="false"
+                                              aria-hidden="true"
+                                              class="wink-icon"
                                             >
-                                              Add file
-                                            </label>
+                                              <path d="M14.5 4a4.501 4.501 0 00-4.118 2.682l-.388.878-.894-.352a3 3 0 00-3.98 3.632l.28.96-.96.28A2.001 2.001 0 005 16h4v2H5a4 4 0 01-1.973-7.48 5 5 0 015.937-5.427 6.5 6.5 0 0111.928 4.595A4.5 4.5 0 0118.5 18H15v-2h3.5a2.5 2.5 0 00.875-4.843l-.9-.336.3-.913A4.5 4.5 0 0014.5 4z"></path>
+                                              <path d="M7.341 12.748l1.317 1.505 2.55-2.231L11 22h2l-.208-9.978 2.55 2.23 1.316-1.505L12 8.672l-4.659 4.077z"></path>
+                                            </svg>
+                                            <div class="stack-1qp4V spacing6-nznRY">
+                                              <div class="stack-1qp4V">
+                                                <p class="root-3TDqk small-bold-6R-6E">
+                                                  Select a zip file to upload
+                                                </p>
+                                                <div id="mc:181">
+                                                  <p class="root-3TDqk small-secondary-3_Rq2">
+                                                    Your zip file should be less
+                                                    than 1MB and should contain:
+                                                  </p>
+                                                  <ul class="list-2l3Ca mcds-list-ul-default small-secondary-2Yg8s">
+                                                    <li class="listItem-YU24s">
+                                                      One .html file (should
+                                                      include the required
+                                                      *|UNSUB|* tag)
+                                                    </li>
+                                                    <li class="listItem-YU24s">
+                                                      All images in web formats
+                                                      (png, gif, or jpg)
+                                                    </li>
+                                                    <li class="listItem-YU24s">
+                                                      Your CSS file(s)
+                                                    </li>
+                                                  </ul>
+                                                </div>
+                                              </div>
+                                              <input
+                                                type="file"
+                                                hidden // This hides the input
+                                                onChange={handleFileChange} // Handles file selection
+                                                style={{ display: "none" }}
+                                                accept="image/*"
+                                                class="fileinput-12gz-"
+                                                id="mc:180"
+
+                                                aria-describedby="mc:181"
+
+                                              />
+
+                                              <label style={{ border: '1px solid #007c89', padding: "10px 30px", color: "#007c89", fontSize: "12px" }}
+                                                for="mc:180"
+                                                class="upload-Bj38u"
+                                              >
+                                                Add file
+                                              </label>
+
+                                            </div>
 
                                           </div>
-
+                                          <br />
+                                          {image !== null && <p>{image?.name}</p>}
+                                          <button onClick={uploadImage}>   {loading ? "loading..." : "upload"}</button>
                                         </div>
-                                        <br />
-                                        {image?.name !== null && <p>{image.name}</p>}
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="footer-GeAzX">
-                            <div class="cluster-3D5Qr">
-                              <div class="alignItemsCenter-1HCiJ justifyFlexEnd-3_ERd spacing4-1S_zR">
-                                <button style={{ color: "#007c89" }}
-                                  class="root-sBgFt container-3-bH7 tertiary-Wmhgk button-1hkgD"
-                                  type="reset"
-                                >
-                                  <span class="temporarySpan-2iF2p">
-                                    Cancel
-                                  </span>
-                                </button>
-                                <button onClick={uploadImage} style={{ backgroundColor: "#007c89", color: 'white' }}
-                                  class="root-sBgFt container-3-bH7 primary-33czz button-3mfLr"
-                                  type="button"
-                                >
-                                  <span class="temporarySpan-2iF2p">
-                                    {loading ? "loading..." : "upload"}
-                                  </span>
-                                </button>
+                            <div class="footer-GeAzX">
+                              <div class="cluster-3D5Qr">
+                                <div class="alignItemsCenter-1HCiJ justifyFlexEnd-3_ERd spacing4-1S_zR">
+                                  <button onClick={handleResetClick} style={{ color: "#007c89" }}
+                                    class="root-sBgFt container-3-bH7 tertiary-Wmhgk button-1hkgD"
+                                    type="reset"
+                                  >
+                                    <span class="temporarySpan-2iF2p">
+                                      Cancel
+                                    </span>
+                                  </button>
+                                  <button onClick={MovetoNext} style={{ backgroundColor: "#007c89", color: 'white' }}
+                                    class="root-sBgFt container-3-bH7 primary-33czz button-3mfLr"
+                                    type="button"
+                                  >
+                                    <span class="temporarySpan-2iF2p">
+                                      Finish
+                                    </span>
+                                  </button>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </form>
+                          </form>
+                        </div>
                       </div>
                     </div>
                   </div>

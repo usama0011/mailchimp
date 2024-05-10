@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Reports.css";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Reports = () => {
   const navigate = useNavigate()
+  const [reports, setReports] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
   const handleviewreport = () => {
     navigate("/allcompaings/3872983")
   }
+  useEffect(() => {
+    axios.get('https://mailchimp-server.vercel.app/api/reports')
+      .then(response => {
+        setReports(response.data);
+        setLoading(false);
+      })
+      .catch(error => {
+        setError('Error fetching reports');
+        setLoading(false);
+      });
+  }, []);
+  console.log(reports)
   return (
     <div>
       <div
@@ -1198,41 +1214,45 @@ const Reports = () => {
                     <div className="comapingdetaissl">
                       <span>Aril,2024 (4)</span>
                       <hr />
-                      <div className="comapingdetail">
-                        <div>
-                          <input type="checkbox" name="" id="" />
-                        </div>
-                        <div className="emailsection">
-                          {/* icon is here  */}
-                          <p className="mail">testme@gmail.com</p>
-                          <p className="regularemail">Regular Next We Lines</p>
-                          <p className="largeid">
-                            Sent <b>Fri,April 26th 2:06 am</b>
-                            <br />
-                            to  2,005 recipients by you
-                          </p>
-                        </div>
+                      {loading ? "Loading..." : reports?.map((item) => (
+                        <>
+                          <div className="comapingdetail">
+                            <div>
+                              <input type="checkbox" name="" id="" />
+                            </div>
+                            <div className="emailsection">
+                              {/* icon is here  */}
+                              <p className="mail">testme@gmail.com</p>
+                              <p className="regularemail">Regular Next We Lines</p>
+                              <p className="largeid">
+                                Sent <b>Fri,April 26th 2:06 am</b>
+                                <br />
+                                to  2,005 recipients by you
+                              </p>
+                            </div>
 
-                        <div className="draftnewuilder">
-                          <p style={{ backgroundColor: "#d8eacc" }}>Send</p>
-                          <p>New Builder</p>
-                        </div>
+                            <div className="draftnewuilder">
+                              <p style={{ backgroundColor: "#d8eacc" }}>Send</p>
+                              <p>New Builder</p>
+                            </div>
 
-                        <div onClick={handleviewreport} style={{ width: "150px" }} className="reporseditcele">
-                          <p>View Reports</p>
-                          <p>
-                            <svg
-                              className="arrodddd"
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 512 512"
-                            >
-                              <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
-                            </svg>
-                          </p>
-                        </div>
-                      </div>
-                      <hr />
+                            <div onClick={handleviewreport} style={{ width: "150px" }} className="reporseditcele">
+                              <p>View Reports</p>
+                              <p>
+                                <svg
+                                  className="arrodddd"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 512 512"
+                                >
+                                  <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                                </svg>
+                              </p>
+                            </div>
+                          </div>
+                          <hr />
 
+                        </>
+                      ))}
 
                     </div>
                   </div>

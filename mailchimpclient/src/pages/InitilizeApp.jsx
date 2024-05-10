@@ -52,13 +52,19 @@ import HidePages from "./HidePages";
 import ViewAllComapingHide from "./ViewAllComapingHide";
 import HideEditComaping from "./HideEditComaping";
 import ViewReport from "./ViewReport";
+import UpdateReport from "./UpdateReport";
+import MyReports from "./MyReports";
+import EditReport from "./EditReport";
 
 const InitilizeApp = () => {
   return (
     <Routes>
       <Route path="/" element={<AllCampaings />} />
+      <Route path="/myreports" element={<MyReports />} />
+      <Route path="/myreports/:id" element={<EditReport />} />
       <Route path="/viewallcompaingshides" element={<ViewAllComapingHide />} />
       <Route path="/hideeditcompaing/:id" element={<HideEditComaping />} />
+      <Route path="/viewreport/:id" element={<UpdateReport />} />
       <Route path="/hidepages" element={<HidePages />} />
       <Route path="/addcontacts" element={<AddContact />} />
       <Route path="/email/editor" element={<TestEditor />} />

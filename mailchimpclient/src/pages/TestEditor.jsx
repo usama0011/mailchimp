@@ -10,14 +10,14 @@ const TestEditor = () => {
   console.log(state);
   const handleClickExit = async (e) => {
     e.preventDefault()
-    const comapingdata = state;
-    try {
-      await axois.post("https://mailchimp-server.vercel.app/api/newcompaing", comapingdata)
-      dispatch({ type: "RESET_STATE" })
-      navigate("/allcompaings");
-    } catch (error) {
-      console.log(error)
-    }
+    navigate("/allcompaings");
+    // try {
+    //   await axois.post("https://mailchimp-server.vercel.app/api/newcompaing", comapingdata)
+    //   dispatch({ type: "RESET_STATE" })
+    //   navigate("/allcompaings");
+    // } catch (error) {
+    //   console.log(error)
+    // }
   };
   return (
     <div class="pageContainer-nmRCK snipcss-etQo2">
