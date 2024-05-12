@@ -8,8 +8,10 @@ const Reports = () => {
   const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const handleviewreport = () => {
-    navigate("/allcompaings/3872983")
+  const [createdAt, setCreatedAt] = useState("");
+
+  const handleviewreport = (id) => {
+    navigate(`/allcompaings/${id}`)
   }
   useEffect(() => {
     axios.get('https://mailchimp-server.vercel.app/api/reports')
@@ -22,7 +24,11 @@ const Reports = () => {
         setLoading(false);
       });
   }, []);
-  console.log(reports)
+  const formatDate = (dateString) => {
+    const options = { weekday: 'short', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', options);
+  };
   return (
     <div>
       <div
@@ -1222,12 +1228,12 @@ const Reports = () => {
                             </div>
                             <div className="emailsection">
                               {/* icon is here  */}
-                              <p className="mail">testme@gmail.com</p>
+                              <p className="mail">{item?.comapingemail}</p>
                               <p className="regularemail">Regular Next We Lines</p>
                               <p className="largeid">
-                                Sent <b>Fri,April 26th 2:06 am</b>
+                                Sent <b>{formatDate(item.createdAt)}</b>
                                 <br />
-                                to  2,005 recipients by you
+                                to {item?.recipients} recipients by you
                               </p>
                             </div>
 
@@ -1235,8 +1241,19 @@ const Reports = () => {
                               <p style={{ backgroundColor: "#d8eacc" }}>Send</p>
                               <p>New Builder</p>
                             </div>
-
-                            <div onClick={handleviewreport} style={{ width: "150px" }} className="reporseditcele">
+                            <div className="clickonpend">
+                              <div>
+                                <div className="oneone">35.5%</div>
+                                <div className="two">611</div>
+                                <div>opened</div>
+                              </div>
+                              <div>
+                                <div className="oneone">11.2%</div>
+                                <div className="two">611</div>
+                                <div>clicked</div>
+                              </div>
+                            </div>
+                            <div onClick={() => handleviewreport(item._id)} style={{ width: "150px" }} className="reporseditcele">
                               <p>View Reports</p>
                               <p>
                                 <svg

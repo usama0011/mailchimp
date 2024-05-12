@@ -7,6 +7,7 @@ const UpdateReport = () => {
     const [error, setError] = useState(null);
     const { id } = useParams();
     const [formData, setFormData] = useState({
+        comapingemail: "",
         recipients: "",
         Audience: "",
         subject: "",
@@ -78,6 +79,13 @@ const UpdateReport = () => {
         <div style={{ padding: '30px' }}>
             <h2>Update Report</h2>
             <form onSubmit={handleSubmit}>
+                <label>Compaing Email</label>
+                <input
+                    type="text"
+                    name="comapingemail"
+                    value={formData.comapingemail}
+                    onChange={(event) => setFormData({ ...formData, comapingemail: event.target.value })}
+                />
                 <label>Recipients:</label>
                 <input
                     type="text"
@@ -152,14 +160,14 @@ const UpdateReport = () => {
                 />
                 <label>Lastopened:</label>
                 <input
-                    type="text"
+                    type="date"
                     name="Lastopened"
                     value={formData.Lastopened}
                     onChange={(event) => setFormData({ ...formData, Lastopened: event.target.value })}
                 />
                 <label>lastClicked:</label>
                 <input
-                    type="text"
+                    type="date"
                     name="lastClicked"
                     value={formData.lastClicked}
                     onChange={(event) => setFormData({ ...formData, lastClicked: event.target.value })}

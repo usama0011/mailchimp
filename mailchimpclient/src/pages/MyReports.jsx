@@ -35,8 +35,9 @@ const MyReports = () => {
             {error && <p>{error}</p>}
             {reports.map((report, index) => (
                 <div key={index} className="report-item" style={{ margin: '20px', border: '1px solid #ccc', padding: '10px' }}>
-                    <h2>{report.subject}</h2>
+                    <h2>{report.comapingemail}</h2>
                     <p>Recipients: {report.recipients}</p>
+                    <p>Subject: {report.subject}</p>
                     <p>Audience: {report.Audience}</p>
                     <p>Delivered Time: {report.deliveredtime}</p>
                     <p>Opened: {report.opened}</p>

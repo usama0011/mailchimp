@@ -40,6 +40,11 @@ const AllCampaings = () => {
     }
     fetchAllcompaings()
   }, [])
+  const formatDate = (dateString) => {
+    const options = { weekday: 'short', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', options);
+  };
   return (
     <div>
       <div
@@ -1248,12 +1253,24 @@ const AllCampaings = () => {
                               <p className="mail">{item?.comapingemail}</p>
                               <p className="regularemail">{item?.previewtext}</p>
                               <p className="largeid">
-                                Edited <b>Fri,April 26th 2:06 AM</b> by you
+                                Edited <b>{formatDate(item?.updatedAt)}</b> by you
                               </p>
                             </div>
                             <div className="draftnewuilder">
                               <p>Draft</p>
                               <p>New Builder</p>
+                            </div>
+                            <div className="clickonpend">
+                              <div>
+                                <div className="oneone">35.5%</div>
+                                <div className="two">611</div>
+                                <div>opened</div>
+                              </div>
+                              <div>
+                                <div className="oneone">11.2%</div>
+                                <div className="two">611</div>
+                                <div>clicked</div>
+                              </div>
                             </div>
                             <div style={{ cursor: 'pointer' }} onClick={() => handleEditClick(item._id)} className="editdelete">
                               <p>Edit</p>

@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/ViewCompaing.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 const ViewCompaing = () => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [singlereport, setSingleReport] = useState({})
+  const { id } = useParams();
+  useEffect(() => {
+    const fetchReport = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(`https://mailchimp-server.vercel.app/api/reports/${id}`);
+        setSingleReport(response.data);
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+    fetchReport();
+  }, [id]);
+  const maleFill = (singlereport?.male / (singlereport?.male + singlereport?.female)) * 100;
+  const femaleFill = (singlereport?.female / (singlereport?.male + singlereport?.female)) * 100;
   return (
     <div>
       <div
@@ -919,7 +940,7 @@ const ViewCompaing = () => {
                 <br />
 
                 <div className="lastUnit">
-                  <h1>Roofing Services | GreatDailyBlogs</h1>{" "}
+                  <h1>{singlereport?.subject}</h1>{" "}
                 </div>
                 <div
                   data-dojo-attach-point="switcherContainer"
@@ -1050,9 +1071,9 @@ const ViewCompaing = () => {
                         href="https://us9.admin.mailchimp.com/reports/activity/sent?id=6150701"
                         title="View"
                       >
-                        2,005{" "}
+                        {singlereport?.recipients}{" "}
                       </a>
-                      <span data-mc-el="recipientCountLabel"> Recipients</span>{" "}
+                      <span data-mc-el="recipientCountLabel">Recipients</span>{" "}
                     </h3>{" "}
                   </div>{" "}
                   <div class="lastUnit size1of2 alignr">
@@ -1081,13 +1102,13 @@ const ViewCompaing = () => {
                       <li>
                         {" "}
                         <span class="title fwb ">Audience:</span>{" "}
-                        <span class="description">Great Daily Blogs </span>{" "}
+                        <span class="description">{singlereport?.Audience} </span>{" "}
                       </li>{" "}
                       <li>
                         {" "}
                         <span class="title fwb ">Subject:</span>{" "}
                         <span class="description">
-                          Roofing Services: Restoring Your Home's Crown
+                          {singlereport?.subject}
                           <img
                             style={{ width: "20px", height: "20px" }}
                             class="emoji"
@@ -1170,7 +1191,7 @@ const ViewCompaing = () => {
                         href="https://hayzeltech.com/mailing/reports/"
                         title="View"
                       >
-                        611
+                        {singlereport?.opened}
                       </a>{" "}
                     </h3>{" "}
                     <p>Opened</p>{" "}
@@ -1184,7 +1205,7 @@ const ViewCompaing = () => {
                         href="https://hayzeltech.com/mailing/reports/"
                         title="View"
                       >
-                        221
+                        {singlereport?.clicked}
                       </a>
                     </h3>{" "}
                     <p>Clicked</p>{" "}
@@ -1198,7 +1219,7 @@ const ViewCompaing = () => {
                         href="https://hayzeltech.com/mailing/reports/"
                         title="View"
                       >
-                        2
+                        {singlereport?.bounced}
                       </a>
                     </h3>{" "}
                     <p>Bounced</p>{" "}
@@ -1212,7 +1233,7 @@ const ViewCompaing = () => {
                         href="https://us9.admin.mailchimp.com/reports/activity/unsubscribed?id=6150701"
                         title="View"
                       >
-                        0
+                        {singlereport?.unsubscribed}
                       </a>
                     </h3>{" "}
                     <p>Unsubscribed</p>{" "}
@@ -1230,7 +1251,7 @@ const ViewCompaing = () => {
                         <span>Successful deliveries</span>{" "}
                         <span class="fwb">
                           <span data-mc-el="deliverCountStat">
-                            <b>2,003</b>
+                            <b>{singlereport?.Successfuldeliveries}</b>
                           </span>{" "}
                           <span
                             data-mc-el="deliverRateStat"
@@ -1249,14 +1270,14 @@ const ViewCompaing = () => {
                             href="https://us9.admin.mailchimp.com/reports/activity/opened?id=6150701&amp;_ga=2.41225579.810457447.1706014327-1066594206.1700086536"
                             title="View"
                           >
-                            614
+                            {singlereport?.Totalopens}
                           </a>{" "}
                         </span>{" "}
                       </li>{" "}
                       <li>
                         {" "}
                         <span>Last opened</span>
-                        <span data-mc-el="lastOpenDate">1/25/24 4:40PM</span>
+                        <span data-mc-el="lastOpenDate">{singlereport?.Lastopened}</span>
                       </li>{" "}
                       <li>
                         {" "}
@@ -1272,7 +1293,7 @@ const ViewCompaing = () => {
                         {" "}
                         <span>Forward opens</span>{" "}
                         <span class="fwb">
-                          <span data-mc-el="forwardOpenCountStat">0</span>
+                          <span data-mc-el="forwardOpenCountStat">{singlereport?.Forwarded}</span>
                         </span>{" "}
                       </li>{" "}
                     </ul>{" "}
@@ -1286,7 +1307,7 @@ const ViewCompaing = () => {
                         <span>Clicks per unique opens</span>{" "}
                         <span class="fwb">
                           <span data-mc-el="openClickRateStat">
-                            <b>36.1%</b>
+                            <b>{singlereport?.Clicksperuniqueopens}%</b>
                           </span>
                         </span>{" "}
                       </li>{" "}
@@ -1302,14 +1323,14 @@ const ViewCompaing = () => {
                       <li>
                         {" "}
                         <span>Last clicked</span>
-                        <span data-mc-el="lastClickDate">1/25/24 4:44PM</span>
+                        <span data-mc-el="lastClickDate">{singlereport?.lastCliked}</span>
                       </li>{" "}
                       <li>
                         {" "}
                         <span>Abuse reports</span>{" "}
                         <span class="fwb">
                           <span data-mc-el="abuseCountStat">
-                            <span>0</span>
+                            <span>{singlereport?.Abusereports}</span>
                           </span>
                         </span>{" "}
                       </li>{" "}
@@ -1326,7 +1347,7 @@ const ViewCompaing = () => {
                         href="https://hayzeltech.com/mailing/reports/"
                         title="View"
                       >
-                        611
+                        {singlereport?.Orders}
                       </a>{" "}
                     </h3>{" "}
                     <p>Orders</p>{" "}
@@ -1340,7 +1361,7 @@ const ViewCompaing = () => {
                         href="https://hayzeltech.com/mailing/reports/"
                         title="View"
                       >
-                        221
+                        {singlereport?.Averageorderrevenue}$
                       </a>
                     </h3>{" "}
                     <p>Average order revenue</p>{" "}
@@ -1354,7 +1375,7 @@ const ViewCompaing = () => {
                         href="https://hayzeltech.com/mailing/reports/"
                         title="View"
                       >
-                        2
+                        {singlereport?.Totalrevenue}$
                       </a>
                     </h3>{" "}
                     <p>Total revenue</p>{" "}
@@ -1544,35 +1565,18 @@ const ViewCompaing = () => {
                     <div className="sectoinleftclicked">
                       <h4 class="title-2V2Vk">Top links clicked &nbsp;</h4>
                       <br />
+                      {singlereport?.Toplinksclicked?.map((item) => (
+                        <>
+                          <div>
+                            <a style={{ color: "#1b8a95" }} href="#">
+                              {item.linkname}
+                            </a>
+                            <span>{item.linkvalue}</span>
+                          </div>
+                          <hr />
+                        </>
+                      ))}
 
-                      <div>
-                        <a style={{ color: "#1b8a95" }} href="#">
-                          https://www.lb03vh8trk.com/28KL6/6JHXF/
-                        </a>
-                        <span>220</span>
-                      </div>
-                      <hr />
-                      <div>
-                        <a style={{ color: "#1b8a95" }} href="#">
-                          https://www.lb03vh8trk.com/28KL6/6JHXF/
-                        </a>
-                        <span>220</span>
-                      </div>
-                      <hr />
-                      <div>
-                        <a style={{ color: "#1b8a95" }} href="#">
-                          https://www.lb03vh8trk.com/28KL6/6JHXF/
-                        </a>
-                        <span>220</span>
-                      </div>
-                      <hr />
-                      <div>
-                        <a style={{ color: "#1b8a95" }} href="#">
-                          https://www.lb03vh8trk.com/28KL6/6JHXF/
-                        </a>
-                        <span>220</span>
-                      </div>
-                      <hr />
                       <br />
                       <br />
                       <div>
@@ -1598,7 +1602,7 @@ const ViewCompaing = () => {
                             objectFit: "cover",
                             backgroundSize: "cover",
                           }}
-                          src="https://hayzeltech.com/mailing/reports/roofing_details4_files/1fc5f4d3dfa24932aaf493d8ea32141e_3.jpg"
+                          src={singlereport?.chooseemailtemplate}
                           alt=""
                         />
                       </div>
@@ -1807,7 +1811,30 @@ const ViewCompaing = () => {
                                 }}
                                 class="genderChartContainer-6pb1A"
                               >
-                                <svg version="1.1" style={{ position: "absolute", width: "404px", height: "150px" }}><desc></desc><g><path cs="100,100" d="M0.5,0.5 L403.5,0.5 L403.5,149.5 L0.5,149.5 Z" fill="#FFFFFF" stroke="#000000" fill-opacity="0" stroke-width="1" stroke-opacity="0"></path></g><g></g><g></g><g></g><g></g><g></g><g><g><path cs="1000,1000" d=" M190.2945806790323,133.84711682419382 L187.36822584879036,148.5588960302423 A75,75,0,0,1,201.99999999999997,0 L201.99999999999997,15 A60,60,0,0,0,190.2945806790323,133.84711682419382 Z" fill="#4f135e" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0" fill-opacity="1"></path></g><g><path cs="1000,1000" d=" M202,15 L202,0 A75,75,0,1,1,187.36822584879036,148.5588960302423 L190.2945806790323,133.84711682419382 A60,60,0,1,0,202,15 Z" fill="#f97f50" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0" fill-opacity="1"></path></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g><g></g></g><g></g><g></g><g></g></svg>
+                                <svg version="1.1" style={{ position: "absolute", width: "404px", height: "150px" }}>
+                                  <g>
+                                    {/* Female Circle */}
+                                    <path
+                                      d="M190.2945806790323,133.84711682419382 L187.36822584879036,148.5588960302423 A75,75,0,0,1,201.99999999999997,0 L201.99999999999997,15 A60,60,0,0,0,190.2945806790323,133.84711682419382 Z"
+                                      fill="#4f135e"
+                                      fillOpacity="1"
+                                      stroke="#FFFFFF"
+                                      strokeWidth="1"
+                                      strokeOpacity="0"
+                                      transform={`rotate(${femaleFill}, 202, 75)`} // Rotate based on fill ratio
+                                    />
+                                    {/* Male Circle */}
+                                    <path
+                                      d="M202,15 L202,0 A75,75,0,1,1,187.36822584879036,148.5588960302423 L190.2945806790323,133.84711682419382 A60,60,0,1,0,202,15 Z"
+                                      fill="#f97f50"
+                                      fillOpacity="1"
+                                      stroke="#FFFFFF"
+                                      strokeWidth="1"
+                                      strokeOpacity="0"
+                                      transform={`rotate(${maleFill}, 202, 75)`} // Rotate based on fill ratio
+                                    />
+                                  </g>
+                                </svg>
                                 <br />
                                 <br />
                                 <br />
@@ -1825,7 +1852,7 @@ const ViewCompaing = () => {
                                           <div class="content-3KolX">
                                             <div class="rowContent-RedmX">
                                               <strong class="percentage-31XWx">
-                                                51.2%
+                                                {singlereport?.female}%
                                               </strong>
                                               <span class="label-3pIE0">
                                                 Female
@@ -1842,7 +1869,7 @@ const ViewCompaing = () => {
                                           <div class="content-3KolX">
                                             <div class="rowContent-RedmX">
                                               <strong class="percentage-31XWx">
-                                                34.4%
+                                                {singlereport?.male}%
                                               </strong>
                                               <span class="label-3pIE0">
                                                 Male
@@ -1859,7 +1886,7 @@ const ViewCompaing = () => {
                                           <div class="content-3KolX">
                                             <div class="rowContent-RedmX">
                                               <strong class="percentage-31XWx">
-                                                0.0%
+                                                {singlereport?.otherIdentity}%
                                               </strong>
                                               <span class="label-3pIE0">
                                                 Another Identity
@@ -1876,7 +1903,7 @@ const ViewCompaing = () => {
                                           <div class="content-3KolX">
                                             <div class="rowContent-RedmX">
                                               <strong class="percentage-31XWx">
-                                                14.4%
+                                                {singlereport?.unknow}%
                                               </strong>
                                               <span class="label-3pIE0">
                                                 Unknown

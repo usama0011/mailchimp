@@ -6,7 +6,6 @@ const reportSchema = new Schema(
     {
         recipients: {
             type: String,
-
         },
         Audience: {
             type: String,

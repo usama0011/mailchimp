@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import "../styles/TestEditor.css";
 import { useNavigate } from "react-router-dom";
 import { NewCampaignDetailsContext } from "../context/NewCompaingContext";
-import axois from 'axios'
 const TestEditor = () => {
   const navigate = useNavigate();
   const { state, dispatch } = useContext(NewCampaignDetailsContext);
