@@ -52,6 +52,7 @@ const CreateEmail = () => {
     const formattedDate = `${year}-${month}-${day}`;
 
     setchoosedate(formattedDate);
+    handleClickInside()
   }
 
   const handleClickOutside = e => {
@@ -774,7 +775,7 @@ const CreateEmail = () => {
                                                       >
 
                                                         {clickedOutside ? (
-                                                          <div ref={myRef} onClick={handleClickInside} style={{ position: "absolute", top: 0, left: 0 }} className="absoluteinput">
+                                                          <div style={{ position: "absolute", top: 0, left: 0 }} className="absoluteinput">
                                                             <Calendar
                                                               date={new Date()}
                                                               onChange={handleSelect}
