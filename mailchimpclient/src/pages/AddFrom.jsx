@@ -38,7 +38,7 @@ const AddFrom = () => {
             <h2>Add From</h2>
             <form style={{ display: 'flex', flexDirection: "column", maxWidth: "500px", margin: "auto" }} onSubmit={handleSubmit}>
                 <br />
-                <input style={{ marginBottom: '10px' }} type="email" name="emailaddress" value={formData.emailaddress} onChange={handleChange} placeholder="Email Address" required />
+                <input style={{ marginBottom: '10px' }} type="email" name="from" value={formData.from} onChange={handleChange} placeholder="Email Address" required />
 
 
                 <button type="submit" disabled={loading}>Submit</button>

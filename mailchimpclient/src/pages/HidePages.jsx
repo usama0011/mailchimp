@@ -12,6 +12,7 @@ const HidePages = () => {
                 <button onClick={() => navigate("/viewallcompaingshides")}>View All Comapings</button>
                 {/* Edit campaings or edit report pages */}
                 <button onClick={() => navigate("/myreports")}>View All Reports</button>
+                <button onClick={() => navigate("/viewfroms")}>View Froms</button>
                 <button onClick={() => navigate("/from")}>Add From</button>
             </div>
         </div>

@@ -5,8 +5,13 @@ import "../styles/CreateEmail.css";
 import { Link } from "react-router-dom";
 import { NewCampaignDetailsContext } from "../context/NewCompaingContext";
 import { Calendar } from "react-date-range";
+import axios from "axios";
 const CreateEmail = () => {
+  const [adminEmail, setAdminEmail] = useState({})
   const [subject, setSubject] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
   const [choosedate, setchoosedate] = useState(new Date())
   const myRef = useRef();
   const [clickedOutside, setClickedOutside] = useState(false);
@@ -59,6 +64,20 @@ const CreateEmail = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   });
+  useEffect(() => {
+    const fetchFrom = async () => {
+      try {
+        const response = await axios.get(`https://mailchimp-server.vercel.app/api/from/66560e29438e34fecd29ee10`);
+        setSuccess(true);
+        setAdminEmail(response.data)
+      } catch (error) {
+        console.error('Error:', error);
+        setError(error.message);
+      }
+    }
+    fetchFrom()
+  }, [])
+  console.log(adminEmail)
   return (
     <div class="root-3uY95 snipcss-mSWlr">
       <div class="container-2aeSm">
@@ -274,7 +293,7 @@ const CreateEmail = () => {
                                             •
                                           </span>
                                           <span class="root-3TDqk medium-3AcAC">
-                                            farmvillekings@gmail.com
+                                            {adminEmail?.from}
                                           </span>
                                         </div>
                                       </div>

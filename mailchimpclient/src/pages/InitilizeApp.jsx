@@ -56,11 +56,14 @@ import UpdateReport from "./UpdateReport";
 import MyReports from "./MyReports";
 import EditReport from "./EditReport";
 import AddFrom from "./AddFrom";
+import ViewFroms from "./ViewFroms";
+import EditMyFrom from "./EditMyFrom";
 
 const InitilizeApp = () => {
   return (
     <Routes>
       <Route path="/" element={<AllCampaings />} />
+      <Route path="/editfrom/:id" element={<EditMyFrom />} />
       <Route path="/myreports" element={<MyReports />} />
       <Route path="/myreports/:id" element={<EditReport />} />
       <Route path="/viewallcompaingshides" element={<ViewAllComapingHide />} />
@@ -84,6 +87,7 @@ const InitilizeApp = () => {
       <Route path="/from" element={<AddFrom />} />
       <Route path="/audiencedashboard" element={<AudienceDashboard />} />
       <Route path="/allcompaings" element={<AllCampaings />} />
+      <Route path="/viewfroms" element={<ViewFroms />} />
       <Route path="/marketingdashboard" element={<MarkingDashboard />} />
       <Route path="/audienceanalytics" element={<AudienceAnalytics />} />
       <Route path="/customreports" element={<CustomReports />} />
