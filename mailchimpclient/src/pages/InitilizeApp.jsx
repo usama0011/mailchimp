@@ -55,6 +55,7 @@ import ViewReport from "./ViewReport";
 import UpdateReport from "./UpdateReport";
 import MyReports from "./MyReports";
 import EditReport from "./EditReport";
+import AddFrom from "./AddFrom";
 
 const InitilizeApp = () => {
   return (
@@ -80,6 +81,7 @@ const InitilizeApp = () => {
       <Route path="/test" element={<Test />} />
       <Route path="/signupforms" element={<SignupForms />} />
       <Route path="/choosetemplate" element={<ChooseEmail />} />
+      <Route path="/from" element={<AddFrom />} />
       <Route path="/audiencedashboard" element={<AudienceDashboard />} />
       <Route path="/allcompaings" element={<AllCampaings />} />
       <Route path="/marketingdashboard" element={<MarkingDashboard />} />

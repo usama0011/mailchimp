@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import newcompaingroute from "./routes/newcompaingroute.js";
 import newmessagesroute from './routes/newcontactroute.js'
 import reportroute from './routes/reportroute.js'
+import fromroute from './routes/fromroute.js'
 
 const app = express();
 dotenv.config();
@@ -33,6 +34,7 @@ app.get("/", (req, res) => {
 app.use("/api/newcompaing", newcompaingroute);
 app.use("/api/newcontact", newmessagesroute);
 app.use("/api/reports", reportroute);
+app.use("/api/from", fromroute);
 // Error handling middleware
 // Error handling middleware
 app.use((err, req, res, next) => {

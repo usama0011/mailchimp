@@ -36,6 +36,9 @@ const campaignSchema = new Schema(
     },
     clickPercentage: {
       type: String,
+    },
+    entryDate: {
+      type: String,
     }
   },
   { timestamps: true }
