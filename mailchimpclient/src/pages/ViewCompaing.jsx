@@ -5,13 +5,15 @@ import axios from "axios";
 const ViewCompaing = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [singlereport, setSingleReport] = useState({})
+  const [singlereport, setSingleReport] = useState({});
   const { id } = useParams();
   useEffect(() => {
     const fetchReport = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`https://mailchimp-server.vercel.app/api/reports/${id}`);
+        const response = await axios.get(
+          `https://mailchimp-server.vercel.app/api/reports/${id}`
+        );
         setSingleReport(response.data);
         setLoading(false);
       } catch (error) {
@@ -21,8 +23,10 @@ const ViewCompaing = () => {
     };
     fetchReport();
   }, [id]);
-  const maleFill = (singlereport?.male / (singlereport?.male + singlereport?.female)) * 100;
-  const femaleFill = (singlereport?.female / (singlereport?.male + singlereport?.female)) * 100;
+  const maleFill =
+    (singlereport?.male / (singlereport?.male + singlereport?.female)) * 100;
+  const femaleFill =
+    (singlereport?.female / (singlereport?.male + singlereport?.female)) * 100;
   return (
     <div>
       <div
@@ -390,15 +394,16 @@ const ViewCompaing = () => {
                                   data-analytics-tag="SecondaryNav-All contacts"
                                   className="snipcss0-13-110-115"
                                 >
-                                  <Link to="/allcontacts"
-                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72">
+                                  <Link
+                                    to="/allcontacts"
+                                    className="root-2MzAS fullHeight-2grW3 snipcss0-14-71-72"
+                                  >
                                     <div className="snipcss0-15-116-117">
                                       <span className="snipcss0-16-117-118">
                                         All contacts
                                       </span>
                                     </div>
                                   </Link>
-
                                 </li>
                                 <li
                                   data-analytics-tag="SecondaryNav-Signup forms"
@@ -1102,7 +1107,9 @@ const ViewCompaing = () => {
                       <li>
                         {" "}
                         <span class="title fwb ">Audience:</span>{" "}
-                        <span class="description">{singlereport?.Audience} </span>{" "}
+                        <span class="description">
+                          {singlereport?.Audience}{" "}
+                        </span>{" "}
                       </li>{" "}
                       <li>
                         {" "}
@@ -1277,7 +1284,9 @@ const ViewCompaing = () => {
                       <li>
                         {" "}
                         <span>Last opened</span>
-                        <span data-mc-el="lastOpenDate">{singlereport?.Lastopened}</span>
+                        <span data-mc-el="lastOpenDate">
+                          {singlereport?.Lastopened}
+                        </span>
                       </li>{" "}
                       <li>
                         {" "}
@@ -1293,7 +1302,9 @@ const ViewCompaing = () => {
                         {" "}
                         <span>Forward opens</span>{" "}
                         <span class="fwb">
-                          <span data-mc-el="forwardOpenCountStat">{singlereport?.Forwarded}</span>
+                          <span data-mc-el="forwardOpenCountStat">
+                            {singlereport?.Forwarded}
+                          </span>
                         </span>{" "}
                       </li>{" "}
                     </ul>{" "}
@@ -1323,7 +1334,9 @@ const ViewCompaing = () => {
                       <li>
                         {" "}
                         <span>Last clicked</span>
-                        <span data-mc-el="lastClickDate">{singlereport?.lastCliked}</span>
+                        <span data-mc-el="lastClickDate">
+                          {singlereport?.lastCliked}
+                        </span>
                       </li>{" "}
                       <li>
                         {" "}
@@ -1587,14 +1600,6 @@ const ViewCompaing = () => {
                     </div>
                     <div className="sectoinrightclicked">
                       <div className="whitegatway">
-                        <div className="greadalbolys">
-                          <p>
-                            <h3>Great Daily</h3>
-                          </p>
-                          <p>
-                            <h3>Blogs</h3>
-                          </p>
-                        </div>
                         <img
                           style={{
                             width: "100%",
@@ -1811,7 +1816,14 @@ const ViewCompaing = () => {
                                 }}
                                 class="genderChartContainer-6pb1A"
                               >
-                                <svg version="1.1" style={{ position: "absolute", width: "404px", height: "150px" }}>
+                                <svg
+                                  version="1.1"
+                                  style={{
+                                    position: "absolute",
+                                    width: "404px",
+                                    height: "150px",
+                                  }}
+                                >
                                   <g>
                                     {/* Female Circle */}
                                     <path
@@ -2111,7 +2123,9 @@ const ViewCompaing = () => {
                   </div>
                 </section>
                 <br />
-                <a style={{ paddingLeft: '30px' }} href="#">Learn more about predicted demographics</a>
+                <a style={{ paddingLeft: "30px" }} href="#">
+                  Learn more about predicted demographics
+                </a>
                 <br />
 
                 <br />
