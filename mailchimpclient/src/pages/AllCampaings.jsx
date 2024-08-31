@@ -982,8 +982,8 @@ const AllCampaings = () => {
                 <div className="audiencemain">
                   <p style={{ fontSize: "20px", color: "#241c60" }}>
                     Your aduience has{" "}
-                    <span style={{ color: "#007c89 " }}> 500</span> contacts.
-                    <span style={{ color: "#007c89 " }}> 500</span> fo these are
+                    <span style={{ color: "#007c89 " }}> 50,000</span> contacts.
+                    <span style={{ color: "#007c89 " }}> 48,795</span> fo these are
                     subscribers.
                   </p>
                 </div>
@@ -1257,8 +1257,7 @@ const AllCampaings = () => {
                               </p>
                             </div>
                             <div className="draftnewuilder">
-                              <p>Draft</p>
-                              <p>New Builder</p>
+                              <p style={{ backgroundColor: "#cae0e1", fontWeight: '400', color: "#004e56" }}>Sent</p>
                             </div>
                             <div className="clickonpend">
                               <div>
